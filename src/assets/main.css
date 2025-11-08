@@ -1,35 +1,87 @@
 @import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&display=swap');
+
+:root {
+    --text-main: #d0d0d0;
+    --text-muted: #8a8a8a;
+    --accent: #7dd3fc;
+    --card-bg: rgba(30, 30, 40, 0.6);
+    --card-border: rgba(120, 120, 140, 0.2);
+    --hover-bg: rgba(125, 211, 252, 0.1);
+    --bg-dark: #121212;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+}
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+    width: 100%;
+    padding: 4rem 5vw;
+    box-sizing: border-box;
+    font-weight: normal;
 }
 
 a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+.link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 3px;
+    transition: background-color 0.3s ease;
 }
 
 @media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+    a:hover,
+    .link:hover {
+        background-color: var(--hover-bg);
+    }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #e2e8f0;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
 
-  #app {
+.grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
