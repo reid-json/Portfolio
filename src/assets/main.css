@@ -50,12 +50,14 @@ a,
     letter-spacing: 0.6px;
 }
 
+/* Grid layout */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
 }
 
+/* Card styles */
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -84,4 +86,33 @@ a,
     margin-bottom: 1rem;
     color: var(--text-muted);
     line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #app {
+        padding: 3rem 6vw;
+    }
+
+    .headline {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .card h2 {
+        font-size: 1.25rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
 }

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const navItems = [
   { name: 'Home', href: '#' },
   { name: 'About', href: '#about' },
@@ -6,14 +8,22 @@ const navItems = [
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ]
+
+const isOpen = ref(false)
+const toggleMenu = () => (isOpen.value = !isOpen.value)
 </script>
 
 <template>
   <nav class="navbar">
     <div class="logo">Jason Reid</div>
-    <ul class="nav-links">
+
+    <button class="menu-toggle" @click="toggleMenu" aria-label="Toggle navigation">
+      <span :class="{ open: isOpen }"></span>
+    </button>
+
+    <ul class="nav-links" :class="{ open: isOpen }">
       <li v-for="item in navItems" :key="item.name">
-        <a :href="item.href">{{ item.name }}</a>
+        <a :href="item.href" @click="isOpen = false">{{ item.name }}</a>
       </li>
     </ul>
   </nav>
@@ -49,6 +59,7 @@ const navItems = [
   letter-spacing: 1px;
 }
 
+/* Desktop nav */
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -70,5 +81,76 @@ const navItems = [
 .nav-links a:hover {
   background-color: var(--hover-bg);
   border-radius: 4px;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 28px;
+  height: 24px;
+  position: relative;
+}
+
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after {
+  content: '';
+  display: block;
+  background: var(--text-main);
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  transition: 0.3s ease;
+}
+
+.menu-toggle span::before {
+  top: -8px;
+  position: absolute;
+}
+
+.menu-toggle span::after {
+  top: 8px;
+  position: absolute;
+}
+
+.menu-toggle span.open {
+  background: transparent;
+}
+
+.menu-toggle span.open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.menu-toggle span.open::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-dark);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 1rem 5vw;
+    gap: 1rem;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
 }
 </style>

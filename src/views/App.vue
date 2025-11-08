@@ -6,7 +6,9 @@ import HomePage from './HomePage.vue'
 <template>
   <div class="app">
     <Navbar />
-    <HomePage />
+    <main class="content">
+      <HomePage />
+    </main>
   </div>
 </template>
 
@@ -28,5 +30,19 @@ import HomePage from './HomePage.vue'
   background-color: var(--bg-dark);
   display: flex;
   flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+  padding: 4rem 5vw;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding: 3rem 6vw;
+  }
 }
 </style>

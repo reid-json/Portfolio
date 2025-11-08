@@ -27,7 +27,7 @@ const techStack = [
     </section>
 
     <!-- About -->
-    <section class="about">
+    <section class="about" id="about">
       <h2>About</h2>
       <p>
         I specialize in building future-proof web architectures, rapid prototyping, and clean design systems.
@@ -36,7 +36,7 @@ const techStack = [
     </section>
 
     <!-- Tech Stack -->
-    <section class="stack">
+    <section class="stack" id="stack">
       <h2>Tech Stack</h2>
       <ul class="stack-grid">
         <li v-for="tech in techStack" :key="tech">{{ tech }}</li>
@@ -44,7 +44,7 @@ const techStack = [
     </section>
 
     <!-- Projects -->
-    <section class="projects">
+    <section class="projects" id="projects">
       <h2>Projects</h2>
       <div class="grid">
         <div v-for="(project, index) in projects" :key="index" class="card">
@@ -155,7 +155,7 @@ section {
 
 .stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
   list-style: none;
   padding: 0;
@@ -176,7 +176,7 @@ section {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -220,5 +220,36 @@ section {
 
 .link:hover {
   text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.8rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .about h2,
+  .stack h2,
+  .projects h2,
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
 }
 </style>
