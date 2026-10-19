@@ -1,4 +1,4 @@
-import { STORAGE_KEY, emptyState, localDate, streak, award, markRead, answerQuestion, finishQuiz, reviewAnswer, validateState, exportNotes, importNotes } from './state.js';
+import { STORAGE_KEY, emptyState, localDate, streak, longestStreak, award, markRead, answerQuestion, finishQuiz, reviewAnswer, validateState, exportNotes, importNotes } from './state.js';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -113,7 +113,7 @@ function challengePage(day) {
   currentEdition = edition;
   const questions = edition.articles.map(a => a.quiz[0]);
   const count = questions.filter(q => state.attempts[q.id]).length;
-  return `<div class="reading">${heading(dateLabel(edition.date), 'A little daily challenge.', 'One question from each interest. No timer, no pressure.')}<p>${count} of ${questions.length} answered. Article and daily questions share progress; replaying does not farm XP.</p><progress max="${questions.length}" value="${count}" aria-label="Daily challenge progress"></progress>${quizMarkup(questions)}</div>`;
+  return `<div class="reading">${heading(dateLabel(edition.date), 'A little daily challenge.', 'One question from every read. No timer, no pressure.')}<p>${count} of ${questions.length} answered. Article and daily questions share progress; replaying does not farm XP.</p><progress max="${questions.length}" value="${count}" aria-label="Daily challenge progress"></progress>${quizMarkup(questions)}</div>`;
 }
 function reviewPage() {
   const due = articles.flatMap(a => a.quiz).filter(q => state.reviewDue[q.id] && state.reviewDue[q.id] <= localDate());
@@ -147,7 +147,7 @@ function progressPage() {
   const correct = attempts.filter(a => a.correct).length;
   const names = { tech: 'Signal Finder', coding: 'Code Wizard', guitar: 'Riff Master', music: 'Deep Listener', philosophy: 'Bookworm', health: 'Iron Will', anime: 'Otaku Scholar' };
   const badges = config.categories.map(c => ({ name: names[c.id], earned: attempts.filter(a => a.category === c.id && a.correct).length >= 5, detail: '5 correct ' + c.name + ' answers' }));
-  badges.push({ name: 'A Week of Wonder', earned: streak(state) >= 7, detail: '7-day current streak' }, { name: 'A Hundred Questions', earned: attempts.length >= 100, detail: '100 answered questions' });
+  badges.push({ name: 'A Week of Wonder', earned: longestStreak(state) >= 7, detail: '7-day streak achieved' }, { name: 'A Hundred Questions', earned: attempts.length >= 100, detail: '100 answered questions' });
   const days = Array.from({ length: 7 }, (_, i) => { const d = new Date(); d.setDate(d.getDate() - 6 + i); return localDate(d); });
   const max = Math.max(1, ...days.map(d => state.activity[d] || 0));
   return `${heading('Small steps add up', 'Your quiet progress.', 'Not a leaderboard. Just a record of showing up for your own curiosity.')}${progressStrip()}

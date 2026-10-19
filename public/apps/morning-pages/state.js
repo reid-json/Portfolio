@@ -18,6 +18,15 @@ export function streak(state, today = localDate()) {
   while (days.has(day)) { count++; day = previousDay(day); }
   return count;
 }
+export function longestStreak(state) {
+  let best = 0, count = 0, previous = null;
+  for (const day of [...new Set(state.streakDays)].sort()) {
+    count = previous === previousDay(day) ? count + 1 : 1;
+    best = Math.max(best, count);
+    previous = day;
+  }
+  return best;
+}
 export function award(state, amount, day = localDate()) {
   state.xp += amount;
   state.activity[day] = (state.activity[day] || 0) + amount;
@@ -83,6 +92,7 @@ export function exportNotes(notes) {
 }
 export function importNotes(text) {
   const matches = [...text.matchAll(/^<!-- morning-pages-note (.+) -->$/gm)];
+  if (!matches.length && text.trim() === '# Morning Pages notebook') return [];
   if (!matches.length) throw new Error('Use a Markdown notebook exported by Morning Pages.');
   const notes = matches.map(m => JSON.parse(m[1]));
   validateState({ ...emptyState(), notes });
