@@ -44,6 +44,7 @@ function answeredCount(id) {
 
 function setDomain(id) {
   domainId = id;
+  document.getElementById("reward-message").textContent = "";
   store.lastDomain = id;
   saveStore(store);
   history.replaceState(null, "", `#${id}`);
@@ -55,6 +56,7 @@ function goTo(index) {
   const total = domainQuestions(domainId).length;
   if (index < 0 || index >= total) return;
   state.index = index;
+  document.getElementById("reward-message").textContent = "";
   saveStore(store);
   render();
 }
@@ -64,6 +66,17 @@ function commit(question, selected) {
   if (state.answers[question.id]) return;
   const correct = isCorrect(question, selected);
   state.answers[question.id] = { selected, correct };
+  const before = learning.snapshot();
+  const xp = learning.award(question, correct);
+  const after = learning.snapshot();
+  const milestones = [];
+  if (after.level > before.level) milestones.push(`Level ${after.level} unlocked!`);
+  if (before.today < 10 && after.today >= 10) milestones.push("Daily quest complete!");
+  const topicQuestions = domainQuestions(domainId).filter((q) => topicOf(q) === topicOf(question));
+  if (xp && topicQuestions.every((q) => state.answers[q.id])) milestones.push("Topic complete! Pick a new topic or review your notes.");
+  document.getElementById("reward-message").textContent = xp
+    ? `+${xp} XP! ${correct ? "Connection made." : "Every missed packet teaches you something. Read the explanation and reflect."} ${milestones.join(" ")}`
+    : "Reviewed! This question already earned its XP. Keep going with a new question.";
   store.answered += 1;
   if (correct) store.correct += 1;
   delete pending[question.id];
@@ -143,7 +156,11 @@ function render() {
 
   renderTabs();
   renderSummary();
-  renderLesson(document.getElementById("lesson"), question);
+  renderLesson(document.getElementById("lesson"), question, Boolean(record));
+  learning.renderJourney(studyBank);
+  renderNotebook(question);
+  document.getElementById("review-missed").disabled = !questions.some((q) => state.answers[q.id]?.correct === false);
+  document.getElementById("continue-quest").disabled = answeredCount(domainId) === questions.length;
 
   document.getElementById("q-position").textContent = `QUESTION ${state.index + 1} OF ${questions.length}`;
   document.getElementById("q-status").textContent = record ? (record.correct ? "✓ CORRECT" : "✕ INCORRECT") : "";
@@ -157,6 +174,15 @@ function render() {
 
   const topics = domainTopics(domainId);
   const current = topics.find((topic) => topic.indexes.includes(state.index));
+  const completed = current.indexes.filter((index) => state.answers[questions[index].id]).length;
+  const mission = document.getElementById("topic-mission");
+  mission.replaceChildren(node("strong", "", `Topic quest ${topics.indexOf(current) + 1}/${topics.length}: ${current.name}`));
+  mission.append(node("span", "", `${completed}/${current.indexes.length} explored${completed === current.indexes.length ? " - complete!" : " - answer, reflect, and keep moving"}`));
+  const progress = node("progress");
+  progress.max = current.indexes.length;
+  progress.value = completed;
+  progress.setAttribute("aria-label", "Current topic progress");
+  mission.append(progress);
   const select = document.getElementById("topic-select");
   select.replaceChildren();
   topics.forEach((topic) => {
@@ -189,7 +215,7 @@ document.getElementById("prev").addEventListener("click", () => goTo(domainState
 document.getElementById("topic-select").addEventListener("change", (event) => goTo(Number(event.target.value)));
 document.getElementById("next").addEventListener("click", () => goTo(domainState(domainId).index + 1));
 document.getElementById("reset-domain").addEventListener("click", () => {
-  if (!window.confirm("Clear your answers for this domain and start it again?")) return;
+  if (!window.confirm("Clear your answers for this domain and start it again? Your notes and lifetime XP will be kept.")) return;
   store.study[domainId] = { index: 0, answers: {} };
   domainQuestions(domainId).forEach((question) => delete pending[question.id]);
   saveStore(store);
@@ -198,6 +224,7 @@ document.getElementById("reset-domain").addEventListener("click", () => {
 
 document.addEventListener("keydown", (event) => {
   if (event.metaKey || event.ctrlKey || event.altKey) return;
+  if (event.target.closest("input, textarea, select, button, a, summary, [contenteditable]")) return;
   const question = domainQuestions(domainId)[domainState(domainId).index];
   if (event.key === "ArrowRight") goTo(domainState(domainId).index + 1);
   else if (event.key === "ArrowLeft") goTo(domainState(domainId).index - 1);
@@ -208,5 +235,83 @@ window.addEventListener("hashchange", () => {
   const id = hashDomain();
   if (id && id !== domainId) setDomain(id);
 });
+
+function renderNotebook(question) {
+  const topic = topicOf(question);
+  const textarea = document.getElementById("topic-note");
+  const key = JSON.stringify([question.domain, topic]);
+  if (textarea.dataset.topic !== key) {
+    textarea.value = learning.getNote(question.domain, topic);
+    textarea.dataset.topic = key;
+    document.getElementById("note-status").textContent = "Notes autosave as you type.";
+  }
+  document.getElementById("note-label").textContent = `${moduleById(question.domain).short} / ${topic}`;
+  renderSavedNotes();
+}
+
+function saveCurrentNote() {
+  const question = domainQuestions(domainId)[domainState(domainId).index];
+  const saved = learning.saveNote(domainId, topicOf(question), document.getElementById("topic-note").value);
+  document.getElementById("note-status").textContent = saved ? "Saved in this browser." : "Not saved. Export your notes before leaving.";
+  renderSavedNotes();
+}
+
+function renderSavedNotes() {
+  const all = learning.notes();
+  const query = document.getElementById("note-search").value.trim().toLowerCase();
+  const list = document.getElementById("saved-notes");
+  list.replaceChildren();
+  document.getElementById("notebook-count").textContent = `Browse your notes (${all.length} topics)`;
+  all.filter((note) => `${note.topic} ${note.text} ${note.domain}`.toLowerCase().includes(query)).forEach((note) => {
+    const item = node("li");
+    const button = node("button", "btn", `${moduleById(note.domain)?.short || note.domain} / ${note.topic}`);
+    button.type = "button";
+    button.append(node("small", "", note.text.slice(0, 120)));
+    button.addEventListener("click", () => {
+      const index = domainQuestions(note.domain).findIndex((q) => topicOf(q) === note.topic);
+      if (index < 0) {
+        document.getElementById("note-status").textContent = "This topic is no longer available. Export your notebook to read its notes.";
+        return;
+      }
+      setDomain(note.domain);
+      goTo(index);
+      document.getElementById("topic-note").focus();
+    });
+    item.append(button);
+    list.append(item);
+  });
+  if (!list.children.length) list.append(node("li", "", all.length ? "No matching notes." : "Your saved notes will appear here."));
+}
+
+document.getElementById("topic-note").addEventListener("input", saveCurrentNote);
+document.getElementById("note-search").addEventListener("input", renderSavedNotes);
+document.getElementById("add-reflection").addEventListener("click", () => {
+  const question = domainQuestions(domainId)[domainState(domainId).index];
+  const textarea = document.getElementById("topic-note");
+  textarea.value += `${textarea.value ? "\n\n" : ""}Question: ${question.question}\nMy reasoning:\nWhat I learned:\nWhat I will check next:\n`;
+  saveCurrentNote();
+  textarea.focus();
+  textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+});
+document.getElementById("export-notes").addEventListener("click", () => {
+  const url = URL.createObjectURL(new Blob([learning.exportNotes()], { type: "text/markdown;charset=utf-8" }));
+  const link = node("a");
+  link.href = url;
+  link.download = "packetpath-notes.md";
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+function findNext(matches) {
+  const questions = domainQuestions(domainId);
+  const state = domainState(domainId);
+  for (let offset = 1; offset <= questions.length; offset += 1) {
+    const index = (state.index + offset) % questions.length;
+    if (matches(state.answers[questions[index].id])) { goTo(index); return; }
+  }
+}
+document.getElementById("continue-quest").addEventListener("click", () => findNext((record) => !record));
+document.getElementById("review-missed").addEventListener("click", () => findNext((record) => record?.correct === false));
 
 setDomain(domainId);

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="pages.css">
   <link rel="stylesheet" href="exam.css">
+  <link rel="stylesheet" href="learning.css">
   <script src="theme.js"></script>
   <script src="data.js" defer></script>
   <script src="study-nf-1.js" defer></script>
@@ -26,6 +27,7 @@
   <script src="study-ap-1.js" defer></script>
   <script src="bank.js" defer></script>
   <script src="quiz.js" defer></script>
+  <script src="learning.js" defer></script>
   <script src="study.js" defer></script>
 </head>
 <body>
@@ -44,26 +46,51 @@
 
   <main class="page">
     <h1 class="page-title">Study by domain</h1>
-    <p class="page-sub">Pick an exam domain. Read the quick lesson on the left, answer the question on the right, and get an explanation whether you are right or wrong.</p>
+    <p class="page-sub">Think it through, capture your reasoning, then answer. Unlock the full lesson after each attempt and build your network of knowledge.</p>
+    <section id="learning-journey" class="learning-journey study-journey" aria-label="Your learning journey"></section>
+    <p id="reward-message" class="reward-message" role="status" aria-live="polite"></p>
 
     <div class="domain-tabs" id="domain-tabs" role="tablist" aria-label="Exam domains"></div>
     <div id="domain-summary" class="summary" hidden></div>
 
     <div class="topic-picker"><label for="topic-select">Jump to topic</label><select id="topic-select"></select></div>
+    <div id="topic-mission" class="topic-mission"></div>
 
     <div class="study-grid">
-      <section class="panel learn-panel" id="lesson" aria-label="Quick learn"></section>
+      <section class="panel learn-panel" id="lesson" aria-label="Guided learning"></section>
       <section class="panel" aria-label="Question">
         <div class="q-head"><span id="q-position"></span><span id="q-status"></span></div>
         <div id="question"></div>
       </section>
     </div>
-
     <div class="study-nav">
       <button class="btn" id="prev" type="button">← Previous</button>
       <div class="dots" id="dots" aria-label="Questions in this topic"></div>
       <button class="btn primary" id="next" type="button">Next →</button>
     </div>
+    <div class="study-actions">
+      <button class="btn" id="continue-quest" type="button">Find next unanswered</button>
+      <button class="btn" id="review-missed" type="button">Review missed questions</button>
+      <a class="btn" href="#notebook">Write a note</a>
+    </div>
+    <section id="notebook" class="notebook" aria-labelledby="notebook-heading">
+      <h2 id="notebook-heading">Your field notebook</h2>
+      <p>Notes stay with this topic as you move between its questions. Saved only in this browser; export a backup to keep them.</p>
+      <label id="note-label" for="topic-note">Topic notes</label>
+      <textarea id="topic-note" placeholder="My reasoning...&#10;What rules apply?&#10;What did I learn or need to revisit?"></textarea>
+      <p id="note-status" role="status" aria-live="polite"></p>
+      <div class="notebook-actions">
+        <button class="btn small" id="add-reflection" type="button">Add current question + reflection prompts</button>
+        <button class="btn small" id="export-notes" type="button">Export all notes (.md)</button>
+      </div>
+      <details>
+        <summary id="notebook-count">Browse your notes</summary>
+        <label for="note-search">Search topics and note text</label>
+        <input id="note-search" type="search" placeholder="Search your notebook">
+        <ul id="saved-notes" class="saved-notes"></ul>
+      </details>
+    </section>
+
     <p class="shortcuts">Shortcuts: <kbd>1</kbd>–<kbd>5</kbd> pick an answer · <kbd>←</kbd> <kbd>→</kbd> move between questions · <button class="btn small" id="reset-domain" type="button">Reset this domain</button></p>
   </main>
 </body>

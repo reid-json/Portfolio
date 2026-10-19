@@ -93,11 +93,26 @@ function renderQuestionCard(container, question, { selected = [], revealed = fal
 }
 
 // Draws the "quick learn" panel for a question.
-function renderLesson(container, question) {
+function renderLesson(container, question, revealed = false) {
   container.replaceChildren();
   const lesson = question.lesson;
   const domain = moduleById(question.domain);
-  container.append(node("div", "kicker", `QUICK LEARN · ${domain.title.toUpperCase()}`));
+  container.append(node("div", "kicker", `${revealed ? "LESSON UNLOCKED" : "THINK IT THROUGH"} · ${domain.title.toUpperCase()}`));
+  if (!revealed) {
+    container.append(node("h2", "lesson-title", "Build your reasoning"));
+    container.append(node("p", "", "No answer spoilers here. Use these prompts, jot down your reasoning below, then commit to an answer. The full lesson unlocks after your attempt."));
+    const prompts = node("ol", "lesson-points");
+    reasoningPrompts(question).forEach((prompt) => prompts.append(node("li", "", prompt)));
+    container.append(prompts);
+    const hint = node("details", "guided-hint");
+    hint.append(node("summary", "", "Need another nudge?"));
+    hint.append(node("p", "", "Compare each option against your rule, not against the other options. Which assumption would have to be true for each one to work? Eliminate choices you can disprove."));
+    container.append(hint);
+    const notes = node("a", "btn small", "Capture your reasoning in a note");
+    notes.href = "#notebook";
+    container.append(notes);
+    return;
+  }
   container.append(node("h2", "lesson-title", lesson.title));
   const points = node("ul", "lesson-points");
   lesson.points.forEach((point) => points.append(node("li", "", point)));
@@ -107,9 +122,44 @@ function renderLesson(container, question) {
     pre.append(node("code", "", lesson.code));
     container.append(pre);
   }
+
   if (lesson.tip) {
     const tip = node("p", "lesson-tip");
     tip.append(node("strong", "", "Tip · "), document.createTextNode(lesson.tip));
     container.append(tip);
   }
+}
+
+function reasoningPrompts(question) {
+  const prompts = {
+    "network-fundamentals": "Trace the traffic from source to destination. At which layer does the decision happen, and what information is available there?",
+    "network-access": "Sketch the switches, links, and endpoints. What scope or boundary is involved, and what changes as traffic crosses it?",
+    "ip-connectivity": "Write down the destination, available paths, and next-hop information. Which selection rule applies first, and which rules only break ties?",
+    "ip-services": "Identify the client, server, or device roles. What must happen before the requested service can work, and how would you verify it?",
+    "security-fundamentals": "Name the asset, the threat, and the point where a control is enforced. What should be permitted, and what should be blocked?",
+    "automation-programmability": "Identify the input, desired state, and output. Who sends the request, who processes it, and how could you check the result?"
+  };
+  let method = prompts[question.domain] || "Identify the relevant rule and test it against the scenario.";
+  if (/subnet|prefix|\/\d{1,3}|broadcast|usable host/i.test(question.question)) {
+    method = "Write the address and prefix on paper. Find the network boundaries, then check whether the question asks for a range, a host, or a route match.";
+  } else if (/command|configure|configuration|syntax/i.test(question.question)) {
+    method = "Identify the intended change and the configuration context. What scope should the command affect, and how would you verify the result?";
+  } else if (/\bSTP\b|spanning.tree|root bridge/i.test(question.question)) {
+    method = "Sketch the links and compare the candidate devices and paths. Which tie-breaker applies at each step, and which path would remain if a link failed?";
+  } else if (/\bVLAN\b|trunk|802\.1Q/i.test(question.question)) {
+    method = "Label each link and its traffic membership. What happens to a frame's identity when it enters, crosses, and leaves each link?";
+  } else if (/\bTCP\b|\bUDP\b|transport/i.test(question.question)) {
+    method = "List the application's delivery requirements. Does it need ordering, acknowledgments, or low overhead, and what trade-offs would follow?";
+  } else if (/\bOSPF\b|routing table|administrative distance/i.test(question.question)) {
+    method = "Separate route learning from route selection. What information builds the candidate paths, and what criteria decide the installed or forwarded path?";
+  } else if (/\bACL\b|access.list|wildcard/i.test(question.question)) {
+    method = "Write down source, destination, protocol, and direction. Walk through the rules in order and ask where the traffic would first match.";
+  } else if (/\bJSON\b|\bREST\b|\bHTTP\b|\bAPI\b/i.test(question.question)) {
+    method = "Separate the data format from the operation. What is being represented or requested, and how would you distinguish a valid request from its response?";
+  }
+  return [
+    "Restate the question in your own words. Which details constrain the answer, and what exactly must you choose?",
+    method,
+    "Predict the result before comparing the options. Can you explain why your choice fits and why at least one alternative does not?"
+  ];
 }

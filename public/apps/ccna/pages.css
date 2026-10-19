@@ -183,6 +183,9 @@ kbd { padding: 1px 6px; border: 1px solid var(--border); border-radius: 5px; bac
   .domain-row .track { grid-column: 1 / -1; grid-row: 2; }
 }
 @media (max-width: 560px) {
+  .site-header { flex-wrap: wrap; gap: 8px; }
+  .site-nav { flex-wrap: wrap; }
+  .site-nav .theme-toggle { flex-shrink: 0; }
   .site-brand .light { display: none; }
   .site-nav a { padding: 8px 9px; font-size: 14px; }
   .score-hero { grid-template-columns: 1fr; justify-items: center; text-align: center; }

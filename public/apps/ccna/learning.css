@@ -1,0 +1,46 @@
+.learning-journey, .notebook {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+  padding: 22px; margin: 0 0 24px; color: var(--text);
+}
+.journey-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.journey-heading h2, .notebook h2 { font: 600 21px/1.3 "Space Grotesk", sans-serif; margin: 0 0 6px; }
+.journey-heading p, .journey-help, .notebook p { color: var(--text-2); margin: 0 0 12px; font-size: 14px; }
+.journey-link { color: var(--accent); font-weight: 700; }
+.learning-journey progress { width: 100%; height: 12px; accent-color: var(--accent); margin: 10px 0; }
+.journey-stats, .journey-badges, .notebook-actions, .study-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+.journey-stats { font-weight: 600; justify-content: space-between; }
+.badge { padding: 6px 10px; border: 1px dashed var(--border); border-radius: 8px; font-size: 13px; color: var(--text-2); }
+.badge.earned { color: var(--good); background: var(--good-bg); border: 1px solid var(--good-border); }
+.journey-help { margin: 14px 0 0; }
+.notebook { margin-top: 24px; }
+.notebook label { display: block; font-weight: 600; margin: 12px 0 6px; }
+.notebook textarea, .notebook input {
+  display: block; width: 100%; box-sizing: border-box; font: inherit; line-height: 1.6;
+  color: var(--text); background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 9px; padding: 12px;
+}
+.notebook textarea { min-height: 180px; resize: vertical; }
+.notebook textarea:focus-visible, .notebook input:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--accent); outline-offset: 2px;
+}
+.notebook summary, .guided-hint summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: 10px 0; }
+.saved-notes { list-style: none; padding: 0; display: grid; gap: 8px; max-height: 320px; overflow-y: auto; }
+.saved-notes button { width: 100%; text-align: left; height: auto; padding: 10px 14px; white-space: normal; }
+.saved-notes small { display: block; color: var(--text-2); }
+.guided-hint { border-top: 1px solid var(--border); margin-top: 12px; }
+.guided-hint p { color: var(--text-2); }
+.learning-error { background: var(--bad-bg); color: var(--bad); padding: 14px; border: 1px solid var(--bad-border); border-radius: 9px; }
+.reward-message { min-height: 24px; color: var(--good); font-weight: 700; }
+.reward-message:empty { display: none; }
+.study-journey { padding: 16px 20px; margin-bottom: 18px; }
+.study-journey .journey-heading h2 { font-size: 18px; }
+.study-journey .journey-heading p { margin-bottom: 0; }
+.study-journey .journey-stats { margin: 6px 0; font-size: 14px; }
+.journey-achievements summary { color: var(--accent); cursor: pointer; font-size: 14px; }
+.topic-mission { display: grid; gap: 6px; margin: 0 0 20px; }
+.topic-mission span { font-size: 14px; color: var(--text-2); }
+.topic-mission progress { width: 100%; height: 8px; accent-color: var(--good); }
+@media (max-width: 560px) {
+  .learning-journey, .notebook { padding: 16px; }
+  .journey-stats { flex-direction: column; }
+}
