@@ -25,4 +25,11 @@ export const projects = [
     link: '/apps/ccna/index.html',
     repo: 'https://github.com/reid-json/CCNA',
   },
+  {
+    title: 'ClusterCraft — CKA Study Site',
+    description: 'Offline-first Kubernetes administration lessons, a bounded practice simulator, state-graded labs, and timed mock tasks.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Kubernetes'],
+    link: '/apps/cka/index.html',
+    repo: 'https://github.com/reid-json/CKA',
+  },
 ]

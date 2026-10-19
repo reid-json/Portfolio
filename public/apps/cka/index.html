@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="An offline-first CKA learning and practice workspace.">
+  <title>ClusterCraft — CKA Study Space</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#overview" data-view="overview" aria-label="ClusterCraft overview">
+        <span class="brand-mark">K</span>
+        <span><strong>clustercraft</strong><small>CKA STUDY SPACE</small></span>
+      </a>
+      <nav class="main-nav">
+        <button class="nav-link active" data-view="overview"><span>⌂</span> Overview</button>
+        <button class="nav-link" data-view="learn"><span>▤</span> Learning path</button>
+        <button class="nav-link" data-view="terminal"><span>›_</span> Practice terminal</button>
+        <button class="nav-link" data-view="labs"><span>◈</span> Labs &amp; troubleshooting</button>
+        <button class="nav-link" data-view="exams"><span>◷</span> Mock exams</button>
+        <button class="nav-link" data-view="reference"><span>⌕</span> Reference library</button>
+        <button class="nav-link" data-view="progress"><span>▥</span> Progress &amp; planner</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="offline-chip"><span></span> Works offline</div>
+        <button class="nav-link" id="theme-toggle"><span>◐</span> Toggle appearance</button>
+        <small>CKA curriculum 1.37 · verified Oct 2026</small>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumbs"><span>Study space</span><b>/</b><strong id="page-label">Overview</strong></div>
+        <label class="searchbox"><span>⌕</span><input id="global-search" type="search" placeholder="Search lessons and reference…" autocomplete="off"><kbd>/</kbd></label>
+        <button class="avatar" title="Your local study profile">JR</button>
+      </header>
+      <div id="search-results" class="search-results" hidden></div>
+      <section id="app-view" class="content" tabindex="-1"></section>
+      <footer class="app-footer">Offline-first learning workspace · No account or network connection required · Exam scope last verified October 19, 2026</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="curriculum.js"></script>
+  <script src="simulator.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
