@@ -22,6 +22,9 @@
   <script src="exam-sf.js" defer></script>
   <script src="exam-ap.js" defer></script>
   <script src="bank.js" defer></script>
+  <script src="references.js" defer></script>
+  <script src="guidance.js" defer></script>
+  <script src="assessment.js" defer></script>
   <script src="quiz.js" defer></script>
   <script src="qtypes.js" defer></script>
   <script src="exam.js" defer></script>
@@ -36,6 +39,8 @@
       <a href="index.html">Overview</a>
       <a href="study.html">Study</a>
       <a href="exam.html" aria-current="page">Practice exam</a>
+      <a href="library.html">Library</a>
+      <a href="skills.html">Skills &amp; career</a>
       <button class="theme-toggle" type="button" data-theme-toggle></button>
     </nav>
   </header>
@@ -71,6 +76,7 @@
             </label>
           </div>
           <button class="btn primary" id="start" type="button">Start exam →</button>
+          <p class="note">Skills evidence requires a full 100-question exam, the 120-minute timer enabled, answers hidden throughout, and at least 80% correct before rounding. This is a PacketPath practice benchmark, not Cisco's official passing score.</p>
           <p class="note" style="margin-top:14px">These are original practice questions for study, not real exam questions. Lab simulations use a simplified CLI, so type full or common abbreviated commands. A score around 80% or higher here is a good sign.</p>
         </div>
         <div class="panel">
@@ -125,11 +131,13 @@
               <div class="group" style="display:flex;gap:10px;flex-wrap:wrap">
                 <button class="btn primary" id="retake" type="button">Take another exam</button>
                 <a class="btn" href="study.html">Study weak areas</a>
+                <a class="btn" href="skills.html">View skills &amp; career evidence</a>
               </div>
             </div>
           </div>
           <p class="field-title">BY DOMAIN</p>
           <div class="domain-rows" id="domain-rows"></div>
+          <p id="assessment-status" role="status"></p>
         </div>
         <div>
           <div class="review-head">

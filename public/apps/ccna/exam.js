@@ -112,6 +112,7 @@ function startExam() {
   const option = lengthOptions.find((item) => item.id === settings.length);
   const questions = pickQuestions(option.count, option.id === "full");
   exam = {
+    length: option.id,
     questions,
     answers: {},
     flagged: {},
@@ -148,6 +149,15 @@ function tick() {
 
 function isLocked(question) {
   return exam.feedback && Boolean(exam.checked[question.id]);
+}
+
+function canAnswer() {
+  if (exam.finished) return false;
+  if (exam.timed && elapsed() >= exam.limit) {
+    finishExam(true);
+    return false;
+  }
+  return true;
 }
 
 function answerOf(question) { return exam.answers[question.id] || []; }
@@ -190,8 +200,8 @@ function renderRun() {
     checkable: exam.feedback,
     order: exam.order[question.id],
     onSelect: (index) => pick(question, index),
-    onChange: (answer) => { exam.answers[question.id] = answer; renderChrome(); },
-    onCheck: () => { exam.checked[question.id] = true; renderRun(); },
+    onChange: (answer) => { if (canAnswer()) { exam.answers[question.id] = answer; renderChrome(); } },
+    onCheck: () => { if (canAnswer()) { exam.checked[question.id] = true; renderRun(); } },
     rerender: renderRun
   });
 
@@ -201,6 +211,7 @@ function renderRun() {
 }
 
 function pick(question, index) {
+  if (!canAnswer()) return;
   if (isLocked(question)) return;
   const multi = question.answer.length > 1;
   let picks = [...answerOf(question)];
@@ -234,6 +245,7 @@ document.getElementById("finish-top").addEventListener("click", () => finishExam
 
 /* ── Results ── */
 function finishExam(auto = false) {
+  if (!exam || exam.finished) return;
   if (!auto) {
     const unanswered = exam.questions.filter((q) => !isAnswered(q, answerOf(q))).length;
     const flagged = exam.questions.filter((q) => exam.flagged[q.id]).length;
@@ -244,19 +256,26 @@ function finishExam(auto = false) {
   }
 
   clearInterval(exam.interval);
+  exam.finished = true;
   const seconds = elapsed();
   const results = exam.questions.map((q) => ({ q, picks: answerOf(q), right: gradeQuestion(q, answerOf(q)) }));
   const right = results.filter((r) => r.right).length;
   const percent = Math.round(right / results.length * 100);
+  const assessment = makeAssessment(exam, results, seconds);
+  const decision = assessmentDecision(assessment);
+  store.assessments.unshift(assessment);
+  store.assessments = store.assessments.slice(0, 20);
+  if (decision.eligible) store.latestAssessment = assessment;
 
   store.exams.unshift({ date: Date.now(), total: results.length, correct: right, percent, seconds, feedback: exam.feedback });
   store.exams = store.exams.slice(0, 10);
   store.sessions += 1;
   store.answered += results.filter((r) => isAnswered(r.q, r.picks)).length;
   store.correct += right;
-  saveStore(store);
+  const saved = saveStore(store);
 
   renderResults(results, right, percent, seconds, auto);
+  document.getElementById("assessment-status").textContent = `${decision.reason}${saved ? " Detailed results saved to Skills & career." : " Results could not be saved; the career page will not receive this attempt."}`;
   show("results");
 }
 

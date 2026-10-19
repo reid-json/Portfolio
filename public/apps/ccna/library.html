@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation library - PacketPath CCNA</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="resources.css">
+  <script src="theme.js"></script>
+  <script src="data.js" defer></script>
+  <script src="quiz.js" defer></script>
+  <script src="references.js" defer></script>
+  <script src="library.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-brand" href="index.html">packetpath</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Overview</a>
+      <a href="study.html">Study</a>
+      <a href="exam.html">Practice exam</a>
+      <a href="library.html" aria-current="page">Library</a>
+      <a href="skills.html">Skills &amp; career</a>
+      <button class="theme-toggle" type="button" data-theme-toggle></button>
+    </nav>
+  </header>
+  <main class="page">
+    <h1 class="page-title">Documentation library</h1>
+    <p class="page-sub">Go beyond an answer key. Read the original specifications and official vendor documentation used by the question guides.</p>
+    <div class="panel">
+      <h2>How to use these sources</h2>
+      <p>Start with the section listed on each card. RFCs describe protocol behavior; Cisco guides describe specific platforms and software releases. Older foundational RFCs may have updates and errata linked by the RFC Editor. Check those and your device release before applying commands.</p>
+      <p>These are reference links, not copied books, exam dumps, a complete collection of every CCNA resource, or a guarantee that every practice answer has been independently reviewed. Documentation can reveal answers: use it for learning, then take an exam without assistance.</p>
+    </div>
+    <div class="resource-filters">
+      <label>Search documentation<input id="library-search" type="search" placeholder="e.g. OSPF, IPv6, JSON, port security"></label>
+      <label>Exam domain<select id="library-domain"><option value="">All domains</option></select></label>
+    </div>
+    <p id="library-count" role="status" aria-live="polite"></p>
+    <div id="library-list" class="resource-grid"></div>
+  </main>
+</body>
+</html>

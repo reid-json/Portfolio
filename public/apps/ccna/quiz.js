@@ -1,19 +1,47 @@
 // Shared helpers used by the study and exam pages.
 const STORE_KEY = "packetpath-ccna-progress-v1";
 const OPTION_LETTERS = "ABCDEFGH";
+let progressLoadFailed = false;
 
 function loadStore() {
   let saved = null;
-  try { saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null"); } catch (error) { saved = null; }
+  try {
+    saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+    if (saved !== null && (typeof saved !== "object" || Array.isArray(saved))) throw new Error("Invalid saved progress structure.");
+  } catch (error) {
+    progressLoadFailed = true;
+    saved = null;
+    console.error("Could not load saved progress or assessment evidence.", error);
+    const notice = node("p", "q-feedback is-incorrect", "Saved progress and assessment evidence could not be loaded. Check browser storage before starting another attempt.");
+    notice.setAttribute("role", "alert");
+    document.querySelector("main").prepend(notice);
+  }
   const base = { completed: [], sessions: 0, correct: 0, answered: 0, questionIndex: 0, cardIndex: 0 };
   const store = { ...base, ...(saved && typeof saved === "object" ? saved : {}) };
   if (!store.study || typeof store.study !== "object") store.study = {};
   if (!Array.isArray(store.exams)) store.exams = [];
+  if (!Array.isArray(store.assessments)) store.assessments = [];
   return store;
 }
 
 function saveStore(store) {
-  try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (error) { console.error("Could not save progress.", error); }
+  if (progressLoadFailed) return false;
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(store));
+    document.getElementById("progress-error")?.remove();
+    return true;
+  } catch (error) {
+    console.error("Could not save progress.", error);
+    let notice = document.getElementById("progress-error");
+    if (!notice) {
+      notice = node("p", "q-feedback is-incorrect");
+      notice.id = "progress-error";
+      notice.setAttribute("role", "alert");
+      document.querySelector("main").prepend(notice);
+    }
+    notice.textContent = "Progress and assessment evidence could not be saved. Browser storage may be full or unavailable. Keep this page open to review your results.";
+    return false;
+  }
 }
 
 function isCorrect(question, selected) {
@@ -95,19 +123,23 @@ function renderQuestionCard(container, question, { selected = [], revealed = fal
 // Draws the "quick learn" panel for a question.
 function renderLesson(container, question, revealed = false) {
   container.replaceChildren();
+  container.dataset.questionId = question.id;
   const lesson = question.lesson;
   const domain = moduleById(question.domain);
   container.append(node("div", "kicker", `${revealed ? "LESSON UNLOCKED" : "THINK IT THROUGH"} · ${domain.title.toUpperCase()}`));
   if (!revealed) {
-    container.append(node("h2", "lesson-title", "Build your reasoning"));
-    container.append(node("p", "", "No answer spoilers here. Use these prompts, jot down your reasoning below, then commit to an answer. The full lesson unlocks after your attempt."));
+    const guide = questionGuidance(question);
+    container.append(node("h2", "lesson-title", "Quick learn: this question"));
+    container.append(node("p", "guidance-focus", guide.focus));
+    container.append(node("p", "", "Use the details of this question, not a memorized answer. The lesson and explanation stay hidden until you submit."));
     const prompts = node("ol", "lesson-points");
-    reasoningPrompts(question).forEach((prompt) => prompts.append(node("li", "", prompt)));
+    guide.prompts.forEach((prompt) => prompts.append(node("li", "", prompt)));
     container.append(prompts);
     const hint = node("details", "guided-hint");
     hint.append(node("summary", "", "Need another nudge?"));
-    hint.append(node("p", "", "Compare each option against your rule, not against the other options. Which assumption would have to be true for each one to work? Eliminate choices you can disprove."));
+    hint.append(node("p", "", guide.hint));
     container.append(hint);
+    renderQuestionEvidence(container, guide.sources, false, guide.referenceScope);
     const notes = node("a", "btn small", "Capture your reasoning in a note");
     notes.href = "#notebook";
     container.append(notes);
@@ -128,38 +160,19 @@ function renderLesson(container, question, revealed = false) {
     tip.append(node("strong", "", "Tip · "), document.createTextNode(lesson.tip));
     container.append(tip);
   }
+  const guide = questionGuidance(question);
+  renderQuestionEvidence(container, guide.sources, true, guide.referenceScope);
 }
 
-function reasoningPrompts(question) {
-  const prompts = {
-    "network-fundamentals": "Trace the traffic from source to destination. At which layer does the decision happen, and what information is available there?",
-    "network-access": "Sketch the switches, links, and endpoints. What scope or boundary is involved, and what changes as traffic crosses it?",
-    "ip-connectivity": "Write down the destination, available paths, and next-hop information. Which selection rule applies first, and which rules only break ties?",
-    "ip-services": "Identify the client, server, or device roles. What must happen before the requested service can work, and how would you verify it?",
-    "security-fundamentals": "Name the asset, the threat, and the point where a control is enforced. What should be permitted, and what should be blocked?",
-    "automation-programmability": "Identify the input, desired state, and output. Who sends the request, who processes it, and how could you check the result?"
-  };
-  let method = prompts[question.domain] || "Identify the relevant rule and test it against the scenario.";
-  if (/subnet|prefix|\/\d{1,3}|broadcast|usable host/i.test(question.question)) {
-    method = "Write the address and prefix on paper. Find the network boundaries, then check whether the question asks for a range, a host, or a route match.";
-  } else if (/command|configure|configuration|syntax/i.test(question.question)) {
-    method = "Identify the intended change and the configuration context. What scope should the command affect, and how would you verify the result?";
-  } else if (/\bSTP\b|spanning.tree|root bridge/i.test(question.question)) {
-    method = "Sketch the links and compare the candidate devices and paths. Which tie-breaker applies at each step, and which path would remain if a link failed?";
-  } else if (/\bVLAN\b|trunk|802\.1Q/i.test(question.question)) {
-    method = "Label each link and its traffic membership. What happens to a frame's identity when it enters, crosses, and leaves each link?";
-  } else if (/\bTCP\b|\bUDP\b|transport/i.test(question.question)) {
-    method = "List the application's delivery requirements. Does it need ordering, acknowledgments, or low overhead, and what trade-offs would follow?";
-  } else if (/\bOSPF\b|routing table|administrative distance/i.test(question.question)) {
-    method = "Separate route learning from route selection. What information builds the candidate paths, and what criteria decide the installed or forwarded path?";
-  } else if (/\bACL\b|access.list|wildcard/i.test(question.question)) {
-    method = "Write down source, destination, protocol, and direction. Walk through the rules in order and ask where the traffic would first match.";
-  } else if (/\bJSON\b|\bREST\b|\bHTTP\b|\bAPI\b/i.test(question.question)) {
-    method = "Separate the data format from the operation. What is being represented or requested, and how would you distinguish a valid request from its response?";
-  }
-  return [
-    "Restate the question in your own words. Which details constrain the answer, and what exactly must you choose?",
-    method,
-    "Predict the result before comparing the options. Can you explain why your choice fits and why at least one alternative does not?"
-  ];
+function renderQuestionEvidence(container, ids, revealed, scope) {
+  const evidence = node("details", "guided-hint question-evidence");
+  evidence.open = revealed;
+  evidence.append(node("summary", "", revealed ? "Check the underlying documentation" : "Optional evidence and documentation - may reveal clues"));
+  evidence.append(node("p", "note", "These primary sources support the underlying concepts, not a Cisco endorsement or an independently audited answer key. The prompts and questions are written by PacketPath. Opening a reference may reveal the answer; leave this closed for an unaided attempt."));
+  evidence.append(node("p", "note", scope));
+  renderReferences(evidence, ids);
+  const library = node("a", "btn small", "Browse the documentation library");
+  library.href = "library.html";
+  evidence.append(library);
+  container.append(evidence);
 }

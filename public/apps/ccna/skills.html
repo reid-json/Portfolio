@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skills and career evidence - PacketPath CCNA</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="resources.css">
+  <script src="theme.js"></script>
+  <script src="data.js" defer></script>
+  <script src="quiz.js" defer></script>
+  <script src="references.js" defer></script>
+  <script src="guidance.js" defer></script>
+  <script src="assessment.js" defer></script>
+  <script src="skills.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-brand" href="index.html">packetpath</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Overview</a>
+      <a href="study.html">Study</a>
+      <a href="exam.html">Practice exam</a>
+      <a href="library.html">Library</a>
+      <a href="skills.html" aria-current="page">Skills &amp; career</a>
+      <button class="theme-toggle" type="button" data-theme-toggle></button>
+    </nav>
+  </header>
+  <main class="page">
+    <h1 class="page-title">What can you demonstrate?</h1>
+    <p class="page-sub">Turn measured practice into an honest skills profile, resume wording, and interview preparation. XP measures activity; this page measures completed exam performance.</p>
+    <div class="career-warning">
+      <strong>Practice evidence, not certification or work experience.</strong>
+      <p>These local, self-administered results cannot prove an unaided attempt, identity, job readiness, or Cisco certification. Do not list "CCNA certified" unless you actually earned it. Simulated CLI exercises are not production experience. There is no universal official Cisco passing score claimed here.</p>
+    </div>
+    <section class="panel career-section" aria-labelledby="qualification-heading">
+      <h2 id="qualification-heading">Assessment checkpoint</h2>
+      <p>Complete a full 100-question exam with the 120-minute countdown enabled, keep answers hidden throughout, and score at least 80% before rounding. The newest attempt under those conditions controls this profile: a later failed assessment pauses resume suggestions until you pass again.</p>
+      <p id="career-status" role="status"></p>
+      <p id="career-date" class="note"></p>
+      <div class="career-toolbar"><a class="btn primary" href="exam.html">Take an assessment</a><a class="btn" href="library.html">Open library</a></div>
+      <p class="note">Only exams completed after detailed tracking was added can qualify. The latest 20 detailed assessments plus your current full-assessment checkpoint are retained in this browser. Nothing is independently verified or synced across devices.</p>
+    </section>
+    <section class="panel career-section" aria-labelledby="coverage-heading">
+      <h2 id="coverage-heading">Knowledge coverage and gaps</h2>
+      <p>Based on your newest full, timed, hidden-feedback assessment. A concept needs at least 3 questions and 80% correct to support a conceptual-knowledge suggestion. Unsampled concepts are not assessed; one correct answer is not mastery.</p>
+      <p class="note">Concept groups are mapped automatically from question wording and topics. They are a practice-study aid, not a validated competency taxonomy or a comprehensive assessment of the whole subject.</p>
+      <div id="knowledge-coverage"></div>
+    </section>
+    <section class="panel career-section" aria-labelledby="resume-heading">
+      <h2 id="resume-heading">Resume wording you can adapt</h2>
+      <p>Use under independent learning or projects, not certifications. Edit to reflect only knowledge you can explain and work you actually performed.</p>
+      <label for="resume-copy">Evidence-backed draft</label>
+      <textarea id="resume-copy" class="career-copy" readonly placeholder="Pass a qualifying assessment to unlock a draft."></textarea>
+      <div class="career-toolbar"><button class="btn" id="download-career" type="button" disabled>Export evidence and interview plan (.md)</button></div>
+    </section>
+    <section class="career-section" aria-labelledby="interview-heading">
+      <h2 id="interview-heading">Interview knowledge to practice explaining</h2>
+      <p>Passing an exam is not a speaking test. Use these prompts to explain your reasoning aloud. Outline points are a preparation rubric, not a claim that you have demonstrated an interview skill.</p>
+      <div id="interview-plan"></div>
+    </section>
+    <section class="panel career-section" aria-labelledby="history-heading">
+      <h2 id="history-heading">Assessment evidence trail</h2>
+      <div id="assessment-trail"></div>
+    </section>
+  </main>
+</body>
+</html>
