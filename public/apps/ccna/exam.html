@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Practice exam — PacketPath CCNA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="pages.css">
+  <script src="theme.js"></script>
+  <script src="data.js" defer></script>
+  <script src="quiz.js" defer></script>
+  <script src="exam.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-brand" href="index.html" aria-label="PacketPath home">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4.5 27.5 11v10L16 27.5 4.5 21V11L16 4.5Z" stroke="currentColor" stroke-width="2"/><path d="m10 16 4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>packet<span class="light">path</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Overview</a>
+      <a href="study.html">Study</a>
+      <a href="exam.html" aria-current="page">Practice exam</a>
+      <button class="theme-toggle" type="button" data-theme-toggle></button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- Setup -->
+    <section id="view-setup">
+      <h1 class="page-title">Practice exam</h1>
+      <p class="page-sub">Questions are drawn from every exam domain in proportion to its weight on the real CCNA 200-301 blueprint.</p>
+      <div class="setup-grid">
+        <div class="panel">
+          <p class="field-title">EXAM LENGTH</p>
+          <div class="choice-list" id="length-choices"></div>
+          <p class="field-title">FEEDBACK</p>
+          <div class="switch-row">
+            <div>
+              <strong id="feedback-label">Show answers as I go</strong>
+              <span id="feedback-help">After each question, see right or wrong with an explanation.</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="feedback-toggle" role="switch" aria-labelledby="feedback-label" checked>
+              <i></i>
+            </label>
+          </div>
+          <button class="btn primary" id="start" type="button">Start exam →</button>
+          <p class="note" style="margin-top:14px">These are original practice questions for study, not real exam questions. The real exam has about 100 questions in 120 minutes. A score around 80% or higher here is a good sign.</p>
+        </div>
+        <div class="panel">
+          <p class="field-title">RECENT ATTEMPTS</p>
+          <ul class="history" id="history"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Running -->
+    <section id="view-run" hidden>
+      <div class="run-bar">
+        <div class="run-meta">
+          <span id="run-position">Question 1 of 1</span>
+          <span class="badge" id="run-mode"></span>
+          <span class="timer" id="run-timer">00:00</span>
+        </div>
+        <button class="btn small" id="finish-top" type="button">Finish exam</button>
+      </div>
+      <div class="bar" aria-hidden="true"><span id="run-bar"></span></div>
+      <div class="run-grid">
+        <div>
+          <div class="panel">
+            <div class="q-head"><span id="run-domain"></span><span id="run-status"></span></div>
+            <div id="run-question"></div>
+          </div>
+          <div class="run-actions">
+            <button class="btn" id="run-prev" type="button">← Previous</button>
+            <div class="group">
+              <button class="btn flag-btn" id="run-flag" type="button" aria-pressed="false">⚑ Flag for review</button>
+              <button class="btn primary" id="run-next" type="button">Next →</button>
+            </div>
+          </div>
+        </div>
+        <aside class="panel navigator" aria-label="Question navigator">
+          <p class="field-title">QUESTIONS</p>
+          <div class="dots" id="run-dots"></div>
+          <div class="legend"><span>Filled = answered · ⚑ = flagged</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="view-results" hidden>
+      <div class="stack">
+        <div class="panel">
+          <div class="score-hero">
+            <div class="score-ring" id="score-ring"><div id="score-pct">0%</div></div>
+            <div>
+              <h2 id="score-title"></h2>
+              <p id="score-detail"></p>
+              <div class="group" style="display:flex;gap:10px;flex-wrap:wrap">
+                <button class="btn primary" id="retake" type="button">Take another exam</button>
+                <a class="btn" href="study.html">Study weak areas</a>
+              </div>
+            </div>
+          </div>
+          <p class="field-title">BY DOMAIN</p>
+          <div class="domain-rows" id="domain-rows"></div>
+        </div>
+        <div>
+          <div class="review-head">
+            <h2>Review</h2>
+            <label class="choice" style="padding:8px 12px;margin:0"><input type="checkbox" id="missed-only"><span>Show missed questions only</span></label>
+          </div>
+          <div class="review-list" id="review-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Study by domain — PacketPath CCNA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="pages.css">
+  <script src="theme.js"></script>
+  <script src="data.js" defer></script>
+  <script src="quiz.js" defer></script>
+  <script src="study.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-brand" href="index.html" aria-label="PacketPath home">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4.5 27.5 11v10L16 27.5 4.5 21V11L16 4.5Z" stroke="currentColor" stroke-width="2"/><path d="m10 16 4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>packet<span class="light">path</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Overview</a>
+      <a href="study.html" aria-current="page">Study</a>
+      <a href="exam.html">Practice exam</a>
+      <button class="theme-toggle" type="button" data-theme-toggle></button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1 class="page-title">Study by domain</h1>
+    <p class="page-sub">Pick an exam domain. Read the quick lesson on the left, answer the question on the right, and get an explanation whether you are right or wrong.</p>
+
+    <div class="domain-tabs" id="domain-tabs" role="tablist" aria-label="Exam domains"></div>
+    <div id="domain-summary" class="summary" hidden></div>
+
+    <div class="study-grid">
+      <section class="panel learn-panel" id="lesson" aria-label="Quick learn"></section>
+      <section class="panel" aria-label="Question">
+        <div class="q-head"><span id="q-position"></span><span id="q-status"></span></div>
+        <div id="question"></div>
+      </section>
+    </div>
+
+    <div class="study-nav">
+      <button class="btn" id="prev" type="button">← Previous</button>
+      <div class="dots" id="dots" aria-label="Questions in this domain"></div>
+      <button class="btn primary" id="next" type="button">Next →</button>
+    </div>
+    <p class="shortcuts">Shortcuts: <kbd>1</kbd>–<kbd>5</kbd> pick an answer · <kbd>←</kbd> <kbd>→</kbd> move between questions · <button class="btn small" id="reset-domain" type="button">Reset this domain</button></p>
+  </main>
+</body>
+</html>

@@ -1,4 +1,5 @@
-const modules = [
+// Legacy copy, unused. The live modules and questions are in data.js.
+const legacyModules = [
   {
     id: "network-fundamentals",
     title: "Network Fundamentals",
@@ -62,7 +63,7 @@ const flashcards = [
   { question: "What is the primary purpose of Spanning Tree Protocol?", answer: "STP prevents Layer 2 switching loops by placing redundant paths into a blocking state while keeping them available as backups." }
 ];
 
-const questions = [
+const legacyQuestions = [
   {
     question: "A host has the address 192.168.10.34/27. Which address is its subnet's network address?",
     options: ["192.168.10.0", "192.168.10.32", "192.168.10.34", "192.168.10.64"],
@@ -100,6 +101,9 @@ const questions = [
     explanation: "STP elects one root bridge. Other switches calculate their best path toward it to determine which ports forward or block."
   }
 ];
+
+// Home-page quick quiz uses the single-answer questions from data.js
+const questions = questionBank.filter((q) => q.answer.length === 1).map((q) => ({ ...q, answer: q.answer[0] }));
 
 const storageKey = "packetpath-ccna-progress-v1";
 const defaults = { completed: [], sessions: 0, correct: 0, answered: 0, questionIndex: 0, cardIndex: 0 };
@@ -192,6 +196,7 @@ function renderModuleDetail() {
     <ul class="topic-list">${module.topics.map((topic) => `<li>${topic}</li>`).join("")}</ul>
     <div class="detail-actions">
       <button class="detail-button${isCompleted ? " completed-button" : ""}" id="complete-module" type="button">${isCompleted ? "✓ Completed" : "Mark as complete"} <span>${isCompleted ? "" : "→"}</span></button>
+      <a class="detail-link" href="study.html#${module.id}">Study this domain →</a>
       <button class="detail-link" id="study-module" type="button">Practice with flashcards</button>
     </div>`;
 
@@ -309,7 +314,7 @@ document.getElementById("next-card").addEventListener("click", () => {
   if (state.cardIndex < flashcards.length - 1) setCard(state.cardIndex + 1);
 });
 document.getElementById("reset-progress").addEventListener("click", () => {
-  if (!window.confirm("Reset your saved progress, study sessions, and quiz stats?")) return;
+  if (!window.confirm("Reset your saved progress, study sessions, domain study answers, exam history, and quiz stats?")) return;
   state = { ...defaults, completed: [] };
   cardRevealed = false;
   saveState();
