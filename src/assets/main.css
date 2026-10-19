@@ -1,118 +1,73 @@
 @import './base.css';
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&display=swap');
 
 :root {
-    --text-main: #d0d0d0;
-    --text-muted: #8a8a8a;
-    --accent: #7dd3fc;
-    --card-bg: rgba(30, 30, 40, 0.6);
-    --card-border: rgba(120, 120, 140, 0.2);
-    --hover-bg: rgba(125, 211, 252, 0.1);
-    --bg-dark: #121212;
+  color-scheme: light;
+  --background: #edf1f4;
+  --surface: #ffffff;
+  --surface-soft: #f5f7f9;
+  --text-main: #202f40;
+  --text-muted: #536376;
+  --accent: #176c79;
+  --accent-hover: #115663;
+  --accent-soft: #e8f2f3;
+  --card-border: #d6dfe6;
+  --ink: #243547;
 }
 
 body {
-    margin: 0;
-    background-color: var(--bg-dark);
-    font-family: 'Inter', sans-serif;
-    color: var(--text-main);
+  color: var(--text-main);
+  background: var(--background);
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 #app {
-    width: 100%;
-    padding: 0;
-    box-sizing: border-box;
-    font-weight: normal;
+  width: 100%;
 }
 
-a,
-.link {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 3px;
-    transition: background-color 0.3s ease;
+a {
+  color: var(--accent);
+  text-decoration: none;
 }
 
-@media (hover: hover) {
-    a:hover,
-    .link:hover {
-        background-color: var(--hover-bg);
-    }
+a:hover {
+  color: var(--accent-hover);
 }
 
-.headline {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.8rem;
-    margin-bottom: 3rem;
-    color: #e2e8f0;
-    font-weight: 600;
-    letter-spacing: 0.6px;
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 4px;
 }
 
-/* Grid layout */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+h1, h2, h3 {
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  line-height: 1.2;
+  color: var(--text-main);
 }
 
-/* Card styles */
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    padding: 2rem;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 12px;
+  z-index: 200;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  transform: translateY(-160%);
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+.skip-link:focus {
+  transform: translateY(0);
 }
 
-.card h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: #f1f5f9;
-    font-weight: 600;
-}
-
-.card p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .headline {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .card {
-        padding: 1.5rem;
-    }
-
-    .card h2 {
-        font-size: 1.25rem;
-    }
-
-    .card p {
-        font-size: 0.95rem;
-    }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

@@ -6,6 +6,9 @@ Portfolio site for <https://reid-json.net> built with Vue 3 + Vite.
 
 - Name, bio, skills, links, and the project list: `src/data/site.js`
 - Page layout/styling: `src/views/HomePage.vue`
+- Shared palette, focus states, and typography: `src/assets/main.css`; navigation: `src/components/Navbar.vue`
+- The design uses a fixed soft-slate light palette with teal accents and a darker featured-project panel. It does not switch automatically with the operating system theme.
+- Projects can optionally include `name`, `category`, `highlights` (an array), and `featured: true`. The first featured entry appears in the hero; the first project is the fallback. App links and GitHub links remain editable in the same content file.
 
 ## Adding another web app
 

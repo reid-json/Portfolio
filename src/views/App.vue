@@ -1,48 +1,10 @@
-<script setup lang="ts">
+<script setup>
 import Navbar from '../components/Navbar.vue'
 import HomePage from './HomePage.vue'
 </script>
 
 <template>
-  <div class="app">
-    <Navbar />
-    <main class="content">
-      <HomePage />
-    </main>
-  </div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <Navbar />
+  <HomePage />
 </template>
-
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&display=swap');
-
-:root {
-  --text-main: #d0d0d0;
-  --bg-dark: #121212;
-}
-
-.app {
-  min-height: 100vh;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  color: var(--text-main);
-  background-color: var(--bg-dark);
-  display: flex;
-  flex-direction: column;
-}
-
-.content {
-  flex: 1;
-  width: 100%;
-  padding: 4rem 5vw;
-  box-sizing: border-box;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .content {
-    padding: 3rem 6vw;
-  }
-}
-</style>
