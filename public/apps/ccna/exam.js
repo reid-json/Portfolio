@@ -1,14 +1,15 @@
 const store = loadStore();
 const PASS_TARGET = 80;
 const total = questionBank.length;
+const MINUTES_PER_QUESTION = 1.2; // 100 questions = 120 minutes, like the real exam
 const lengthOptions = [
-  { id: "quick", count: Math.min(20, total), title: "Quick check", text: "A short mixed set, about 20 minutes." },
-  { id: "half", count: Math.min(30, total), title: "Half exam", text: "A balanced set across all six domains." },
-  { id: "full", count: total, title: "Full practice exam", text: `Every question in the bank (${total}), shuffled.` }
-];
+  { id: "full", count: total, title: "Full CCNA practice exam", text: "Every question, including drag-and-drop and CLI labs." },
+  { id: "half", count: Math.min(50, total), title: "Half exam", text: "A weighted mix across all six domains. No labs." },
+  { id: "quick", count: Math.min(20, total), title: "Quick check", text: "A short weighted mix. No labs." }
+].map((option) => ({ ...option, minutes: Math.round(option.count * MINUTES_PER_QUESTION) }));
 
-let settings = { length: "full", feedback: true };
-let exam = null; // { questions, answers, flagged, feedback, startedAt, index, timer }
+let settings = { length: "full", feedback: true, timer: true };
+let exam = null; // { questions, answers, flagged, checked, order, feedback, timed, limit, startedAt, index, interval }
 
 const views = {
   setup: document.getElementById("view-setup"),
@@ -33,7 +34,8 @@ function shuffle(items) {
 // Allocates questions to each domain by exam weight (largest remainder), then shuffles the combined set.
 function pickQuestions(count) {
   if (count >= total) return shuffle(questionBank);
-  const pools = modules.map((module) => shuffle(questionBank.filter((q) => q.domain === module.id)));
+  const bank = questionBank.filter((q) => qType(q) !== "lab");
+  const pools = modules.map((module) => shuffle(bank.filter((q) => q.domain === module.id)));
   const raw = modules.map((module) => count * module.weightPct / 100);
   const alloc = raw.map((value, i) => Math.min(Math.floor(value), pools[i].length));
   let remaining = count - alloc.reduce((a, b) => a + b, 0);
@@ -47,9 +49,13 @@ function pickQuestions(count) {
 }
 
 function formatTime(seconds) {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+  const s = Math.max(0, seconds);
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const rest = s % 60;
+  const mm = String(m).padStart(2, "0");
+  const ss = String(rest).padStart(2, "0");
+  return h ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
 }
 
 /* ── Setup ── */
@@ -65,7 +71,7 @@ function renderSetup() {
     input.checked = settings.length === option.id;
     input.addEventListener("change", () => { settings.length = option.id; });
     const copy = node("div");
-    copy.append(node("strong", "", `${option.title} · ${option.count} questions`), node("span", "", option.text));
+    copy.append(node("strong", "", `${option.title} · ${option.count} questions · ${option.minutes} min`), node("span", "", option.text));
     label.append(input, copy);
     list.append(label);
   });
@@ -95,80 +101,106 @@ function updateFeedbackText() {
 }
 
 document.getElementById("feedback-toggle").addEventListener("change", updateFeedbackText);
+document.getElementById("timer-toggle").addEventListener("change", (event) => { settings.timer = event.target.checked; });
 document.getElementById("start").addEventListener("click", startExam);
 
 /* ── Running ── */
 function startExam() {
-  const count = lengthOptions.find((option) => option.id === settings.length).count;
+  const option = lengthOptions.find((item) => item.id === settings.length);
+  const questions = pickQuestions(option.count);
   exam = {
-    questions: pickQuestions(count),
+    questions,
     answers: {},
     flagged: {},
+    checked: {},
+    order: {},
     feedback: settings.feedback,
+    timed: settings.timer,
+    limit: option.minutes * 60,
     startedAt: Date.now(),
     index: 0,
-    checked: {},
-    timer: null
+    interval: null
   };
-  exam.timer = setInterval(() => {
-    document.getElementById("run-timer").textContent = formatTime(Math.floor((Date.now() - exam.startedAt) / 1000));
-  }, 1000);
+  questions.filter((q) => qType(q) === "dnd").forEach((q) => { exam.order[q.id] = shuffle(q.pairs.map((_, i) => i)); });
+  exam.interval = setInterval(tick, 1000);
   show("run");
+  tick();
   renderRun();
 }
 
-function isLocked(question) {
-  return exam.feedback && exam.checked[question.id];
+function elapsed() { return Math.floor((Date.now() - exam.startedAt) / 1000); }
+
+function tick() {
+  const timer = document.getElementById("run-timer");
+  if (!exam.timed) {
+    timer.textContent = formatTime(elapsed());
+    timer.classList.remove("low");
+    return;
+  }
+  const left = exam.limit - elapsed();
+  timer.textContent = `${formatTime(left)} left`;
+  timer.classList.toggle("low", left <= 300);
+  if (left <= 0) finishExam(true);
 }
 
-function renderRun() {
-  const question = exam.questions[exam.index];
-  const selected = exam.answers[question.id] || [];
-  const locked = isLocked(question);
+function isLocked(question) {
+  return exam.feedback && Boolean(exam.checked[question.id]);
+}
 
+function answerOf(question) { return exam.answers[question.id] || []; }
+
+function renderChrome() {
+  const question = exam.questions[exam.index];
+  const locked = isLocked(question);
   document.getElementById("run-position").textContent = `Question ${exam.index + 1} of ${exam.questions.length}`;
   document.getElementById("run-mode").textContent = exam.feedback ? "Answers shown" : "Answers hidden";
-  document.getElementById("run-domain").textContent = moduleById(question.domain).title.toUpperCase();
-  document.getElementById("run-status").textContent = locked ? (isCorrect(question, selected) ? "✓ CORRECT" : "✕ INCORRECT") : "";
-  const answeredTotal = exam.questions.filter((q) => (exam.answers[q.id] || []).length).length;
+  const typeLabel = { mc: "", dnd: " · DRAG AND DROP", lab: " · LAB" }[qType(question)];
+  document.getElementById("run-domain").textContent = moduleById(question.domain).title.toUpperCase() + typeLabel;
+  document.getElementById("run-status").textContent = locked ? (gradeQuestion(question, answerOf(question)) ? "✓ CORRECT" : "✕ INCORRECT") : "";
+  const answeredTotal = exam.questions.filter((q) => isAnswered(q, answerOf(q))).length;
   document.getElementById("run-bar").style.width = `${Math.round(answeredTotal / exam.questions.length * 100)}%`;
-
-  renderQuestionCard(document.getElementById("run-question"), question, {
-    selected,
-    revealed: locked,
-    checkable: exam.feedback,
-    onSelect: (index) => pick(question, index),
-    onCheck: () => { exam.checked[question.id] = true; renderRun(); }
-  });
-
-  const flag = document.getElementById("run-flag");
-  flag.setAttribute("aria-pressed", String(Boolean(exam.flagged[question.id])));
-  document.getElementById("run-prev").disabled = exam.index === 0;
-  const last = exam.index === exam.questions.length - 1;
-  const next = document.getElementById("run-next");
-  next.textContent = last ? "Finish exam" : "Next →";
 
   const dots = document.getElementById("run-dots");
   dots.replaceChildren();
   exam.questions.forEach((item, index) => {
-    const picks = exam.answers[item.id] || [];
+    const picks = answerOf(item);
     let cls = "dot";
     if (index === exam.index) cls += " current";
-    if (exam.feedback && exam.checked[item.id]) cls += isCorrect(item, picks) ? " right" : " wrong";
-    else if (picks.length) cls += " answered";
+    if (exam.feedback && exam.checked[item.id]) cls += gradeQuestion(item, picks) ? " right" : " wrong";
+    else if (isAnswered(item, picks)) cls += " answered";
     if (exam.flagged[item.id]) cls += " flagged";
     const dot = node("button", cls, String(index + 1));
     dot.type = "button";
-    dot.setAttribute("aria-label", `Go to question ${index + 1}${picks.length ? ", answered" : ""}${exam.flagged[item.id] ? ", flagged" : ""}`);
+    dot.setAttribute("aria-label", `Go to question ${index + 1}${isAnswered(item, picks) ? ", answered" : ""}${exam.flagged[item.id] ? ", flagged" : ""}`);
     dot.addEventListener("click", () => { exam.index = index; renderRun(); });
     dots.append(dot);
   });
 }
 
+function renderRun() {
+  const question = exam.questions[exam.index];
+  renderChrome();
+
+  renderAny(document.getElementById("run-question"), question, {
+    answer: answerOf(question),
+    revealed: isLocked(question),
+    checkable: exam.feedback,
+    order: exam.order[question.id],
+    onSelect: (index) => pick(question, index),
+    onChange: (answer) => { exam.answers[question.id] = answer; renderChrome(); },
+    onCheck: () => { exam.checked[question.id] = true; renderRun(); },
+    rerender: renderRun
+  });
+
+  document.getElementById("run-flag").setAttribute("aria-pressed", String(Boolean(exam.flagged[question.id])));
+  document.getElementById("run-prev").disabled = exam.index === 0;
+  document.getElementById("run-next").textContent = exam.index === exam.questions.length - 1 ? "Finish exam" : "Next →";
+}
+
 function pick(question, index) {
   if (isLocked(question)) return;
   const multi = question.answer.length > 1;
-  let picks = [...(exam.answers[question.id] || [])];
+  let picks = [...answerOf(question)];
   if (!multi) {
     picks = [index];
     exam.answers[question.id] = picks;
@@ -195,40 +227,42 @@ document.getElementById("run-flag").addEventListener("click", () => {
   exam.flagged[id] = !exam.flagged[id];
   renderRun();
 });
-document.getElementById("finish-top").addEventListener("click", finishExam);
+document.getElementById("finish-top").addEventListener("click", () => finishExam());
 
 /* ── Results ── */
-function finishExam() {
-  const unanswered = exam.questions.filter((q) => !(exam.answers[q.id] || []).length).length;
-  const flagged = exam.questions.filter((q) => exam.flagged[q.id]).length;
-  let warning = "";
-  if (unanswered) warning += `${unanswered} question${unanswered === 1 ? " is" : "s are"} unanswered. `;
-  if (flagged) warning += `${flagged} flagged. `;
-  if (warning && !window.confirm(`${warning}Finish the exam anyway?`)) return;
+function finishExam(auto = false) {
+  if (!auto) {
+    const unanswered = exam.questions.filter((q) => !isAnswered(q, answerOf(q))).length;
+    const flagged = exam.questions.filter((q) => exam.flagged[q.id]).length;
+    let warning = "";
+    if (unanswered) warning += `${unanswered} question${unanswered === 1 ? " is" : "s are"} unanswered. `;
+    if (flagged) warning += `${flagged} flagged. `;
+    if (warning && !window.confirm(`${warning}Finish the exam anyway?`)) return;
+  }
 
-  clearInterval(exam.timer);
-  const seconds = Math.floor((Date.now() - exam.startedAt) / 1000);
-  const results = exam.questions.map((q) => ({ q, picks: exam.answers[q.id] || [], right: isCorrect(q, exam.answers[q.id] || []) }));
+  clearInterval(exam.interval);
+  const seconds = elapsed();
+  const results = exam.questions.map((q) => ({ q, picks: answerOf(q), right: gradeQuestion(q, answerOf(q)) }));
   const right = results.filter((r) => r.right).length;
   const percent = Math.round(right / results.length * 100);
 
   store.exams.unshift({ date: Date.now(), total: results.length, correct: right, percent, seconds, feedback: exam.feedback });
   store.exams = store.exams.slice(0, 10);
   store.sessions += 1;
-  store.answered += results.filter((r) => r.picks.length).length;
+  store.answered += results.filter((r) => isAnswered(r.q, r.picks)).length;
   store.correct += right;
   saveStore(store);
 
-  renderResults(results, right, percent, seconds);
+  renderResults(results, right, percent, seconds, auto);
   show("results");
 }
 
-function renderResults(results, right, percent, seconds) {
+function renderResults(results, right, percent, seconds, auto) {
   const ring = document.getElementById("score-ring");
   ring.style.setProperty("--pct", percent);
   ring.style.setProperty("--ring", percent >= PASS_TARGET ? "var(--good)" : percent >= 60 ? "var(--accent)" : "var(--bad)");
   document.getElementById("score-pct").textContent = `${percent}%`;
-  document.getElementById("score-title").textContent = percent >= PASS_TARGET ? "Great result" : percent >= 60 ? "Getting there" : "Keep studying";
+  document.getElementById("score-title").textContent = auto ? "Time's up" : percent >= PASS_TARGET ? "Great result" : percent >= 60 ? "Getting there" : "Keep studying";
   document.getElementById("score-detail").textContent = `${right} of ${results.length} correct in ${formatTime(seconds)}. A score of ${PASS_TARGET}% or more is a good target.`;
 
   const rows = document.getElementById("domain-rows");
@@ -266,7 +300,7 @@ function renderReview() {
     panel.append(node("div", "review-domain", `QUESTION ${item.number} · ${moduleById(item.q.domain).title.toUpperCase()}`));
     const body = node("div");
     panel.append(body);
-    renderQuestionCard(body, item.q, { selected: item.picks, revealed: true });
+    renderAny(body, item.q, { answer: item.picks, revealed: true, order: exam.order[item.q.id] });
     list.append(panel);
   });
 }

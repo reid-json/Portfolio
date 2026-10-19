@@ -1,0 +1,30 @@
+/* Drag-and-drop, lab terminal and timer styles for the practice exam. */
+.timer.low { color: var(--bad); font-weight: 700; }
+
+.dnd-pool { display: flex; flex-wrap: wrap; gap: 8px; min-height: 52px; padding: 12px; border: 1px dashed var(--border); border-radius: 12px; margin-bottom: 14px; background: var(--surface-2, var(--bg)); }
+.chip { font: inherit; font-size: 15px; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: grab; text-align: left; }
+.chip:hover:not(:disabled) { border-color: var(--accent); }
+.chip.selected { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft), 0 0 0 3px var(--accent); }
+.chip:disabled { cursor: default; opacity: 1; }
+.dnd-rows { display: grid; gap: 10px; }
+.dnd-row { display: grid; grid-template-columns: minmax(110px, 1fr) 2fr; gap: 12px; align-items: center; }
+.dnd-label { font-weight: 600; }
+.dnd-slot { min-height: 46px; display: flex; align-items: center; padding: 4px; border: 1px dashed var(--border); border-radius: 10px; }
+.dnd-slot .chip { width: 100%; cursor: pointer; }
+.dnd-slot.correct { border: 1px solid var(--good-border); background: var(--good-bg); }
+.dnd-slot.incorrect { border: 1px solid var(--bad-border); background: var(--bad-bg); }
+.slot-empty { color: var(--muted); font-size: 14px; padding: 0 8px; }
+@media (max-width: 560px) { .dnd-row { grid-template-columns: 1fr; gap: 6px; } }
+
+.lab-scenario { margin: 0 0 12px; color: var(--muted); }
+.lab-topology { margin: 0 0 14px; padding: 12px; border-radius: 10px; background: var(--surface-2, var(--bg)); border: 1px solid var(--border); overflow-x: auto; font-size: 13px; }
+.lab-tasks { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 6px; }
+.lab-tasks li.done { color: var(--good); }
+.lab-tasks li.todo { color: var(--bad); }
+.task-mark { display: inline-block; width: 1.2em; font-weight: 700; }
+.term { background: #0b1020; color: #d7e3ff; border-radius: 12px; border: 1px solid #1f2a4a; padding: 12px; margin-bottom: 12px; font-family: "Cascadia Code", Consolas, monospace; font-size: 14px; cursor: text; }
+.term-out { margin: 0; max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; font: inherit; }
+.term-row { display: flex; gap: 8px; align-items: center; margin-top: 4px; }
+.term-prompt { color: #7fd1ff; white-space: nowrap; }
+.term-input { flex: 1; min-width: 0; background: transparent; border: 0; outline: 0; color: inherit; font: inherit; }
+.term-input:disabled { opacity: .5; }

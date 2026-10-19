@@ -10,9 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="exam.css">
   <script src="theme.js"></script>
   <script src="data.js" defer></script>
+  <script src="exam-bank.js" defer></script>
   <script src="quiz.js" defer></script>
+  <script src="qtypes.js" defer></script>
   <script src="exam.js" defer></script>
 </head>
 <body>
@@ -33,7 +36,7 @@
     <!-- Setup -->
     <section id="view-setup">
       <h1 class="page-title">Practice exam</h1>
-      <p class="page-sub">Questions are drawn from every exam domain in proportion to its weight on the real CCNA 200-301 blueprint.</p>
+      <p class="page-sub">The full exam mirrors the real CCNA 200-301: about 100 questions in 120 minutes, mixing multiple choice, drag-and-drop matching, and hands-on CLI labs, weighted by domain.</p>
       <div class="setup-grid">
         <div class="panel">
           <p class="field-title">EXAM LENGTH</p>
@@ -49,8 +52,18 @@
               <i></i>
             </label>
           </div>
+          <div class="switch-row">
+            <div>
+              <strong>Countdown timer</strong>
+              <span>The full exam gives you 120 minutes and ends automatically at zero.</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="timer-toggle" role="switch" aria-label="Countdown timer" checked>
+              <i></i>
+            </label>
+          </div>
           <button class="btn primary" id="start" type="button">Start exam →</button>
-          <p class="note" style="margin-top:14px">These are original practice questions for study, not real exam questions. The real exam has about 100 questions in 120 minutes. A score around 80% or higher here is a good sign.</p>
+          <p class="note" style="margin-top:14px">These are original practice questions for study, not real exam questions. Lab simulations use a simplified CLI, so type full or common abbreviated commands. A score around 80% or higher here is a good sign.</p>
         </div>
         <div class="panel">
           <p class="field-title">RECENT ATTEMPTS</p>
