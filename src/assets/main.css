@@ -18,9 +18,13 @@ body {
     color: var(--text-main);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #app {
     width: 100%;
-    padding: 4rem 5vw;
+    padding: 0;
     box-sizing: border-box;
     font-weight: normal;
 }
@@ -90,10 +94,6 @@ a,
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    #app {
-        padding: 3rem 6vw;
-    }
-
     .headline {
         font-size: 2rem;
         margin-bottom: 2rem;

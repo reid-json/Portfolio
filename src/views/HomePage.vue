@@ -1,255 +1,218 @@
-<script setup lang="ts">
-interface Project {
-  title: string
-  description: string
-  link: string
-}
-
-const projects: Project[] = [
-  { title: 'Neural Nexus', description: 'AI-driven data pipeline for real-time analytics.', link: '#' },
-  { title: 'Quantum Pulse', description: 'Quantum-inspired algorithm for parallel computation.', link: '#' },
-  { title: 'Code Reactor', description: 'Modular codebase for scalable microservices.', link: '#' },
-  { title: 'Data Forge', description: 'ETL framework for structured and unstructured data.', link: '#' },
-]
-
-const techStack = [
-  'TypeScript', 'Vue.js', 'Node.js', 'PostgreSQL', 'Docker', 'GraphQL', 'Tailwind', 'Vite'
-]
+<script setup>
+import { profile, skills, projects } from '../data/site.js'
 </script>
 
 <template>
   <main class="container">
-    <!-- Hero -->
     <section class="hero">
-      <h1 class="name">Jason Reid</h1>
-      <p class="tagline">Full-stack engineer crafting modular systems, scalable APIs, and clean UIs for the future.</p>
-      <a href="#contact" class="cta">Let’s Build Something ↗</a>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-      <h2>About</h2>
-      <p>
-        I specialize in building future-proof web architectures, rapid prototyping, and clean design systems.
-        My work blends backend precision with frontend clarity — always modular, always intentional.
-      </p>
-    </section>
-
-    <!-- Tech Stack -->
-    <section class="stack" id="stack">
-      <h2>Tech Stack</h2>
-      <ul class="stack-grid">
-        <li v-for="tech in techStack" :key="tech">{{ tech }}</li>
-      </ul>
-    </section>
-
-    <!-- Projects -->
-    <section class="projects" id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div v-for="(project, index) in projects" :key="index" class="card">
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
-          <a :href="project.link" target="_blank" rel="noopener" class="link">GitHub ↗</a>
-        </div>
+      <p class="eyebrow">Hi, I'm</p>
+      <h1 class="name">{{ profile.name }}</h1>
+      <p class="tagline">{{ profile.tagline }}</p>
+      <div class="actions">
+        <a href="#projects" class="btn primary">View projects</a>
+        <a href="#contact" class="btn">Get in touch</a>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-      <h2>Contact</h2>
-      <p>Reach out via <a href="mailto:you@example.com">email</a> or connect on <a href="#">LinkedIn</a>.</p>
+    <section id="about">
+      <h2>About</h2>
+      <p class="lead">{{ profile.about }}</p>
     </section>
+
+    <section id="stack">
+      <h2>Skills</h2>
+      <ul class="chips">
+        <li v-for="skill in skills" :key="skill">{{ skill }}</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects &amp; Apps</h2>
+      <div class="grid">
+        <article v-for="project in projects" :key="project.title" class="card">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <ul class="tags">
+            <li v-for="tag in project.tags" :key="tag">{{ tag }}</li>
+          </ul>
+          <div class="card-links">
+            <a :href="project.link" class="link">Open app ↗</a>
+            <a v-if="project.repo" :href="project.repo" target="_blank" rel="noopener" class="link">GitHub ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="lead">Open to opportunities and conversations. The best way to reach me:</p>
+      <div class="actions">
+        <a :href="`mailto:${profile.email}`" class="btn primary">{{ profile.email }}</a>
+        <a :href="profile.linkedin" target="_blank" rel="noopener" class="btn">LinkedIn ↗</a>
+        <a :href="profile.github" target="_blank" rel="noopener" class="btn">GitHub ↗</a>
+      </div>
+    </section>
+
+    <footer class="footer">© {{ new Date().getFullYear() }} {{ profile.name }}</footer>
   </main>
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&display=swap');
-
-:root {
-  --text-main: #d0d0d0;
-  --text-muted: #8a8a8a;
-  --accent: #7dd3fc;
-  --bg-dark: radial-gradient(ellipse at top, #0b0c10 0%, #0a0a0f 100%);
-  --card-bg: rgba(20, 25, 40, 0.6);
-  --card-border: rgba(100, 120, 160, 0.2);
-  --highlight: #00bfff;
-  --glow: 0 0 8px rgba(125, 211, 252, 0.3);
-}
-
-body {
-  margin: 0;
-  background: var(--bg-dark);
-  font-family: 'Inter', sans-serif;
-  color: var(--text-main);
-  background-attachment: fixed;
-  background-size: cover;
-}
-
 .container {
-  width: 100%;
-  padding: 4rem 5vw;
-  box-sizing: border-box;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
 }
 
 section {
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
+  scroll-margin-top: 6rem;
 }
 
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 2rem 0;
+  padding: 4rem 0 2rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
 }
 
 .name {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 4.2rem;
+  font-size: clamp(2.8rem, 8vw, 5rem);
   font-weight: 600;
-  color: #e2e8f0;
-  letter-spacing: 1.2px;
-  text-shadow: var(--glow);
+  line-height: 1.05;
+  color: #f1f5f9;
+  margin-bottom: 1.25rem;
 }
 
-.tagline {
-  font-size: 1.2rem;
+.tagline,
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
   color: var(--text-muted);
-  margin: 1rem 0 2rem;
-  max-width: 800px;
-  line-height: 1.6;
+  max-width: 700px;
 }
 
-.cta {
-  font-weight: 500;
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 1rem;
-  border-bottom: 1px solid transparent;
-  transition: border 0.2s ease;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
 }
 
-.cta:hover {
-  border-bottom: 1px solid var(--accent);
+.btn {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--text-main);
+  transition: border-color 0.2s, background-color 0.2s;
 }
 
-.about h2,
-.stack h2,
-.projects h2,
-.contact h2 {
+.btn:hover {
+  border-color: var(--accent);
+}
+
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0b1220;
+}
+
+.btn.primary:hover {
+  background: #a5e2fd;
+}
+
+h2 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.4rem;
+  font-size: 1.9rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  color: #e2e8f0;
-  text-shadow: var(--glow);
+  color: #f1f5f9;
+  margin-bottom: 1.25rem;
 }
 
-.about p,
-.contact p {
-  font-size: 1rem;
-  color: var(--text-muted);
-  max-width: 900px;
-  line-height: 1.6;
-}
-
-.stack-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
+.chips,
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   list-style: none;
   padding: 0;
-  margin-top: 1rem;
+  margin: 0;
 }
 
-.stack-grid li {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
-  text-align: center;
-  font-weight: 500;
-  color: var(--text-main);
-  font-size: 0.95rem;
-  border: 1px solid rgba(125, 211, 252, 0.1);
-  box-shadow: inset 0 0 4px rgba(125, 211, 252, 0.05);
+.chips li {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.92rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .card {
-  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.75rem;
   border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 2rem;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 14px;
+  background: var(--card-bg);
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+  border-color: rgba(125, 211, 252, 0.4);
 }
 
 .card h3 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.3rem;
   color: #f1f5f9;
-  margin-bottom: 0.5rem;
-  text-shadow: var(--glow);
 }
 
 .card p {
-  font-size: 0.95rem;
   color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.link {
+.tags li {
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(125, 211, 252, 0.1);
   color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
 }
 
-.link:hover {
-  text-decoration: underline;
+.card-links {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: auto;
 }
 
-/* Responsive adjustments */
+.footer {
+  padding-top: 2rem;
+  border-top: 1px solid var(--card-border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
-  .name {
-    font-size: 2.8rem;
+  section {
+    margin-bottom: 3.5rem;
   }
-
-  .tagline {
-    font-size: 1rem;
-    max-width: 100%;
-  }
-
-  .about h2,
-  .stack h2,
-  .projects h2,
-  .contact h2 {
-    font-size: 1.8rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 1.5rem;
-  }
-
-  .stack-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  .hero {
+    padding-top: 2rem;
   }
 }
 </style>

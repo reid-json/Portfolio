@@ -1,6 +1,21 @@
 # reid-json-portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Portfolio site for <https://reid-json.net> built with Vue 3 + Vite.
+
+## Editing content
+
+- Name, bio, skills, links, and the project list: `src/data/site.js`
+- Page layout/styling: `src/views/HomePage.vue`
+
+## Adding another web app
+
+1. Put the app's static files in `public/apps/<name>/` (it needs an `index.html` and relative asset paths).
+2. Add an entry to `projects` in `src/data/site.js` with `link: '/apps/<name>/index.html'`.
+3. Commit and push.
+
+The CCNA study site lives in `public/apps/ccna/` (standalone source: <https://github.com/reid-json/CCNA>).
+
+## Vue/Vite template notes
 
 ## Recommended IDE Setup
 
