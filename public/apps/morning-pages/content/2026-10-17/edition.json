@@ -1,0 +1,390 @@
+{
+  "date": "2026-10-17",
+  "sample": true,
+  "generatedAt": "2026-10-19T23:00:28.791133+00:00",
+  "tone": "Warm, curious, practical. An invitation to explore, not a substitute for the source.",
+  "articles": [
+    {
+      "id": "2fcd3c8e9e1a",
+      "date": "2026-10-17",
+      "category": "tech",
+      "title": "The web has a memory budget",
+      "summary": "A page can look finished while still feeling slow. Separate the experience into loading useful content, responding to input, and keeping the layout steady. These are different problems, so one number cannot tell the whole story.",
+      "body": [
+        "A page can look finished while still feeling slow. Separate the experience into loading useful content, responding to input, and keeping the layout steady. These are different problems, so one number cannot tell the whole story.",
+        "Open a small website on your phone and notice its first useful moment. Then try it with a slower connection in developer tools. Record one observation before choosing a fix. Removing an unnecessary image or script is often a better first experiment than adding another optimization layer."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-17/2fcd3c8e9e1a.svg",
+      "imageAlt": "Original abstract tech illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://web.dev/articles/vitals",
+          "site": "web.dev",
+          "title": "Web Vitals",
+          "retrievedAt": "2026-10-19T23:00:28.791133+00:00"
+        }
+      ],
+      "tags": [
+        "Tech",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "2fcd3c8e9e1a-1",
+          "prompt": "Why measure several aspects of page performance?",
+          "options": [
+            "Loading, responsiveness, and stability differ",
+            "One number explains every experience",
+            "Images never affect performance"
+          ],
+          "answer": 0,
+          "explanation": "A page can look finished while still feeling slow. Separate the experience into loading useful content, responding to input, and keeping the layout steady. These are different problems, so one number cannot tell the whole story. Open a small website on your phone and notice its first useful moment. Then try it with a slower connection in developer tools. Record one observation before choosing a fix. Removing an unnecessary image or script is often a better first experiment than adding another optimization layer."
+        },
+        {
+          "id": "2fcd3c8e9e1a-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "3f9db7e606be",
+      "date": "2026-10-17",
+      "category": "coding",
+      "title": "Concept of the Day: a set answers a different question",
+      "summary": "A list records a sequence; a set records membership without duplicates. Choose based on the question your program needs to answer. If you are tracking which articles have been read, membership is usually the important part.",
+      "body": [
+        "A list records a sequence; a set records membership without duplicates. Choose based on the question your program needs to answer. If you are tracking which articles have been read, membership is usually the important part.",
+        "Try adding the same string twice, then inspect the size. Notice that choosing a set does not automatically promise a particular iteration order; that depends on the implementation. State your ordering requirement explicitly before picking a concrete class.",
+        "When reviewing code, look for repeated membership checks and accidental duplicate entries. A good collection choice can express the business rule directly. It does not eliminate the need to think about equality, mutability, or concurrency: those are separate design questions."
+      ],
+      "code": "import java.util.HashSet;\nclass Main {\n  public static void main(String[] args) {\n    var read = new HashSet<String>();\n    read.add(\"morning\");\n    read.add(\"morning\");\n    System.out.println(read.size()); // 1\n  }\n}",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-17/3f9db7e606be.svg",
+      "imageAlt": "Original abstract programming illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html",
+          "site": "Oracle Java",
+          "title": "Set interface",
+          "retrievedAt": "2026-10-19T23:00:28.791133+00:00"
+        }
+      ],
+      "tags": [
+        "Programming",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "3f9db7e606be-1",
+          "prompt": "What does a Set prevent?",
+          "options": [
+            "Duplicate elements",
+            "All mutation",
+            "Every kind of ordering"
+          ],
+          "answer": 0,
+          "explanation": "A list records a sequence; a set records membership without duplicates. Choose based on the question your program needs to answer. If you are tracking which articles have been read, membership is usually the important part. Try adding the same string twice, then inspect the size. Notice that choosing a set does not automatically promise a particular iteration order; that depends on the implementation. State your ordering requirement explicitly before picking a concrete class."
+        },
+        {
+          "id": "3f9db7e606be-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "844cf31937fb",
+      "date": "2026-10-17",
+      "category": "guitar",
+      "title": "A metronome is a listening partner",
+      "summary": "The click is not a race. It gives you a stable reference against which to hear your own timing. Choose a short phrase you can already play and a pace that leaves room to listen.",
+      "body": [
+        "The click is not a race. It gives you a stable reference against which to hear your own timing. Choose a short phrase you can already play and a pace that leaves room to listen.",
+        "Play a few repetitions, then leave a short silence and return on the beat. If you lose the pulse, reduce the difficulty instead of tightening your hands. Keep a brief note about what felt steady. Stop if practice causes pain; comfortable movement matters more than a faster number."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-17/844cf31937fb.svg",
+      "imageAlt": "Original abstract guitar illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.justinguitar.com/guitar-lessons/meet-the-metronome-b1-403",
+          "site": "JustinGuitar",
+          "title": "Meet the metronome",
+          "retrievedAt": "2026-10-19T23:00:28.791133+00:00"
+        }
+      ],
+      "tags": [
+        "Guitar",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "844cf31937fb-1",
+          "prompt": "What is the most useful starting tempo?",
+          "options": [
+            "The fastest possible",
+            "One where you can listen and stay comfortable",
+            "The same tempo for everyone"
+          ],
+          "answer": 1,
+          "explanation": "The click is not a race. It gives you a stable reference against which to hear your own timing. Choose a short phrase you can already play and a pace that leaves room to listen. Play a few repetitions, then leave a short silence and return on the beat. If you lose the pulse, reduce the difficulty instead of tightening your hands. Keep a brief note about what felt steady. Stop if practice causes pain; comfortable movement matters more than a faster number."
+        },
+        {
+          "id": "844cf31937fb-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "7fdb28110e7a",
+      "date": "2026-10-17",
+      "category": "music",
+      "title": "Make a listening journal, not a rating machine",
+      "summary": "A rating compresses an experience into a number. A listening note preserves something you can return to: a particular sound, a surprising entrance, or a feeling that changed on a second listen.",
+      "body": [
+        "A rating compresses an experience into a number. A listening note preserves something you can return to: a particular sound, a surprising entrance, or a feeling that changed on a second listen.",
+        "Choose one unfamiliar record from a verified release source. Write three observations and one question, without ranking it. Later, revisit just one section. The purpose is to make curiosity repeatable, not to turn leisure into homework."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-17/7fdb28110e7a.svg",
+      "imageAlt": "Original abstract new music illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://learningmusic.ableton.com/",
+          "site": "Ableton",
+          "title": "Learning Music",
+          "retrievedAt": "2026-10-19T23:00:28.791133+00:00"
+        }
+      ],
+      "tags": [
+        "New Music",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "7fdb28110e7a-1",
+          "prompt": "Which note is most useful for a later listening session?",
+          "options": [
+            "A concrete observation and a question",
+            "Only a number with no context",
+            "A claim that everyone must agree"
+          ],
+          "answer": 0,
+          "explanation": "A rating compresses an experience into a number. A listening note preserves something you can return to: a particular sound, a surprising entrance, or a feeling that changed on a second listen. Choose one unfamiliar record from a verified release source. Write three observations and one question, without ranking it. Later, revisit just one section. The purpose is to make curiosity repeatable, not to turn leisure into homework."
+        },
+        {
+          "id": "7fdb28110e7a-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "e6c11892ba43",
+      "date": "2026-10-17",
+      "category": "philosophy",
+      "title": "Idea of the Day: understanding before agreement",
+      "summary": "Before deciding whether an argument succeeds, make sure you can explain it fairly. Write its conclusion in one sentence, then list the reasons meant to support it. This is a reading practice, not a quotation from a philosopher.",
+      "body": [
+        "Before deciding whether an argument succeeds, make sure you can explain it fairly. Write its conclusion in one sentence, then list the reasons meant to support it. This is a reading practice, not a quotation from a philosopher.",
+        "Now separate two questions: are the reasons acceptable, and do they support this conclusion? A true premise can still be used in a weak argument. Try inventing a counterexample without caricaturing the author's position.",
+        "For a longer reading session, keep two columns: what the text says, and your response. The distinction makes it easier to notice when a personal association has replaced the original claim. Revisit the strongest version of the argument before writing your final reaction."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-17/e6c11892ba43.svg",
+      "imageAlt": "Original abstract philosophy & reading illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://plato.stanford.edu/entries/critical-thinking/",
+          "site": "Stanford Encyclopedia of Philosophy",
+          "title": "Critical thinking",
+          "retrievedAt": "2026-10-19T23:00:28.791133+00:00"
+        }
+      ],
+      "tags": [
+        "Philosophy & Reading",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "e6c11892ba43-1",
+          "prompt": "What should come before judging an argument?",
+          "options": [
+            "Explaining it fairly",
+            "Assuming the author is wrong",
+            "Counting its words"
+          ],
+          "answer": 0,
+          "explanation": "Before deciding whether an argument succeeds, make sure you can explain it fairly. Write its conclusion in one sentence, then list the reasons meant to support it. This is a reading practice, not a quotation from a philosopher. Now separate two questions: are the reasons acceptable, and do they support this conclusion? A true premise can still be used in a weak argument. Try inventing a counterexample without caricaturing the author's position."
+        },
+        {
+          "id": "e6c11892ba43-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "baf4b62f7963",
+      "date": "2026-10-17",
+      "category": "health",
+      "title": "Give movement a place in the day",
+      "summary": "A plan is easier to follow when it connects to an ordinary part of the day. Instead of designing an ideal week from scratch, look for a realistic opportunity to move that suits your ability and circumstances.",
+      "body": [
+        "A plan is easier to follow when it connects to an ordinary part of the day. Instead of designing an ideal week from scratch, look for a realistic opportunity to move that suits your ability and circumstances.",
+        "Write down one possible cue, such as finishing lunch, and one comfortable activity. This is a planning exercise rather than a personal exercise prescription. Use authoritative guidance for general recommendations and a qualified professional for individual limitations or symptoms."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-17/baf4b62f7963.svg",
+      "imageAlt": "Original abstract training & health illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+          "site": "World Health Organization",
+          "title": "Physical activity",
+          "retrievedAt": "2026-10-19T23:00:28.791133+00:00"
+        }
+      ],
+      "tags": [
+        "Training & Health",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "baf4b62f7963-1",
+          "prompt": "What makes an activity plan more concrete?",
+          "options": [
+            "A realistic cue and an appropriate activity",
+            "A promise never to miss a day",
+            "Ignoring individual circumstances"
+          ],
+          "answer": 0,
+          "explanation": "A plan is easier to follow when it connects to an ordinary part of the day. Instead of designing an ideal week from scratch, look for a realistic opportunity to move that suits your ability and circumstances. Write down one possible cue, such as finishing lunch, and one comfortable activity. This is a planning exercise rather than a personal exercise prescription. Use authoritative guidance for general recommendations and a qualified professional for individual limitations or symptoms."
+        },
+        {
+          "id": "baf4b62f7963-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "7516cb513cc7",
+      "date": "2026-10-17",
+      "category": "anime",
+      "title": "A release date needs a region and a format",
+      "summary": "An announcement can refer to a theatrical opening, a television broadcast, a streaming release, or a physical edition. Those are different events, and availability may also vary by region.",
+      "body": [
+        "An announcement can refer to a theatrical opening, a television broadcast, a streaming release, or a physical edition. Those are different events, and availability may also vary by region.",
+        "Before adding a date to your watch list, locate the official announcement and note the format and territory. If either is unclear, record the uncertainty instead of filling in a guess. This habit makes a personal release calendar more useful than a collection of exciting headlines."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-17/7516cb513cc7.svg",
+      "imageAlt": "Original abstract anime & manga illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.crunchyroll.com/news",
+          "site": "Crunchyroll",
+          "title": "Official anime news",
+          "retrievedAt": "2026-10-19T23:00:28.791133+00:00"
+        }
+      ],
+      "tags": [
+        "Anime & Manga",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "7516cb513cc7-1",
+          "prompt": "What should accompany a release date in a useful watch list?",
+          "options": [
+            "Its region and format",
+            "An invented availability promise",
+            "Only a fan's guess"
+          ],
+          "answer": 0,
+          "explanation": "An announcement can refer to a theatrical opening, a television broadcast, a streaming release, or a physical edition. Those are different events, and availability may also vary by region. Before adding a date to your watch list, locate the official announcement and note the format and territory. If either is unclear, record the uncertainty instead of filling in a guess. This habit makes a personal release calendar more useful than a collection of exciting headlines."
+        },
+        {
+          "id": "7516cb513cc7-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    }
+  ],
+  "conceptId": "3f9db7e606be",
+  "ideaId": "e6c11892ba43"
+}

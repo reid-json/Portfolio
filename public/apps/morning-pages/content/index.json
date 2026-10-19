@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2026-10-19",
+    "count": 14,
+    "sample": false
+  },
+  {
+    "date": "2026-10-18",
+    "count": 7,
+    "sample": true
+  },
+  {
+    "date": "2026-10-17",
+    "count": 7,
+    "sample": true
+  }
+]

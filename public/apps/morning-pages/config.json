@@ -1,0 +1,17 @@
+{
+  "title": "Morning Pages",
+  "timezone": "America/Chicago",
+  "publishHour": 5,
+  "articlesPerCategory": 2,
+  "tone": "Warm, curious, practical. An invitation to explore, not a substitute for the source.",
+  "maxAgeDays": 21,
+  "categories": [
+    {"id":"tech","name":"Tech","icon":"T","color":"#42685b","feed":"https://www.nasa.gov/feed/","lens":"Separate what was demonstrated from what is promised. Look for the measurement, the comparison, and the constraints before deciding what a new technology changes."},
+    {"id":"coding","name":"Programming","icon":"</>","color":"#526ba3","feed":"https://github.blog/changelog/feed/","lens":"Read the compatibility notes before changing a working project. Try the smallest example on a separate branch, write down the result, and keep a way to roll back."},
+    {"id":"guitar","name":"Guitar","icon":"G","color":"#a95e39","feed":"https://www.guitarworld.com/feeds/all","lens":"Turn inspiration into a small practice experiment. Choose one sound or technique, slow it down until it is comfortable, and listen to a recording rather than judging by speed."},
+    {"id":"music","name":"New Music","icon":"M","color":"#97546f","feed":"https://www.stereogum.com/feed/","lens":"Listen once without multitasking. Then revisit the arrangement: which instrument establishes the pulse, what changes between sections, and which sound creates the emotional center?"},
+    {"id":"philosophy","name":"Philosophy & Reading","icon":"P","color":"#806095","feed":"https://dailynous.com/feed/","lens":"Write the claim in your own words, identify its strongest reason, and imagine a fair objection. Understanding an argument does not require agreeing with it."},
+    {"id":"health","name":"Training & Health","icon":"+","color":"#697b3b","feed":"https://www.sciencedaily.com/rss/health_medicine/fitness.xml","lens":"Ask who was studied, what was measured, and whether the result applies to your circumstances. One study is a starting point for questions, not a personal training prescription."},
+    {"id":"anime","name":"Anime & Manga","icon":"A","color":"#a55c50","feed":"https://www.animenewsnetwork.com/all/rss.xml?ann-edition=us","lens":"Check the region, format, and official announcement before treating a release date as a promise. For recommendations, separate your taste from a claim about universal quality."}
+  ]
+}

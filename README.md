@@ -17,6 +17,17 @@ Portfolio site for <https://reid-json.net> built with Vue 3 + Vite.
 3. Commit and push.
 
 The CCNA study site lives in `public/apps/ccna/` (standalone source: <https://github.com/reid-json/CCNA>).
+The CKA study site lives in `public/apps/cka/` (source: <https://github.com/reid-json/CKA>).
+Morning Pages lives in `public/apps/morning-pages/` (private source: `reid-json/Agentic_Research`).
+Its source repository's daily GitHub Actions job publishes verified reading at 5 AM
+America/Chicago and updates this copy using a repository-scoped SSH deploy key.
+Do not edit its generated content here; update the source and run its publishing workflow.
+
+The project inventory also includes DAW, BookStore, Shelves, ClientServer, and
+Geekcode. Source-only desktop/university projects and work in development are
+labeled separately and do not have misleading "Open app" buttons. The hero
+counts only projects with actual hosted app links. Private research and
+automation repositories are not advertised as public source links.
 
 ## Vue/Vite template notes
 

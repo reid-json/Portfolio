@@ -1,0 +1,388 @@
+{
+  "date": "2026-10-18",
+  "sample": true,
+  "generatedAt": "2026-10-19T23:05:34.985147+00:00",
+  "tone": "Warm, curious, practical. An invitation to explore, not a substitute for the source.",
+  "articles": [
+    {
+      "id": "5b17afb02159",
+      "date": "2026-10-18",
+      "category": "tech",
+      "title": "A password is not a second factor",
+      "summary": "A second password still belongs to the same kind of proof: something you know. Multifactor authentication combines different kinds of proof, such as a password and possession of a security key. That distinction is useful when evaluating a service's sign-in options.",
+      "body": [
+        "A second password still belongs to the same kind of proof: something you know. Multifactor authentication combines different kinds of proof, such as a password and possession of a security key. That distinction is useful when evaluating a service's sign-in options.",
+        "Make an inventory of your important accounts. Start with the email account used to reset the others, review its available authentication methods, and store recovery codes somewhere separate from the device you use to sign in. Recovery is part of the design, not an afterthought."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-18/5b17afb02159.svg",
+      "imageAlt": "Original abstract tech illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication",
+          "site": "GitHub Docs",
+          "title": "About two-factor authentication",
+          "retrievedAt": "2026-10-19T23:05:34.985147+00:00"
+        }
+      ],
+      "tags": [
+        "Tech",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "5b17afb02159-1",
+          "prompt": "Which pairing uses different kinds of authentication factors?",
+          "options": [
+            "Password and security key",
+            "Password and another password",
+            "Two security questions"
+          ],
+          "answer": 0,
+          "explanation": "A second password still belongs to the same kind of proof: something you know. Multifactor authentication combines different kinds of proof, such as a password and possession of a security key. That distinction is useful when evaluating a service's sign-in options. Make an inventory of your important accounts. Start with the email account used to reset the others, review its available authentication methods, and store recovery codes somewhere separate from the device you use to sign in. Recovery is part of the design, not an afterthought."
+        },
+        {
+          "id": "5b17afb02159-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "7d9bc97d4198",
+      "date": "2026-10-18",
+      "category": "coding",
+      "title": "Concept of the Day: name the missing value",
+      "summary": "A lookup may return nothing. Treat that possibility as part of the method's contract, rather than as an inconvenient surprise. Optional can make absence visible to a caller.",
+      "body": [
+        "A lookup may return nothing. Treat that possibility as part of the method's contract, rather than as an inconvenient surprise. Optional can make absence visible to a caller.",
+        "Try the example with and without a name. Avoid calling get without checking whether a value exists. Pick a meaningful alternative or handle the empty case deliberately; a silent placeholder can hide a real data problem."
+      ],
+      "code": "import java.util.Optional;\nclass Main {\n  public static void main(String[] args) {\n    Optional<String> name = Optional.empty();\n    System.out.println(name.orElse(\"Reader\"));\n  }\n}",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-18/7d9bc97d4198.svg",
+      "imageAlt": "Original abstract programming illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html",
+          "site": "Oracle Java",
+          "title": "Optional class",
+          "retrievedAt": "2026-10-19T23:05:34.985147+00:00"
+        }
+      ],
+      "tags": [
+        "Programming",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "7d9bc97d4198-1",
+          "prompt": "What does Optional make explicit?",
+          "options": [
+            "A value may be absent",
+            "Every value is a string",
+            "Errors can be ignored"
+          ],
+          "answer": 0,
+          "explanation": "A lookup may return nothing. Treat that possibility as part of the method's contract, rather than as an inconvenient surprise. Optional can make absence visible to a caller. Try the example with and without a name. Avoid calling get without checking whether a value exists. Pick a meaningful alternative or handle the empty case deliberately; a silent placeholder can hide a real data problem."
+        },
+        {
+          "id": "7d9bc97d4198-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "7e8fcc0764ec",
+      "date": "2026-10-18",
+      "category": "guitar",
+      "title": "Make one chord change a tiny study",
+      "summary": "A chord change contains several small decisions: which finger moves first, which fingers can stay close to the strings, and whether the new shape arrives together. Isolate one pair rather than racing through an entire song.",
+      "body": [
+        "A chord change contains several small decisions: which finger moves first, which fingers can stay close to the strings, and whether the new shape arrives together. Isolate one pair rather than racing through an entire song.",
+        "Move slowly, listen for clean notes, and release unnecessary pressure between attempts. A short recording can reveal a pause you did not notice while playing. Compare the movement tomorrow at the same pace, not just a higher count."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-18/7e8fcc0764ec.svg",
+      "imageAlt": "Original abstract guitar illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.justinguitar.com/guitar-lessons/one-minute-changes-exercise-b1-110",
+          "site": "JustinGuitar",
+          "title": "One minute changes",
+          "retrievedAt": "2026-10-19T23:05:34.985147+00:00"
+        }
+      ],
+      "tags": [
+        "Guitar",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "7e8fcc0764ec-1",
+          "prompt": "Why isolate a single chord change?",
+          "options": [
+            "To examine the movement clearly",
+            "To avoid listening",
+            "To guarantee instant speed"
+          ],
+          "answer": 0,
+          "explanation": "A chord change contains several small decisions: which finger moves first, which fingers can stay close to the strings, and whether the new shape arrives together. Isolate one pair rather than racing through an entire song. Move slowly, listen for clean notes, and release unnecessary pressure between attempts. A short recording can reveal a pause you did not notice while playing. Compare the movement tomorrow at the same pace, not just a higher count."
+        },
+        {
+          "id": "7e8fcc0764ec-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "4a230c723b3c",
+      "date": "2026-10-18",
+      "category": "music",
+      "title": "Listen for the bass before the melody",
+      "summary": "On a first listen, melody often takes the spotlight. On a second pass, follow the lowest moving part. Notice whether it shadows the kick drum, sustains across it, or creates a contrasting rhythm.",
+      "body": [
+        "On a first listen, melody often takes the spotlight. On a second pass, follow the lowest moving part. Notice whether it shadows the kick drum, sustains across it, or creates a contrasting rhythm.",
+        "Try describing one section without judging it: sparse bass, repeated notes, a rising line. Then listen for the transition to the next section. This is a reusable listening experiment for your next new release, not a claim that every track uses the same arrangement."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-18/4a230c723b3c.svg",
+      "imageAlt": "Original abstract new music illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://learningmusic.ableton.com/make-basslines/make-basslines.html",
+          "site": "Ableton",
+          "title": "Learning Music: basslines",
+          "retrievedAt": "2026-10-19T23:05:34.985147+00:00"
+        }
+      ],
+      "tags": [
+        "New Music",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "4a230c723b3c-1",
+          "prompt": "What is the point of isolating one instrument while listening?",
+          "options": [
+            "To notice its role in the arrangement",
+            "To decide all music is identical",
+            "To ignore the rest forever"
+          ],
+          "answer": 0,
+          "explanation": "On a first listen, melody often takes the spotlight. On a second pass, follow the lowest moving part. Notice whether it shadows the kick drum, sustains across it, or creates a contrasting rhythm. Try describing one section without judging it: sparse bass, repeated notes, a rising line. Then listen for the transition to the next section. This is a reusable listening experiment for your next new release, not a claim that every track uses the same arrangement."
+        },
+        {
+          "id": "4a230c723b3c-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "a02c94a67d35",
+      "date": "2026-10-18",
+      "category": "philosophy",
+      "title": "Idea of the Day: what would change your mind?",
+      "summary": "A useful way to examine a belief is to ask what supports it and what evidence might count against it. Confidence and justification are related questions, but they are not the same question.",
+      "body": [
+        "A useful way to examine a belief is to ask what supports it and what evidence might count against it. Confidence and justification are related questions, but they are not the same question.",
+        "Choose a low-stakes belief and write one reason for it. Then describe an observation that would make you reconsider. If you cannot imagine one, investigate whether the claim is too vague to test or belongs to a different kind of inquiry. This is an original reflection prompt, not a historical quotation."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-18/a02c94a67d35.svg",
+      "imageAlt": "Original abstract philosophy & reading illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://plato.stanford.edu/entries/epistemology/",
+          "site": "Stanford Encyclopedia of Philosophy",
+          "title": "Epistemology",
+          "retrievedAt": "2026-10-19T23:05:34.985147+00:00"
+        }
+      ],
+      "tags": [
+        "Philosophy & Reading",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "a02c94a67d35-1",
+          "prompt": "Which question encourages examining a belief?",
+          "options": [
+            "How can I avoid all disagreement?",
+            "What evidence would make me reconsider?",
+            "Can I repeat it more loudly?"
+          ],
+          "answer": 1,
+          "explanation": "A useful way to examine a belief is to ask what supports it and what evidence might count against it. Confidence and justification are related questions, but they are not the same question. Choose a low-stakes belief and write one reason for it. Then describe an observation that would make you reconsider. If you cannot imagine one, investigate whether the claim is too vague to test or belongs to a different kind of inquiry. This is an original reflection prompt, not a historical quotation."
+        },
+        {
+          "id": "a02c94a67d35-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "8d75e9c2f621",
+      "date": "2026-10-18",
+      "category": "health",
+      "title": "Track the training you actually did",
+      "summary": "A training log is a description, not a verdict. Record what you did, how it felt, and any practical barrier you encountered. The purpose is to make the next decision better informed.",
+      "body": [
+        "A training log is a description, not a verdict. Record what you did, how it felt, and any practical barrier you encountered. The purpose is to make the next decision better informed.",
+        "Avoid interpreting one unusually good or bad session as a trend. Look for patterns over time and keep the plan appropriate to your current ability. General public-health guidance does not replace individualized advice, especially when pain, illness, or a medical condition changes what is suitable."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-18/8d75e9c2f621.svg",
+      "imageAlt": "Original abstract training & health illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+          "site": "CDC",
+          "title": "Adult activity guidelines",
+          "retrievedAt": "2026-10-19T23:05:34.985147+00:00"
+        }
+      ],
+      "tags": [
+        "Training & Health",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "8d75e9c2f621-1",
+          "prompt": "How should a single difficult workout be interpreted?",
+          "options": [
+            "As proof the entire plan failed",
+            "As one observation, not automatically a trend",
+            "As a reason to ignore pain"
+          ],
+          "answer": 1,
+          "explanation": "A training log is a description, not a verdict. Record what you did, how it felt, and any practical barrier you encountered. The purpose is to make the next decision better informed. Avoid interpreting one unusually good or bad session as a trend. Look for patterns over time and keep the plan appropriate to your current ability. General public-health guidance does not replace individualized advice, especially when pain, illness, or a medical condition changes what is suitable."
+        },
+        {
+          "id": "8d75e9c2f621-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "b75dd21c9cec",
+      "date": "2026-10-18",
+      "category": "anime",
+      "title": "Keep a spoiler-light recommendation note",
+      "summary": "A recommendation can explain the appeal of a story without recounting its surprises. Focus on tone, pacing, visual style, and the sort of reader who might enjoy it.",
+      "body": [
+        "A recommendation can explain the appeal of a story without recounting its surprises. Focus on tone, pacing, visual style, and the sort of reader who might enjoy it.",
+        "Write two sentences about a series you have actually read. Separate your preference from a factual claim, and check official publisher information for availability. Mark anything that reveals a major turn before sharing the note. Curiosity is a better invitation than a plot summary that removes the discovery."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-18/b75dd21c9cec.svg",
+      "imageAlt": "Original abstract anime & manga illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.viz.com/shonenjump",
+          "site": "VIZ",
+          "title": "Shonen Jump",
+          "retrievedAt": "2026-10-19T23:05:34.985147+00:00"
+        }
+      ],
+      "tags": [
+        "Anime & Manga",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "b75dd21c9cec-1",
+          "prompt": "Which makes a useful spoiler-light recommendation?",
+          "options": [
+            "Tone and appeal without major plot revelations",
+            "Every ending in detail",
+            "A claim that taste is universal"
+          ],
+          "answer": 0,
+          "explanation": "A recommendation can explain the appeal of a story without recounting its surprises. Focus on tone, pacing, visual style, and the sort of reader who might enjoy it. Write two sentences about a series you have actually read. Separate your preference from a factual claim, and check official publisher information for availability. Mark anything that reveals a major turn before sharing the note. Curiosity is a better invitation than a plot summary that removes the discovery."
+        },
+        {
+          "id": "b75dd21c9cec-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    }
+  ],
+  "conceptId": "7d9bc97d4198",
+  "ideaId": "a02c94a67d35"
+}

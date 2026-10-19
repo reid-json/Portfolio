@@ -1,7 +1,8 @@
 <script setup>
 import { profile, skills, projects } from '../data/site.js'
 
-const featuredProject = projects.find((project) => project.featured) || projects[0]
+const featuredProject = projects.find((project) => project.featured && project.link) || projects.find((project) => project.link)
+const liveAppCount = projects.filter((project) => project.link).length
 </script>
 
 <template>
@@ -17,7 +18,7 @@ const featuredProject = projects.find((project) => project.featured) || projects
         </div>
         <div class="hero-meta">
           <span>{{ profile.education }}</span>
-          <span>{{ projects.length }} live learning apps</span>
+          <span>{{ liveAppCount }} live apps · {{ projects.length }} projects</span>
         </div>
       </div>
       <aside v-if="featuredProject" class="feature-panel" aria-label="Featured project">
@@ -59,7 +60,7 @@ const featuredProject = projects.find((project) => project.featured) || projects
       </div>
       <div class="project-grid">
         <article v-for="(project, index) in projects" :key="project.title" class="project-card">
-          <div class="project-top"><span class="project-number">{{ String(index + 1).padStart(2, '0') }}</span><span class="project-category">{{ project.category || 'Web application' }}</span><span class="project-status">Live</span></div>
+          <div class="project-top"><span class="project-number">{{ String(index + 1).padStart(2, '0') }}</span><span class="project-category">{{ project.category || 'Web application' }}</span><span class="project-status">{{ project.link ? 'Live' : project.status || 'Source project' }}</span></div>
           <h3>{{ project.name || project.title }}</h3>
           <p>{{ project.description }}</p>
           <ul v-if="project.highlights?.length" class="project-highlights">
@@ -67,7 +68,7 @@ const featuredProject = projects.find((project) => project.featured) || projects
           </ul>
           <ul class="tags" aria-label="Project technologies"><li v-for="tag in project.tags" :key="tag">{{ tag }}</li></ul>
           <div class="card-links">
-            <a :href="project.link" class="btn primary" :aria-label="`Open ${project.name || project.title}`">Open app <span aria-hidden="true">↗</span></a>
+            <a v-if="project.link" :href="project.link" class="btn primary" :aria-label="`Open ${project.name || project.title}`">Open app <span aria-hidden="true">↗</span></a>
             <a v-if="project.repo" :href="project.repo" target="_blank" rel="noopener noreferrer" class="text-link" :aria-label="`${project.name || project.title} source on GitHub`">View source <span aria-hidden="true">↗</span></a>
           </div>
         </article>
