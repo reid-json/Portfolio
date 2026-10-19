@@ -10,8 +10,21 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="exam.css">
   <script src="theme.js"></script>
   <script src="data.js" defer></script>
+  <script src="study-nf-1.js" defer></script>
+  <script src="study-nf-2.js" defer></script>
+  <script src="study-na-1.js" defer></script>
+  <script src="study-na-2.js" defer></script>
+  <script src="study-ip-1.js" defer></script>
+  <script src="study-ip-2.js" defer></script>
+  <script src="study-ip-3.js" defer></script>
+  <script src="study-is-1.js" defer></script>
+  <script src="study-sf-1.js" defer></script>
+  <script src="study-sf-2.js" defer></script>
+  <script src="study-ap-1.js" defer></script>
+  <script src="bank.js" defer></script>
   <script src="quiz.js" defer></script>
   <script src="study.js" defer></script>
 </head>
@@ -36,6 +49,8 @@
     <div class="domain-tabs" id="domain-tabs" role="tablist" aria-label="Exam domains"></div>
     <div id="domain-summary" class="summary" hidden></div>
 
+    <div class="topic-picker"><label for="topic-select">Jump to topic</label><select id="topic-select"></select></div>
+
     <div class="study-grid">
       <section class="panel learn-panel" id="lesson" aria-label="Quick learn"></section>
       <section class="panel" aria-label="Question">
@@ -46,7 +61,7 @@
 
     <div class="study-nav">
       <button class="btn" id="prev" type="button">← Previous</button>
-      <div class="dots" id="dots" aria-label="Questions in this domain"></div>
+      <div class="dots" id="dots" aria-label="Questions in this topic"></div>
       <button class="btn primary" id="next" type="button">Next →</button>
     </div>
     <p class="shortcuts">Shortcuts: <kbd>1</kbd>–<kbd>5</kbd> pick an answer · <kbd>←</kbd> <kbd>→</kbd> move between questions · <button class="btn small" id="reset-domain" type="button">Reset this domain</button></p>

@@ -1,9 +1,8 @@
-// Extra questions used only by the practice exam (they have no quick-lesson, so the study page ignores them).
-// Together with data.js this makes a 100-question bank: 90 multiple choice, 7 drag-and-drop and 3 CLI labs.
-// Add more by pushing objects onto questionBank. Types: mc (default), dnd, lab.
+// Exam-only questions: hand-built multiple choice, drag-and-drop and the CLI labs.
+// More exam questions live in exam-<domain>.js (examPool). Types: mc (default), dnd, lab.
 const mc = (id, domain, question, options, answer, explanation) => ({ id, domain, examOnly: true, question, options, answer, explanation });
 
-questionBank.push(
+examBank.push(
   /* Network Fundamentals */
   mc("x-nf-1", "network-fundamentals", "Which OSI layer provides end-to-end delivery, segmentation, and error recovery between hosts?", ["Network", "Transport", "Session", "Data link"], [1], "The transport layer (TCP/UDP) handles segmentation and end-to-end delivery. TCP adds reliability and error recovery."),
   mc("x-nf-2", "network-fundamentals", "Which connection has traditionally required a crossover cable when auto-MDIX is not available?", ["PC to switch", "Router to switch", "Switch to switch", "Server to switch"], [2], "Like devices (switch to switch, PC to PC, router to router) transmit and receive on the same pairs, so a crossover cable was needed. Modern ports use auto-MDIX."),

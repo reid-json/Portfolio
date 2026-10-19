@@ -73,6 +73,13 @@ const modules = [
   }
 ];
 
+// Content pools. questionBank below is the starter study set. More study questions are added by
+// study-*.js (studyTopics) and exam-only questions by exam-bank.js / exam-*.js (examBank, examPool).
+// bank.js merges them into studyBank and examBank.
+const studyTopics = [];
+const examPool = [];
+const examBank = [];
+
 const questionBank = [
   // ───────────── Network Fundamentals ─────────────
   {

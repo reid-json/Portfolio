@@ -1,12 +1,12 @@
 const store = loadStore();
 const PASS_TARGET = 80;
-const total = questionBank.length;
+const total = examQuestions.length;
 const MINUTES_PER_QUESTION = 1.2; // 100 questions = 120 minutes, like the real exam
 const lengthOptions = [
-  { id: "full", count: total, title: "Full CCNA practice exam", text: "Every question, including drag-and-drop and CLI labs." },
-  { id: "half", count: Math.min(50, total), title: "Half exam", text: "A weighted mix across all six domains. No labs." },
-  { id: "quick", count: Math.min(20, total), title: "Quick check", text: "A short weighted mix. No labs." }
-].map((option) => ({ ...option, minutes: Math.round(option.count * MINUTES_PER_QUESTION) }));
+  { id: "full", count: 100, title: "Full CCNA practice exam", text: "100 questions drawn from the exam pool, with drag-and-drop and CLI labs." },
+  { id: "half", count: 50, title: "Half exam", text: "A weighted mix across all six domains. No labs." },
+  { id: "quick", count: 20, title: "Quick check", text: "A short weighted mix. No labs." }
+].map((option) => ({ ...option, count: Math.min(option.count, total), minutes: Math.round(Math.min(option.count, total) * MINUTES_PER_QUESTION) }));
 
 let settings = { length: "full", feedback: true, timer: true };
 let exam = null; // { questions, answers, flagged, checked, order, feedback, timed, limit, startedAt, index, interval }
@@ -32,20 +32,22 @@ function shuffle(items) {
 }
 
 // Allocates questions to each domain by exam weight (largest remainder), then shuffles the combined set.
-function pickQuestions(count) {
-  if (count >= total) return shuffle(questionBank);
-  const bank = questionBank.filter((q) => qType(q) !== "lab");
+// The full exam always includes every lab; shorter exams skip labs.
+function pickQuestions(count, withLabs) {
+  const labs = withLabs ? shuffle(examQuestions.filter((q) => qType(q) === "lab")) : [];
+  const bank = examQuestions.filter((q) => qType(q) !== "lab");
+  const target = count - labs.length;
   const pools = modules.map((module) => shuffle(bank.filter((q) => q.domain === module.id)));
-  const raw = modules.map((module) => count * module.weightPct / 100);
+  const raw = modules.map((module) => target * module.weightPct / 100);
   const alloc = raw.map((value, i) => Math.min(Math.floor(value), pools[i].length));
-  let remaining = count - alloc.reduce((a, b) => a + b, 0);
+  let remaining = target - alloc.reduce((a, b) => a + b, 0);
   const order = raw.map((value, i) => ({ i, frac: value - Math.floor(value) })).sort((a, b) => b.frac - a.frac);
-  for (let round = 0; remaining > 0 && round < 3; round += 1) {
+  for (let round = 0; remaining > 0 && round < 5; round += 1) {
     for (const { i } of order) {
       if (remaining > 0 && alloc[i] < pools[i].length) { alloc[i] += 1; remaining -= 1; }
     }
   }
-  return shuffle(pools.flatMap((pool, i) => pool.slice(0, alloc[i])));
+  return shuffle([...labs, ...pools.flatMap((pool, i) => pool.slice(0, alloc[i]))]);
 }
 
 function formatTime(seconds) {
@@ -60,6 +62,7 @@ function formatTime(seconds) {
 
 /* ── Setup ── */
 function renderSetup() {
+  document.getElementById("pool-note").textContent = `The full exam mirrors the real CCNA 200-301: 100 questions in 120 minutes, mixing multiple choice, drag-and-drop matching, and hands-on CLI labs, weighted by domain. The exam-only pool has ${total} questions that never appear on the study page, so every attempt is different.`;
   const list = document.getElementById("length-choices");
   list.replaceChildren();
   lengthOptions.forEach((option) => {
@@ -107,7 +110,7 @@ document.getElementById("start").addEventListener("click", startExam);
 /* ── Running ── */
 function startExam() {
   const option = lengthOptions.find((item) => item.id === settings.length);
-  const questions = pickQuestions(option.count);
+  const questions = pickQuestions(option.count, option.id === "full");
   exam = {
     questions,
     answers: {},

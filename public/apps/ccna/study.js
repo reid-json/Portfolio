@@ -10,7 +10,23 @@ let domainId = hashDomain() || store.lastDomain || modules[0].id;
 if (!moduleById(domainId)) domainId = modules[0].id;
 
 function domainQuestions(id) {
-  return questionBank.filter((question) => question.domain === id);
+  return studyBank.filter((question) => question.domain === id);
+}
+
+function topicOf(question) {
+  return question.topic || question.lesson.title;
+}
+
+// Topics in order of first appearance, each with the index of its first question in the domain.
+function domainTopics(id) {
+  const topics = [];
+  domainQuestions(id).forEach((question, index) => {
+    const name = topicOf(question);
+    let topic = topics.find((item) => item.name === name);
+    if (!topic) { topic = { name, start: index, indexes: [] }; topics.push(topic); }
+    topic.indexes.push(index);
+  });
+  return topics;
 }
 
 function domainState(id) {
@@ -139,13 +155,26 @@ function render() {
     onCheck: () => commit(question, pending[question.id] || [])
   });
 
+  const topics = domainTopics(domainId);
+  const current = topics.find((topic) => topic.indexes.includes(state.index));
+  const select = document.getElementById("topic-select");
+  select.replaceChildren();
+  topics.forEach((topic) => {
+    const done = topic.indexes.filter((i) => state.answers[questions[i].id]).length;
+    const option = node("option", "", `${topic.name} (${done}/${topic.indexes.length})`);
+    option.value = String(topic.start);
+    option.selected = topic === current;
+    select.append(option);
+  });
+
   const dots = document.getElementById("dots");
   dots.replaceChildren();
-  questions.forEach((item, index) => {
+  current.indexes.forEach((index) => {
+    const item = questions[index];
     const answer = state.answers[item.id];
-    const dot = node("button", `dot${index === state.index ? " current" : ""}${answer ? (answer.correct ? " right" : " wrong") : ""}`, String(index + 1));
+    const dot = node("button", `dot${index === state.index ? " current" : ""}${answer ? (answer.correct ? " right" : " wrong") : ""}`, String(index - current.start + 1));
     dot.type = "button";
-    dot.setAttribute("aria-label", `Question ${index + 1}${answer ? (answer.correct ? ", correct" : ", incorrect") : ""}`);
+    dot.setAttribute("aria-label", `Question ${index - current.start + 1} of this topic${answer ? (answer.correct ? ", correct" : ", incorrect") : ""}`);
     dot.addEventListener("click", () => goTo(index));
     dots.append(dot);
   });
@@ -157,6 +186,7 @@ function render() {
 }
 
 document.getElementById("prev").addEventListener("click", () => goTo(domainState(domainId).index - 1));
+document.getElementById("topic-select").addEventListener("change", (event) => goTo(Number(event.target.value)));
 document.getElementById("next").addEventListener("click", () => goTo(domainState(domainId).index + 1));
 document.getElementById("reset-domain").addEventListener("click", () => {
   if (!window.confirm("Clear your answers for this domain and start it again?")) return;
