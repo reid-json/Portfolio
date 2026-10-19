@@ -23,6 +23,9 @@
         <button class="nav-link" data-view="exams"><span>◷</span> Mock exams</button>
         <button class="nav-link" data-view="reference"><span>⌕</span> Reference library</button>
         <button class="nav-link" data-view="progress"><span>▥</span> Progress &amp; planner</button>
+        <button class="nav-link" data-view="notes"><span>✎</span> Smart Notes</button>
+        <button class="nav-link" data-view="career"><span>↗</span> Career Kit</button>
+        <button class="nav-link" data-view="game"><span>✦</span> Relay map &amp; quests</button>
       </nav>
       <div class="sidebar-bottom">
         <div class="offline-chip"><span></span> Works offline</div>
@@ -35,6 +38,7 @@
         <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation">☰</button>
         <div class="breadcrumbs"><span>Study space</span><b>/</b><strong id="page-label">Overview</strong></div>
         <label class="searchbox"><span>⌕</span><input id="global-search" type="search" placeholder="Search lessons and reference…" autocomplete="off"><kbd>/</kbd></label>
+        <button class="button quiet quick-note" data-action="quick-note" title="Quick capture (N)">Note +</button>
         <button class="avatar" title="Your local study profile">JR</button>
       </header>
       <div id="search-results" class="search-results" hidden></div>
@@ -45,6 +49,9 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="curriculum.js"></script>
   <script src="simulator.js"></script>
+  <script src="notes-store.js"></script>
+  <script src="career-kit.js"></script>
+  <script src="game-engine.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

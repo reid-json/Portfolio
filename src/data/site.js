@@ -27,7 +27,7 @@ export const projects = [
   },
   {
     title: 'ClusterCraft — CKA Study Site',
-    description: 'Offline-first Kubernetes administration lessons, a bounded practice simulator, state-graded labs, and timed mock tasks.',
+    description: 'Offline-first Kubernetes lessons with prediction-first learning, a bounded practice simulator, graded labs, Smart Notes, evidence-based career practice, local game progression, and timed mock tasks.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Kubernetes'],
     link: '/apps/cka/index.html',
     repo: 'https://github.com/reid-json/CKA',

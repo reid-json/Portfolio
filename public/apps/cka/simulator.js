@@ -82,6 +82,10 @@
     while (existing.length < dep.replicas) {
       existing.push(addPod(dep.name + "-" + Math.random().toString(36).slice(2, 7), dep.namespace, dep.image, dep.labels, key));
     }
+    existing.forEach((pod) => {
+      pod.image = dep.image;
+      pod.labels = clone(dep.labels || {});
+    });
     dep.ready = existing.filter((pod) => pod.status === "Running").length;
     dep.available = dep.ready;
   }
@@ -169,7 +173,9 @@
         return `deployment.apps/${name} created`;
       }
       if (resource === "configmap" || resource === "cm" || resource === "secret") {
-        const name = parts[1]; if (!name) return "error: NAME is required";
+        const nameIndex = resource === "secret" && parts[1] === "generic" ? 2 : 1;
+        if (resource === "secret" && nameIndex !== 2) return errorUnsupported("kubectl create secret " + parts.slice(1).join(" "));
+        const name = parts[nameIndex]; if (!name) return "error: NAME is required";
         const data = {};
         parts.filter((x) => x.startsWith("--from-literal=")).forEach((x) => {
           const pair = x.slice(15).split("="); data[pair.shift()] = pair.join("=");
@@ -430,6 +436,48 @@
         description: "Add label `disk=ssd` to node `worker-b`.",
         namespace: "default", weight: 5, hint: "Node labels are cluster-scoped, not namespaced.", strongerHint: "Run `kubectl label node worker-b disk=ssd`.", solution: ["kubectl label node worker-b disk=ssd"],
         grade() { const n = current().nodes.find((x) => x.name === "worker-b"); return [{ label: "worker-b has disk=ssd", pass: !!n && n.labels.disk === "ssd" }]; }
+      },
+      {
+        id: "create-namespace",
+        title: "Create an isolated workspace",
+        description: "Create the namespace `observability` and verify that it appears in the namespace list.",
+        namespace: "default", weight: 5, hint: "A namespace is cluster-scoped; which kubectl resource names it?", strongerHint: "Try `kubectl create namespace observability`, then list namespaces.", solution: ["kubectl create namespace observability"],
+        grade() { return [{ label: "observability namespace exists", pass: current().namespaces.includes("observability") }]; }
+      },
+      {
+        id: "run-pod",
+        title: "Start a one-off diagnostic Pod",
+        description: "In namespace `shop`, create Pod `netcheck` from image `busybox:1.36` and confirm that it is Running.",
+        namespace: "shop", weight: 8, hint: "Which imperative command starts a single Pod rather than a controller?", strongerHint: "Use `kubectl run` with the Pod name, image, and namespace.", solution: ["kubectl run netcheck --image=busybox:1.36 -n shop"],
+        grade() { const pod = current().pods["shop/netcheck"]; return [{ label: "netcheck exists in shop", pass: !!pod }, { label: "Pod uses busybox:1.36 and is Running", pass: !!pod && pod.image === "busybox:1.36" && pod.status === "Running" }]; }
+      },
+      {
+        id: "create-secret",
+        title: "Provide a simulated application credential",
+        description: "Create Secret `api-credentials` in namespace `shop` with key `token` and value `training-only`.",
+        namespace: "shop", weight: 8, hint: "Which create subcommand accepts key/value literals for sensitive application configuration?", strongerHint: "Use `kubectl create secret generic` with `--from-literal=token=training-only` and `-n shop`.", solution: ["kubectl create secret generic api-credentials --from-literal=token=training-only -n shop"],
+        grade() { const secret = current().secrets["shop/api-credentials"]; return [{ label: "api-credentials Secret exists in shop", pass: !!secret }, { label: "token has the requested value", pass: !!secret && secret.data.token === "training-only" }]; }
+      },
+      {
+        id: "expose-nodeport",
+        title: "Expose a workload through a node port",
+        description: "Create Deployment `catalog` in `shop` with image `nginx:1.27`, then expose it as NodePort `catalog-public` on port 8080.",
+        namespace: "shop", weight: 8, hint: "Which Service type exposes a service through a port on each node?", strongerHint: "Create the Deployment, then use `kubectl expose` with `--name`, `--port=8080`, and `--type=NodePort`.", solution: ["kubectl create deployment catalog --image=nginx:1.27 -n shop", "kubectl expose deployment catalog --name=catalog-public --port=8080 --type=NodePort -n shop"],
+        grade() { const dep = current().deployments["shop/catalog"], service = current().services["shop/catalog-public"]; return [{ label: "catalog Deployment uses nginx:1.27", pass: !!dep && dep.image === "nginx:1.27" }, { label: "catalog-public is a NodePort Service on port 8080", pass: !!service && service.type === "NodePort" && service.port === 8080 }, { label: "Service selector matches the Deployment", pass: !!dep && !!service && service.selector.app === dep.name }]; }
+      },
+      {
+        id: "taint-node",
+        title: "Reserve a node for a workload class",
+        description: "Add taint `dedicated=infra:NoSchedule` to node `worker-b`.",
+        namespace: "default", weight: 8, hint: "A NoSchedule taint repels Pods unless they tolerate it. Which node-level command adds one?", strongerHint: "Use `kubectl taint nodes worker-b dedicated=infra:NoSchedule`.", solution: ["kubectl taint nodes worker-b dedicated=infra:NoSchedule"],
+        grade() { const node = current().nodes.find((item) => item.name === "worker-b"); return [{ label: "worker-b has the dedicated=infra:NoSchedule taint", pass: !!node && node.taints.includes("dedicated=infra:NoSchedule") }]; }
+      },
+      {
+        id: "rollback-image",
+        title: "Roll back a risky image change",
+        description: "In namespace `shop`, ensure Deployment `frontend` uses `nginx:1.27` after undoing its update from `nginx:1.27` to `nginx:1.28`.",
+        namespace: "shop", weight: 10, hint: "Rollout history can be undone when a previous revision is recorded. What must happen before the rollback?", strongerHint: "Create `frontend`, update its image, then run `kubectl rollout undo deployment/frontend -n shop`.", solution: ["kubectl create deployment frontend --image=nginx:1.27 -n shop", "kubectl set image deployment/frontend frontend=nginx:1.28 -n shop", "kubectl rollout undo deployment/frontend -n shop"],
+        grade() { const dep = current().deployments["shop/frontend"]; return [{ label: "frontend Deployment exists", pass: !!dep }, { label: "frontend is restored to nginx:1.27", pass: !!dep && dep.image === "nginx:1.27" }, { label: "frontend Pods use nginx:1.27", pass: !!dep && listPods("shop", false).filter((pod) => pod.owner === "shop/frontend").every((pod) => pod.image === "nginx:1.27") }]; }
       }
     ];
   }
