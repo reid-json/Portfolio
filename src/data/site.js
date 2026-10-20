@@ -89,10 +89,12 @@ export const projects = [
   },
   {
     title: 'Geekcode',
-    category: 'Coding practice',
-    description: 'A coding-practice application in development. Not yet published as a live app.',
-    tags: ['Coding Practice', 'In Development'],
-    status: 'In development',
+    name: 'Geekcode',
+    category: 'Coding practice & interview preparation',
+    description: 'A local-first engineering practice lab with browser-based code execution, question-led coaching, integrated notes, spaced review, and evidence-backed career drafts.',
+    highlights: ['157 exercises, 72 lessons & 360 flashcards across six tracks', 'JavaScript, TypeScript, Python & SQL execution in browser Workers', 'Offline PWA, Smart Notes & honest practice-to-career reports'],
+    tags: ['React', 'TypeScript', 'Python', 'WebAssembly'],
+    link: 'https://reid-json.github.io/Geekcode/',
     repo: 'https://github.com/reid-json/Geekcode',
   },
 ]
