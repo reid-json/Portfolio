@@ -1,0 +1,822 @@
+{
+  "date": "2026-10-22",
+  "sample": false,
+  "generatedAt": "2026-10-22T10:58:49.105426+00:00",
+  "tone": "Warm, curious, practical. An invitation to explore, not a substitute for the source.",
+  "articles": [
+    {
+      "id": "df88c52b62ca",
+      "date": "2026-10-22",
+      "category": "tech",
+      "title": "Choose a small, testable automation",
+      "summary": "A useful automation has a clear input, an observable result, and a visible failure. Start with a repetitive task you already understand rather than a vague goal such as automating everything.",
+      "body": [
+        "A useful automation has a clear input, an observable result, and a visible failure. Start with a repetitive task you already understand rather than a vague goal such as automating everything.",
+        "Sketch the steps as a checklist. Decide which steps need credentials and what should happen if a source is unavailable. Run the checklist manually once, automate it, and inspect the resulting files. The real measure of success is not whether a job turns green, but whether its output is correct and recoverable."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-22/df88c52b62ca.svg",
+      "imageAlt": "Original abstract tech illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://docs.github.com/en/actions/about-github-actions/understanding-github-actions",
+          "site": "GitHub Docs",
+          "title": "Understanding GitHub Actions",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "tags": [
+        "Tech",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "df88c52b62ca-1",
+          "prompt": "What should a reliable automation make visible?",
+          "options": [
+            "Only successful runs",
+            "Its failures and resulting output",
+            "As little information as possible"
+          ],
+          "answer": 1,
+          "explanation": "A useful automation has a clear input, an observable result, and a visible failure. Start with a repetitive task you already understand rather than a vague goal such as automating everything. Sketch the steps as a checklist. Decide which steps need credentials and what should happen if a source is unavailable. Run the checklist manually once, automate it, and inspect the resulting files. The real measure of success is not whether a job turns green, but whether its output is correct and recoverable."
+        },
+        {
+          "id": "df88c52b62ca-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "813711696cd8",
+      "date": "2026-10-22",
+      "category": "tech",
+      "title": "Tech reading desk: APOD: 2026 October 22 \u2013 The First Green Star, WD J1330+6435",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-22",
+      "body": [
+        "On the reading desk: \"APOD: 2026 October 22 \u2013 The First Green Star, WD J1330+6435\". The linked source is dated 2026-10-22. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Separate what was demonstrated from what is promised. Look for the measurement, the comparison, and the constraints before deciding what a new technology changes.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A useful automation has a clear input, an observable result, and a visible failure. Start with a repetitive task you already understand rather than a vague goal such as automating everything."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Tech",
+        "reading desk"
+      ],
+      "image": "content/2026-10-22/813711696cd8.svg",
+      "imageAlt": "Original paper-and-shapes illustration for tech",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/image-article/apod-2026-october-22-the-first-green-star-wd-j13306435/",
+          "site": "Tech source",
+          "title": "APOD: 2026 October 22 \u2013 The First Green Star, WD J1330+6435",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        },
+        {
+          "url": "https://docs.github.com/en/actions/about-github-actions/understanding-github-actions",
+          "site": "GitHub Docs",
+          "title": "Understanding GitHub Actions",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "813711696cd8-1",
+          "prompt": "What should a reliable automation make visible?",
+          "options": [
+            "Only successful runs",
+            "Its failures and resulting output",
+            "As little information as possible"
+          ],
+          "answer": 1,
+          "explanation": "A useful automation has a clear input, an observable result, and a visible failure. Start with a repetitive task you already understand rather than a vague goal such as automating everything. Sketch the steps as a checklist. Decide which steps need credentials and what should happen if a source is unavailable. Run the checklist manually once, automate it, and inspect the resulting files. The real measure of success is not whether a job turns green, but whether its output is correct and recoverable."
+        },
+        {
+          "id": "813711696cd8-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "43ac84ae07f4",
+      "date": "2026-10-22",
+      "category": "coding",
+      "title": "Concept of the Day: a test needs a prediction",
+      "summary": "Running code and seeing output is not yet a test. A test compares an observed result with a stated expectation. Make the expectation precise enough that a plausible mistake would fail it.",
+      "body": [
+        "Running code and seeing output is not yet a test. A test compares an observed result with a stated expectation. Make the expectation precise enough that a plausible mistake would fail it.",
+        "Start with the simplest meaningful case, then add a boundary case and an invalid input. Resist writing assertions that merely repeat the implementation. A useful test describes the contract a future version must preserve."
+      ],
+      "code": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nconst level = xp => Math.floor(xp / 100) + 1;\ntest('level changes at 100 XP', () => {\n  assert.equal(level(99), 1);\n  assert.equal(level(100), 2);\n});",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-22/43ac84ae07f4.svg",
+      "imageAlt": "Original abstract programming illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://nodejs.org/api/test.html",
+          "site": "Node.js",
+          "title": "Test runner",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "tags": [
+        "Programming",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "43ac84ae07f4-1",
+          "prompt": "What turns a run into a useful automated test?",
+          "options": [
+            "Printing a result",
+            "Comparing the result to a precise expectation",
+            "Running it twice"
+          ],
+          "answer": 1,
+          "explanation": "Running code and seeing output is not yet a test. A test compares an observed result with a stated expectation. Make the expectation precise enough that a plausible mistake would fail it. Start with the simplest meaningful case, then add a boundary case and an invalid input. Resist writing assertions that merely repeat the implementation. A useful test describes the contract a future version must preserve."
+        },
+        {
+          "id": "43ac84ae07f4-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "22b090900222",
+      "date": "2026-10-22",
+      "category": "coding",
+      "title": "Programming reading desk: GitHub CLI: Opt in to expiring, auto-refreshing OAuth tokens",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-21",
+      "body": [
+        "On the reading desk: \"GitHub CLI: Opt in to expiring, auto-refreshing OAuth tokens\". The linked source is dated 2026-10-21. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Read the compatibility notes before changing a working project. Try the smallest example on a separate branch, write down the result, and keep a way to roll back.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: Running code and seeing output is not yet a test. A test compares an observed result with a stated expectation. Make the expectation precise enough that a plausible mistake would fail it."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Programming",
+        "reading desk"
+      ],
+      "image": "content/2026-10-22/22b090900222.svg",
+      "imageAlt": "Original paper-and-shapes illustration for programming",
+      "sources": [
+        {
+          "url": "https://github.blog/changelog/2026-10-21-github-cli-opt-in-to-expiring-auto-refreshing-oauth-tokens",
+          "site": "Programming source",
+          "title": "GitHub CLI: Opt in to expiring, auto-refreshing OAuth tokens",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        },
+        {
+          "url": "https://nodejs.org/api/test.html",
+          "site": "Node.js",
+          "title": "Test runner",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "22b090900222-1",
+          "prompt": "What turns a run into a useful automated test?",
+          "options": [
+            "Printing a result",
+            "Comparing the result to a precise expectation",
+            "Running it twice"
+          ],
+          "answer": 1,
+          "explanation": "Running code and seeing output is not yet a test. A test compares an observed result with a stated expectation. Make the expectation precise enough that a plausible mistake would fail it. Start with the simplest meaningful case, then add a boundary case and an invalid input. Resist writing assertions that merely repeat the implementation. A useful test describes the contract a future version must preserve."
+        },
+        {
+          "id": "22b090900222-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "1c5065addc09",
+      "date": "2026-10-22",
+      "category": "guitar",
+      "title": "Build a practice loop with a finish line",
+      "summary": "A small practice goal gives attention somewhere to land. Replace practice guitar with play this transition comfortably three times, or hear the difference between these two chord voicings.",
+      "body": [
+        "A small practice goal gives attention somewhere to land. Replace practice guitar with play this transition comfortably three times, or hear the difference between these two chord voicings.",
+        "Use a short warm-up, one focused problem, and a little time making music you enjoy. Write a sentence about the problem you want to revisit. This is a planning exercise, not a prescription: adjust the session to your experience and stop if you feel pain."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-22/1c5065addc09.svg",
+      "imageAlt": "Original abstract guitar illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.justinguitar.com/guitar-lessons",
+          "site": "JustinGuitar",
+          "title": "Guitar lessons",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "tags": [
+        "Guitar",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "1c5065addc09-1",
+          "prompt": "Which is the clearest practice goal?",
+          "options": [
+            "Become great today",
+            "Play one transition comfortably three times",
+            "Never make a mistake"
+          ],
+          "answer": 1,
+          "explanation": "A small practice goal gives attention somewhere to land. Replace practice guitar with play this transition comfortably three times, or hear the difference between these two chord voicings. Use a short warm-up, one focused problem, and a little time making music you enjoy. Write a sentence about the problem you want to revisit. This is a planning exercise, not a prescription: adjust the session to your experience and stop if you feel pain."
+        },
+        {
+          "id": "1c5065addc09-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "7ec8ce3e2dcd",
+      "date": "2026-10-22",
+      "category": "guitar",
+      "title": "Guitar reading desk: Keith Urban doesn\u2019t want to stop learning",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-22",
+      "body": [
+        "On the reading desk: \"Keith Urban doesn\u2019t want to stop learning\". The linked source is dated 2026-10-22. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Turn inspiration into a small practice experiment. Choose one sound or technique, slow it down until it is comfortable, and listen to a recording rather than judging by speed.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A small practice goal gives attention somewhere to land. Replace practice guitar with play this transition comfortably three times, or hear the difference between these two chord voicings."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Guitar",
+        "reading desk"
+      ],
+      "image": "content/2026-10-22/7ec8ce3e2dcd.svg",
+      "imageAlt": "Original paper-and-shapes illustration for guitar",
+      "sources": [
+        {
+          "url": "https://www.guitarworld.com/artists/guitarists/keith-urban-flow-state",
+          "site": "Guitar source",
+          "title": "Keith Urban doesn\u2019t want to stop learning",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        },
+        {
+          "url": "https://www.justinguitar.com/guitar-lessons",
+          "site": "JustinGuitar",
+          "title": "Guitar lessons",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "7ec8ce3e2dcd-1",
+          "prompt": "Which is the clearest practice goal?",
+          "options": [
+            "Become great today",
+            "Play one transition comfortably three times",
+            "Never make a mistake"
+          ],
+          "answer": 1,
+          "explanation": "A small practice goal gives attention somewhere to land. Replace practice guitar with play this transition comfortably three times, or hear the difference between these two chord voicings. Use a short warm-up, one focused problem, and a little time making music you enjoy. Write a sentence about the problem you want to revisit. This is a planning exercise, not a prescription: adjust the session to your experience and stop if you feel pain."
+        },
+        {
+          "id": "7ec8ce3e2dcd-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "2648b549cfc6",
+      "date": "2026-10-22",
+      "category": "music",
+      "title": "Hear a song as a sequence of rooms",
+      "summary": "A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it.",
+      "body": [
+        "A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it.",
+        "Sketch a simple timeline during a second listen. Mark where something enters, leaves, or returns. You do not need to know the official section names to notice contrast and repetition. Compare your sketch with a friend rather than treating one interpretation as the only correct one."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-22/2648b549cfc6.svg",
+      "imageAlt": "Original abstract new music illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://learningmusic.ableton.com/song-structure/song-structure.html",
+          "site": "Ableton",
+          "title": "Learning Music: song structure",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "tags": [
+        "New Music",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "2648b549cfc6-1",
+          "prompt": "What can mark a new section even when the melody stays familiar?",
+          "options": [
+            "A change in texture or density",
+            "The file name alone",
+            "Nothing can"
+          ],
+          "answer": 0,
+          "explanation": "A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it. Sketch a simple timeline during a second listen. Mark where something enters, leaves, or returns. You do not need to know the official section names to notice contrast and repetition. Compare your sketch with a friend rather than treating one interpretation as the only correct one."
+        },
+        {
+          "id": "2648b549cfc6-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "2a0c7b6a7266",
+      "date": "2026-10-22",
+      "category": "music",
+      "title": "New Music reading desk: Dowsers \u2013 \u201cDogwood\u201d & \u201cThree Forks Of Cheat\u201d",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-21",
+      "body": [
+        "On the reading desk: \"Dowsers \u2013 \u201cDogwood\u201d & \u201cThree Forks Of Cheat\u201d\". The linked source is dated 2026-10-21. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Listen once without multitasking. Then revisit the arrangement: which instrument establishes the pulse, what changes between sections, and which sound creates the emotional center?",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "New Music",
+        "reading desk"
+      ],
+      "image": "content/2026-10-22/2a0c7b6a7266.svg",
+      "imageAlt": "Original paper-and-shapes illustration for new music",
+      "sources": [
+        {
+          "url": "https://stereogum.com/2515282/dowsers-dogwood-three-forks-of-cheat/music/",
+          "site": "New Music source",
+          "title": "Dowsers \u2013 \u201cDogwood\u201d & \u201cThree Forks Of Cheat\u201d",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        },
+        {
+          "url": "https://learningmusic.ableton.com/song-structure/song-structure.html",
+          "site": "Ableton",
+          "title": "Learning Music: song structure",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "2a0c7b6a7266-1",
+          "prompt": "What can mark a new section even when the melody stays familiar?",
+          "options": [
+            "A change in texture or density",
+            "The file name alone",
+            "Nothing can"
+          ],
+          "answer": 0,
+          "explanation": "A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it. Sketch a simple timeline during a second listen. Mark where something enters, leaves, or returns. You do not need to know the official section names to notice contrast and repetition. Compare your sketch with a friend rather than treating one interpretation as the only correct one."
+        },
+        {
+          "id": "2a0c7b6a7266-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "af38507a73ee",
+      "date": "2026-10-22",
+      "category": "philosophy",
+      "title": "Idea of the Day: a definition can do hidden work",
+      "summary": "Arguments sometimes appear to disagree about a fact when the speakers are using a key word differently. Before adding more reasons, try explaining how each speaker is using that word.",
+      "body": [
+        "Arguments sometimes appear to disagree about a fact when the speakers are using a key word differently. Before adding more reasons, try explaining how each speaker is using that word.",
+        "Pick a term from today's reading. Give an example that fits, an example that does not, and a difficult boundary case. A working definition should help you reason, not merely replace one unfamiliar word with several others. Keep a note of where the definition stops being helpful."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-22/af38507a73ee.svg",
+      "imageAlt": "Original abstract philosophy & reading illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://plato.stanford.edu/entries/definitions/",
+          "site": "Stanford Encyclopedia of Philosophy",
+          "title": "Definitions",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "tags": [
+        "Philosophy & Reading",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "af38507a73ee-1",
+          "prompt": "What can a boundary case reveal?",
+          "options": [
+            "Where a definition becomes difficult to apply",
+            "That all definitions are useless",
+            "Only a spelling mistake"
+          ],
+          "answer": 0,
+          "explanation": "Arguments sometimes appear to disagree about a fact when the speakers are using a key word differently. Before adding more reasons, try explaining how each speaker is using that word. Pick a term from today's reading. Give an example that fits, an example that does not, and a difficult boundary case. A working definition should help you reason, not merely replace one unfamiliar word with several others. Keep a note of where the definition stops being helpful."
+        },
+        {
+          "id": "af38507a73ee-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "9c460c8173cf",
+      "date": "2026-10-22",
+      "category": "philosophy",
+      "title": "Philosophy & Reading reading desk: Mini-Heap",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-22",
+      "body": [
+        "On the reading desk: \"Mini-Heap\". The linked source is dated 2026-10-22. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Write the claim in your own words, identify its strongest reason, and imagine a fair objection. Understanding an argument does not require agreeing with it.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: Arguments sometimes appear to disagree about a fact when the speakers are using a key word differently. Before adding more reasons, try explaining how each speaker is using that word."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Philosophy & Reading",
+        "reading desk"
+      ],
+      "image": "content/2026-10-22/9c460c8173cf.svg",
+      "imageAlt": "Original paper-and-shapes illustration for philosophy & reading",
+      "sources": [
+        {
+          "url": "https://dailynous.com/2026/10/22/mini-heap-733/",
+          "site": "Philosophy & Reading source",
+          "title": "Mini-Heap",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        },
+        {
+          "url": "https://plato.stanford.edu/entries/definitions/",
+          "site": "Stanford Encyclopedia of Philosophy",
+          "title": "Definitions",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "9c460c8173cf-1",
+          "prompt": "What can a boundary case reveal?",
+          "options": [
+            "Where a definition becomes difficult to apply",
+            "That all definitions are useless",
+            "Only a spelling mistake"
+          ],
+          "answer": 0,
+          "explanation": "Arguments sometimes appear to disagree about a fact when the speakers are using a key word differently. Before adding more reasons, try explaining how each speaker is using that word. Pick a term from today's reading. Give an example that fits, an example that does not, and a difficult boundary case. A working definition should help you reason, not merely replace one unfamiliar word with several others. Keep a note of where the definition stops being helpful."
+        },
+        {
+          "id": "9c460c8173cf-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "3d604ec5f14c",
+      "date": "2026-10-22",
+      "category": "health",
+      "title": "Read the study before changing the routine",
+      "summary": "A health headline can omit the details that determine whether a finding applies to you. Start with the participants, the comparison group, the outcome, and the duration. A measured association is not automatically an explanation of cause.",
+      "body": [
+        "A health headline can omit the details that determine whether a finding applies to you. Start with the participants, the comparison group, the outcome, and the duration. A measured association is not automatically an explanation of cause.",
+        "Write down one limitation before deciding what the result means. Check whether the source is describing a single study or a broader body of evidence. Do not change treatment based on a reading note; discuss individual medical decisions with a qualified professional."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-22/3d604ec5f14c.svg",
+      "imageAlt": "Original abstract training & health illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.nih.gov/health-information/nih-clinical-research-trials-you/basics",
+          "site": "NIH",
+          "title": "Clinical research trials: the basics",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "tags": [
+        "Training & Health",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "3d604ec5f14c-1",
+          "prompt": "What should you examine before applying a study's result?",
+          "options": [
+            "Who was studied and what was measured",
+            "Only how exciting its headline is",
+            "Only how many times it was shared"
+          ],
+          "answer": 0,
+          "explanation": "A health headline can omit the details that determine whether a finding applies to you. Start with the participants, the comparison group, the outcome, and the duration. A measured association is not automatically an explanation of cause. Write down one limitation before deciding what the result means. Check whether the source is describing a single study or a broader body of evidence. Do not change treatment based on a reading note; discuss individual medical decisions with a qualified professional."
+        },
+        {
+          "id": "3d604ec5f14c-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "2d7542cb6a20",
+      "date": "2026-10-22",
+      "category": "health",
+      "title": "Training & Health reading desk: Just 4 minutes a day can dramatically improve strength after 65",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-21",
+      "body": [
+        "On the reading desk: \"Just 4 minutes a day can dramatically improve strength after 65\". The linked source is dated 2026-10-21. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Ask who was studied, what was measured, and whether the result applies to your circumstances. One study is a starting point for questions, not a personal training prescription.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A health headline can omit the details that determine whether a finding applies to you. Start with the participants, the comparison group, the outcome, and the duration. A measured association is not automatically an explanation of cause."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Training & Health",
+        "reading desk"
+      ],
+      "image": "content/2026-10-22/2d7542cb6a20.svg",
+      "imageAlt": "Original paper-and-shapes illustration for training & health",
+      "sources": [
+        {
+          "url": "https://www.sciencedaily.com/releases/2026/10/261020085025.htm",
+          "site": "Training & Health source",
+          "title": "Just 4 minutes a day can dramatically improve strength after 65",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        },
+        {
+          "url": "https://www.nih.gov/health-information/nih-clinical-research-trials-you/basics",
+          "site": "NIH",
+          "title": "Clinical research trials: the basics",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "2d7542cb6a20-1",
+          "prompt": "What should you examine before applying a study's result?",
+          "options": [
+            "Who was studied and what was measured",
+            "Only how exciting its headline is",
+            "Only how many times it was shared"
+          ],
+          "answer": 0,
+          "explanation": "A health headline can omit the details that determine whether a finding applies to you. Start with the participants, the comparison group, the outcome, and the duration. A measured association is not automatically an explanation of cause. Write down one limitation before deciding what the result means. Check whether the source is describing a single study or a broader body of evidence. Do not change treatment based on a reading note; discuss individual medical decisions with a qualified professional."
+        },
+        {
+          "id": "2d7542cb6a20-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "09096fe61a26",
+      "date": "2026-10-22",
+      "category": "anime",
+      "title": "Build a watch list you can actually use",
+      "summary": "A long watch list can become a second inbox. Give each entry a short reason for saving it, a verified place to watch, and a rough sense of the commitment involved.",
+      "body": [
+        "A long watch list can become a second inbox. Give each entry a short reason for saving it, a verified place to watch, and a rough sense of the commitment involved.",
+        "Keep a small next-up list separate from a someday list. After trying an episode, update your note honestly rather than forcing yourself to finish. Check availability on the official service in your region; a listing is not a guarantee that every reader can access the same catalog."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-22/09096fe61a26.svg",
+      "imageAlt": "Original abstract anime & manga illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.crunchyroll.com/videos/new",
+          "site": "Crunchyroll",
+          "title": "New anime videos",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "tags": [
+        "Anime & Manga",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "09096fe61a26-1",
+          "prompt": "What adds useful context to a watch-list entry?",
+          "options": [
+            "A reason for saving it and a verified official listing",
+            "An unlimited pile with no notes",
+            "Assuming access is identical worldwide"
+          ],
+          "answer": 0,
+          "explanation": "A long watch list can become a second inbox. Give each entry a short reason for saving it, a verified place to watch, and a rough sense of the commitment involved. Keep a small next-up list separate from a someday list. After trying an episode, update your note honestly rather than forcing yourself to finish. Check availability on the official service in your region; a listing is not a guarantee that every reader can access the same catalog."
+        },
+        {
+          "id": "09096fe61a26-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "f2a10838f21e",
+      "date": "2026-10-22",
+      "category": "anime",
+      "title": "Anime & Manga reading desk: Aobuta Film Opens at #4, New Live-Action Street Fighter Film at #8 in Japan",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-22",
+      "body": [
+        "On the reading desk: \"Aobuta Film Opens at #4, New Live-Action Street Fighter Film at #8 in Japan\". The linked source is dated 2026-10-22. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Check the region, format, and official announcement before treating a release date as a promise. For recommendations, separate your taste from a claim about universal quality.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A long watch list can become a second inbox. Give each entry a short reason for saving it, a verified place to watch, and a rough sense of the commitment involved."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Anime & Manga",
+        "reading desk"
+      ],
+      "image": "content/2026-10-22/f2a10838f21e.svg",
+      "imageAlt": "Original paper-and-shapes illustration for anime & manga",
+      "sources": [
+        {
+          "url": "https://www.animenewsnetwork.com/news/2026-10-22/aobuta-film-opens-at-no.4-new-live-action-street-fighter-film-at-no.8-in-japan/.243101",
+          "site": "Anime & Manga source",
+          "title": "Aobuta Film Opens at #4, New Live-Action Street Fighter Film at #8 in Japan",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        },
+        {
+          "url": "https://www.crunchyroll.com/videos/new",
+          "site": "Crunchyroll",
+          "title": "New anime videos",
+          "retrievedAt": "2026-10-22T10:58:49.105426+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "f2a10838f21e-1",
+          "prompt": "What adds useful context to a watch-list entry?",
+          "options": [
+            "A reason for saving it and a verified official listing",
+            "An unlimited pile with no notes",
+            "Assuming access is identical worldwide"
+          ],
+          "answer": 0,
+          "explanation": "A long watch list can become a second inbox. Give each entry a short reason for saving it, a verified place to watch, and a rough sense of the commitment involved. Keep a small next-up list separate from a someday list. After trying an episode, update your note honestly rather than forcing yourself to finish. Check availability on the official service in your region; a listing is not a guarantee that every reader can access the same catalog."
+        },
+        {
+          "id": "f2a10838f21e-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    }
+  ],
+  "conceptId": "43ac84ae07f4",
+  "ideaId": "af38507a73ee"
+}
