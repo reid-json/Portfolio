@@ -1,0 +1,822 @@
+{
+  "date": "2026-10-29",
+  "sample": false,
+  "generatedAt": "2026-10-29T10:39:32.515151+00:00",
+  "tone": "Warm, curious, practical. An invitation to explore, not a substitute for the source.",
+  "articles": [
+    {
+      "id": "2fcd3c8e9e1a",
+      "date": "2026-10-29",
+      "category": "tech",
+      "title": "The web has a memory budget",
+      "summary": "A page can look finished while still feeling slow. Separate the experience into loading useful content, responding to input, and keeping the layout steady. These are different problems, so one number cannot tell the whole story.",
+      "body": [
+        "A page can look finished while still feeling slow. Separate the experience into loading useful content, responding to input, and keeping the layout steady. These are different problems, so one number cannot tell the whole story.",
+        "Open a small website on your phone and notice its first useful moment. Then try it with a slower connection in developer tools. Record one observation before choosing a fix. Removing an unnecessary image or script is often a better first experiment than adding another optimization layer."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-29/2fcd3c8e9e1a.svg",
+      "imageAlt": "Original abstract tech illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://web.dev/articles/vitals",
+          "site": "web.dev",
+          "title": "Web Vitals",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "tags": [
+        "Tech",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "2fcd3c8e9e1a-1",
+          "prompt": "Why measure several aspects of page performance?",
+          "options": [
+            "Loading, responsiveness, and stability differ",
+            "One number explains every experience",
+            "Images never affect performance"
+          ],
+          "answer": 0,
+          "explanation": "A page can look finished while still feeling slow. Separate the experience into loading useful content, responding to input, and keeping the layout steady. These are different problems, so one number cannot tell the whole story. Open a small website on your phone and notice its first useful moment. Then try it with a slower connection in developer tools. Record one observation before choosing a fix. Removing an unnecessary image or script is often a better first experiment than adding another optimization layer."
+        },
+        {
+          "id": "2fcd3c8e9e1a-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "684a0e80dde9",
+      "date": "2026-10-29",
+      "category": "tech",
+      "title": "Tech reading desk: APOD: 29 October 2026 \u2013 The Horns of Venus",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-29",
+      "body": [
+        "On the reading desk: \"APOD: 29 October 2026 \u2013 The Horns of Venus\". The linked source is dated 2026-10-29. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Separate what was demonstrated from what is promised. Look for the measurement, the comparison, and the constraints before deciding what a new technology changes.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A page can look finished while still feeling slow. Separate the experience into loading useful content, responding to input, and keeping the layout steady. These are different problems, so one number cannot tell the whole story."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Tech",
+        "reading desk"
+      ],
+      "image": "content/2026-10-29/684a0e80dde9.svg",
+      "imageAlt": "Original paper-and-shapes illustration for tech",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/image-article/apod-29-october-2026-the-horns-of-venus/",
+          "site": "Tech source",
+          "title": "APOD: 29 October 2026 \u2013 The Horns of Venus",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        },
+        {
+          "url": "https://web.dev/articles/vitals",
+          "site": "web.dev",
+          "title": "Web Vitals",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "684a0e80dde9-1",
+          "prompt": "Why measure several aspects of page performance?",
+          "options": [
+            "Loading, responsiveness, and stability differ",
+            "One number explains every experience",
+            "Images never affect performance"
+          ],
+          "answer": 0,
+          "explanation": "A page can look finished while still feeling slow. Separate the experience into loading useful content, responding to input, and keeping the layout steady. These are different problems, so one number cannot tell the whole story. Open a small website on your phone and notice its first useful moment. Then try it with a slower connection in developer tools. Record one observation before choosing a fix. Removing an unnecessary image or script is often a better first experiment than adding another optimization layer."
+        },
+        {
+          "id": "684a0e80dde9-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "bbcb5f91e719",
+      "date": "2026-10-29",
+      "category": "coding",
+      "title": "Concept of the Day: keep the input unchanged",
+      "summary": "A transformation is easier to reason about when its input remains available for comparison. JavaScript's map creates a new array from the callback results. That does not mean objects inside it become deeply immutable.",
+      "body": [
+        "A transformation is easier to reason about when its input remains available for comparison. JavaScript's map creates a new array from the callback results. That does not mean objects inside it become deeply immutable.",
+        "Read the example before running it. Predict both arrays, then check your prediction. In larger programs, keeping transformations separate from side effects makes it easier to write small tests and locate the point where data changed."
+      ],
+      "code": "const minutes = [2, 4, 6];\nconst seconds = minutes.map(value => value * 60);\nconsole.log(minutes); // [2, 4, 6]\nconsole.log(seconds); // [120, 240, 360]",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-29/bbcb5f91e719.svg",
+      "imageAlt": "Original abstract programming illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
+          "site": "MDN",
+          "title": "Array.prototype.map",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "tags": [
+        "Programming",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "bbcb5f91e719-1",
+          "prompt": "What does map return?",
+          "options": [
+            "Only the original array",
+            "A new array of callback results",
+            "A database connection"
+          ],
+          "answer": 1,
+          "explanation": "A transformation is easier to reason about when its input remains available for comparison. JavaScript's map creates a new array from the callback results. That does not mean objects inside it become deeply immutable. Read the example before running it. Predict both arrays, then check your prediction. In larger programs, keeping transformations separate from side effects makes it easier to write small tests and locate the point where data changed."
+        },
+        {
+          "id": "bbcb5f91e719-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "af8e72e013cb",
+      "date": "2026-10-29",
+      "category": "coding",
+      "title": "Programming reading desk: Route and orchestrate models with GitHub Copilot Fusion",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-28",
+      "body": [
+        "On the reading desk: \"Route and orchestrate models with GitHub Copilot Fusion\". The linked source is dated 2026-10-28. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Read the compatibility notes before changing a working project. Try the smallest example on a separate branch, write down the result, and keep a way to roll back.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A transformation is easier to reason about when its input remains available for comparison. JavaScript's map creates a new array from the callback results. That does not mean objects inside it become deeply immutable."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Programming",
+        "reading desk"
+      ],
+      "image": "content/2026-10-29/af8e72e013cb.svg",
+      "imageAlt": "Original paper-and-shapes illustration for programming",
+      "sources": [
+        {
+          "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+          "site": "Programming source",
+          "title": "Route and orchestrate models with GitHub Copilot Fusion",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        },
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
+          "site": "MDN",
+          "title": "Array.prototype.map",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "af8e72e013cb-1",
+          "prompt": "What does map return?",
+          "options": [
+            "Only the original array",
+            "A new array of callback results",
+            "A database connection"
+          ],
+          "answer": 1,
+          "explanation": "A transformation is easier to reason about when its input remains available for comparison. JavaScript's map creates a new array from the callback results. That does not mean objects inside it become deeply immutable. Read the example before running it. Predict both arrays, then check your prediction. In larger programs, keeping transformations separate from side effects makes it easier to write small tests and locate the point where data changed."
+        },
+        {
+          "id": "af8e72e013cb-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "439d8d96b00e",
+      "date": "2026-10-29",
+      "category": "guitar",
+      "title": "Train your ear with a two-note question",
+      "summary": "An interval describes the distance between two pitches. Instead of memorizing a large chart at once, compare just two sounds: repeat the same note, then move to a different one.",
+      "body": [
+        "An interval describes the distance between two pitches. Instead of memorizing a large chart at once, compare just two sounds: repeat the same note, then move to a different one.",
+        "Sing or hum the pair before looking at the fretboard. Describe what you hear in ordinary language, then check the interval name. Keep pitch distance separate from fretboard shape; the same musical relationship can appear in more than one location."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-29/439d8d96b00e.svg",
+      "imageAlt": "Original abstract guitar illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.musictheory.net/lessons/30",
+          "site": "musictheory.net",
+          "title": "Intervals",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "tags": [
+        "Guitar",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "439d8d96b00e-1",
+          "prompt": "What does a musical interval describe?",
+          "options": [
+            "Distance between pitches",
+            "The price of strings",
+            "The length of a guitar cable"
+          ],
+          "answer": 0,
+          "explanation": "An interval describes the distance between two pitches. Instead of memorizing a large chart at once, compare just two sounds: repeat the same note, then move to a different one. Sing or hum the pair before looking at the fretboard. Describe what you hear in ordinary language, then check the interval name. Keep pitch distance separate from fretboard shape; the same musical relationship can appear in more than one location."
+        },
+        {
+          "id": "439d8d96b00e-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "0b869599818e",
+      "date": "2026-10-29",
+      "category": "guitar",
+      "title": "Guitar reading desk: Session legend Carl Carlton on imposter syndrome, meeting his heroes, and the wild tale...",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-29",
+      "body": [
+        "On the reading desk: \"Session legend Carl Carlton on imposter syndrome, meeting his heroes, and the wild tale...\". The linked source is dated 2026-10-29. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Turn inspiration into a small practice experiment. Choose one sound or technique, slow it down until it is comfortable, and listen to a recording rather than judging by speed.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: An interval describes the distance between two pitches. Instead of memorizing a large chart at once, compare just two sounds: repeat the same note, then move to a different one."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Guitar",
+        "reading desk"
+      ],
+      "image": "content/2026-10-29/0b869599818e.svg",
+      "imageAlt": "Original paper-and-shapes illustration for guitar",
+      "sources": [
+        {
+          "url": "https://www.guitarworld.com/artists/guitarists/carl-carlton-miles-of-time",
+          "site": "Guitar source",
+          "title": "Session legend Carl Carlton on imposter syndrome, meeting his heroes, and the wild tale that gave him his name",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        },
+        {
+          "url": "https://www.musictheory.net/lessons/30",
+          "site": "musictheory.net",
+          "title": "Intervals",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "0b869599818e-1",
+          "prompt": "What does a musical interval describe?",
+          "options": [
+            "Distance between pitches",
+            "The price of strings",
+            "The length of a guitar cable"
+          ],
+          "answer": 0,
+          "explanation": "An interval describes the distance between two pitches. Instead of memorizing a large chart at once, compare just two sounds: repeat the same note, then move to a different one. Sing or hum the pair before looking at the fretboard. Describe what you hear in ordinary language, then check the interval name. Keep pitch distance separate from fretboard shape; the same musical relationship can appear in more than one location."
+        },
+        {
+          "id": "0b869599818e-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "2648b549cfc6",
+      "date": "2026-10-29",
+      "category": "music",
+      "title": "Hear a song as a sequence of rooms",
+      "summary": "A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it.",
+      "body": [
+        "A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it.",
+        "Sketch a simple timeline during a second listen. Mark where something enters, leaves, or returns. You do not need to know the official section names to notice contrast and repetition. Compare your sketch with a friend rather than treating one interpretation as the only correct one."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-29/2648b549cfc6.svg",
+      "imageAlt": "Original abstract new music illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://learningmusic.ableton.com/song-structure/song-structure.html",
+          "site": "Ableton",
+          "title": "Learning Music: song structure",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "tags": [
+        "New Music",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "2648b549cfc6-1",
+          "prompt": "What can mark a new section even when the melody stays familiar?",
+          "options": [
+            "A change in texture or density",
+            "The file name alone",
+            "Nothing can"
+          ],
+          "answer": 0,
+          "explanation": "A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it. Sketch a simple timeline during a second listen. Mark where something enters, leaves, or returns. You do not need to know the official section names to notice contrast and repetition. Compare your sketch with a friend rather than treating one interpretation as the only correct one."
+        },
+        {
+          "id": "2648b549cfc6-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "01388fb24efa",
+      "date": "2026-10-29",
+      "category": "music",
+      "title": "New Music reading desk: DIIV \u2013 \u201cDare Me\u201d",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-28",
+      "body": [
+        "On the reading desk: \"DIIV \u2013 \u201cDare Me\u201d\". The linked source is dated 2026-10-28. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Listen once without multitasking. Then revisit the arrangement: which instrument establishes the pulse, what changes between sections, and which sound creates the emotional center?",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "New Music",
+        "reading desk"
+      ],
+      "image": "content/2026-10-29/01388fb24efa.svg",
+      "imageAlt": "Original paper-and-shapes illustration for new music",
+      "sources": [
+        {
+          "url": "https://stereogum.com/2515877/diiv-dare-me-zirp-song/music/",
+          "site": "New Music source",
+          "title": "DIIV \u2013 \u201cDare Me\u201d",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        },
+        {
+          "url": "https://learningmusic.ableton.com/song-structure/song-structure.html",
+          "site": "Ableton",
+          "title": "Learning Music: song structure",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "01388fb24efa-1",
+          "prompt": "What can mark a new section even when the melody stays familiar?",
+          "options": [
+            "A change in texture or density",
+            "The file name alone",
+            "Nothing can"
+          ],
+          "answer": 0,
+          "explanation": "A change of section can feel like entering a new room. The melody may stay familiar while texture, register, or rhythmic density changes around it. Sketch a simple timeline during a second listen. Mark where something enters, leaves, or returns. You do not need to know the official section names to notice contrast and repetition. Compare your sketch with a friend rather than treating one interpretation as the only correct one."
+        },
+        {
+          "id": "01388fb24efa-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "05aaf3a84a8a",
+      "date": "2026-10-29",
+      "category": "philosophy",
+      "title": "Idea of the Day: read the footnote in your own claim",
+      "summary": "When we call an action good, we may mean several things: a good outcome, a good rule, or the expression of a good character. Naming the perspective helps a disagreement become more precise.",
+      "body": [
+        "When we call an action good, we may mean several things: a good outcome, a good rule, or the expression of a good character. Naming the perspective helps a disagreement become more precise.",
+        "Describe a small everyday decision. Consider the result you want, the rule you might apply, and the habit the decision could reinforce. These lenses need not produce the same answer. Use the disagreement as a question for further reading rather than as proof that ethical reflection is pointless."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-29/05aaf3a84a8a.svg",
+      "imageAlt": "Original abstract philosophy & reading illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://plato.stanford.edu/entries/ethics-virtue/",
+          "site": "Stanford Encyclopedia of Philosophy",
+          "title": "Virtue ethics",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "tags": [
+        "Philosophy & Reading",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "05aaf3a84a8a-1",
+          "prompt": "Why identify the ethical perspective behind a claim?",
+          "options": [
+            "To make the disagreement more precise",
+            "To eliminate every difficult decision",
+            "To prove outcomes never matter"
+          ],
+          "answer": 0,
+          "explanation": "When we call an action good, we may mean several things: a good outcome, a good rule, or the expression of a good character. Naming the perspective helps a disagreement become more precise. Describe a small everyday decision. Consider the result you want, the rule you might apply, and the habit the decision could reinforce. These lenses need not produce the same answer. Use the disagreement as a question for further reading rather than as proof that ethical reflection is pointless."
+        },
+        {
+          "id": "05aaf3a84a8a-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "20f982653e37",
+      "date": "2026-10-29",
+      "category": "philosophy",
+      "title": "Philosophy & Reading reading desk: \u201cA Failure of Expectation Calibration\u201d",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-28",
+      "body": [
+        "On the reading desk: \"\u201cA Failure of Expectation Calibration\u201d\". The linked source is dated 2026-10-28. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Write the claim in your own words, identify its strongest reason, and imagine a fair objection. Understanding an argument does not require agreeing with it.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: When we call an action good, we may mean several things: a good outcome, a good rule, or the expression of a good character. Naming the perspective helps a disagreement become more precise."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Philosophy & Reading",
+        "reading desk"
+      ],
+      "image": "content/2026-10-29/20f982653e37.svg",
+      "imageAlt": "Original paper-and-shapes illustration for philosophy & reading",
+      "sources": [
+        {
+          "url": "https://dailynous.com/2026/10/28/a-failure-of-expectation-calibration/",
+          "site": "Philosophy & Reading source",
+          "title": "\u201cA Failure of Expectation Calibration\u201d",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        },
+        {
+          "url": "https://plato.stanford.edu/entries/ethics-virtue/",
+          "site": "Stanford Encyclopedia of Philosophy",
+          "title": "Virtue ethics",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "20f982653e37-1",
+          "prompt": "Why identify the ethical perspective behind a claim?",
+          "options": [
+            "To make the disagreement more precise",
+            "To eliminate every difficult decision",
+            "To prove outcomes never matter"
+          ],
+          "answer": 0,
+          "explanation": "When we call an action good, we may mean several things: a good outcome, a good rule, or the expression of a good character. Naming the perspective helps a disagreement become more precise. Describe a small everyday decision. Consider the result you want, the rule you might apply, and the habit the decision could reinforce. These lenses need not produce the same answer. Use the disagreement as a question for further reading rather than as proof that ethical reflection is pointless."
+        },
+        {
+          "id": "20f982653e37-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "08637ec7a460",
+      "date": "2026-10-29",
+      "category": "health",
+      "title": "Recovery starts with noticing the pattern",
+      "summary": "Recovery is easier to discuss when you have observations rather than guesses. A brief sleep note can record bedtime, wake time, and how rested you feel without pretending that one number explains everything.",
+      "body": [
+        "Recovery is easier to discuss when you have observations rather than guesses. A brief sleep note can record bedtime, wake time, and how rested you feel without pretending that one number explains everything.",
+        "Look for a routine you can make more consistent. Avoid using a consumer device reading as a diagnosis. Persistent sleep problems or unusual fatigue deserve a conversation with a qualified clinician; this reading exercise is educational and not medical advice."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-29/08637ec7a460.svg",
+      "imageAlt": "Original abstract training & health illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.nhlbi.nih.gov/health/sleep/why-sleep-important",
+          "site": "NHLBI",
+          "title": "Why sleep is important",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "tags": [
+        "Training & Health",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "08637ec7a460-1",
+          "prompt": "What is a reasonable use of a simple sleep log?",
+          "options": [
+            "Diagnosing every medical problem",
+            "Observing patterns to discuss or adjust",
+            "Proving that devices never make mistakes"
+          ],
+          "answer": 1,
+          "explanation": "Recovery is easier to discuss when you have observations rather than guesses. A brief sleep note can record bedtime, wake time, and how rested you feel without pretending that one number explains everything. Look for a routine you can make more consistent. Avoid using a consumer device reading as a diagnosis. Persistent sleep problems or unusual fatigue deserve a conversation with a qualified clinician; this reading exercise is educational and not medical advice."
+        },
+        {
+          "id": "08637ec7a460-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "24714a6bebdf",
+      "date": "2026-10-29",
+      "category": "health",
+      "title": "Training & Health reading desk: A simple daily fiber supplement reduced arthritis pain and improved strength",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-27",
+      "body": [
+        "On the reading desk: \"A simple daily fiber supplement reduced arthritis pain and improved strength\". The linked source is dated 2026-10-27. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Ask who was studied, what was measured, and whether the result applies to your circumstances. One study is a starting point for questions, not a personal training prescription.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: Recovery is easier to discuss when you have observations rather than guesses. A brief sleep note can record bedtime, wake time, and how rested you feel without pretending that one number explains everything."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Training & Health",
+        "reading desk"
+      ],
+      "image": "content/2026-10-29/24714a6bebdf.svg",
+      "imageAlt": "Original paper-and-shapes illustration for training & health",
+      "sources": [
+        {
+          "url": "https://www.sciencedaily.com/releases/2026/10/261027230715.htm",
+          "site": "Training & Health source",
+          "title": "A simple daily fiber supplement reduced arthritis pain and improved strength",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        },
+        {
+          "url": "https://www.nhlbi.nih.gov/health/sleep/why-sleep-important",
+          "site": "NHLBI",
+          "title": "Why sleep is important",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "24714a6bebdf-1",
+          "prompt": "What is a reasonable use of a simple sleep log?",
+          "options": [
+            "Diagnosing every medical problem",
+            "Observing patterns to discuss or adjust",
+            "Proving that devices never make mistakes"
+          ],
+          "answer": 1,
+          "explanation": "Recovery is easier to discuss when you have observations rather than guesses. A brief sleep note can record bedtime, wake time, and how rested you feel without pretending that one number explains everything. Look for a routine you can make more consistent. Avoid using a consumer device reading as a diagnosis. Persistent sleep problems or unusual fatigue deserve a conversation with a qualified clinician; this reading exercise is educational and not medical advice."
+        },
+        {
+          "id": "24714a6bebdf-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "2c5459dd46c4",
+      "date": "2026-10-29",
+      "category": "anime",
+      "title": "Notice what the adaptation chooses to emphasize",
+      "summary": "A printed page and a moving scene organize attention differently. A page lets you choose how long to linger; animation controls duration through movement, sound, and editing.",
+      "body": [
+        "A printed page and a moving scene organize attention differently. A page lets you choose how long to linger; animation controls duration through movement, sound, and editing.",
+        "Compare a small passage you can legally access in both forms. Describe one change in emphasis without immediately calling it an improvement or a failure. An adaptation comparison becomes more interesting when it explains the effect of a choice instead of merely counting differences."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-10-29/2c5459dd46c4.svg",
+      "imageAlt": "Original abstract anime & manga illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.viz.com/read",
+          "site": "VIZ",
+          "title": "Read manga",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "tags": [
+        "Anime & Manga",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "2c5459dd46c4-1",
+          "prompt": "What makes an adaptation comparison more informative?",
+          "options": [
+            "Explaining the effect of a creative choice",
+            "Only counting changes",
+            "Assuming every change is a mistake"
+          ],
+          "answer": 0,
+          "explanation": "A printed page and a moving scene organize attention differently. A page lets you choose how long to linger; animation controls duration through movement, sound, and editing. Compare a small passage you can legally access in both forms. Describe one change in emphasis without immediately calling it an improvement or a failure. An adaptation comparison becomes more interesting when it explains the effect of a choice instead of merely counting differences."
+        },
+        {
+          "id": "2c5459dd46c4-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "54937931883f",
+      "date": "2026-10-29",
+      "category": "anime",
+      "title": "Anime & Manga reading desk: The Remarried Empress Webtoon Launches Side Stories Ahead of Disney+ Live-Action Series",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-10-29",
+      "body": [
+        "On the reading desk: \"The Remarried Empress Webtoon Launches Side Stories Ahead of Disney+ Live-Action Series\". The linked source is dated 2026-10-29. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Check the region, format, and official announcement before treating a release date as a promise. For recommendations, separate your taste from a claim about universal quality.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A printed page and a moving scene organize attention differently. A page lets you choose how long to linger; animation controls duration through movement, sound, and editing."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Anime & Manga",
+        "reading desk"
+      ],
+      "image": "content/2026-10-29/54937931883f.svg",
+      "imageAlt": "Original paper-and-shapes illustration for anime & manga",
+      "sources": [
+        {
+          "url": "https://www.animenewsnetwork.com/news/2026-10-29/the-remarried-empress-webtoon-launches-side-stories-ahead-of-disney-live-action-series/.243306",
+          "site": "Anime & Manga source",
+          "title": "The Remarried Empress Webtoon Launches Side Stories Ahead of Disney+ Live-Action Series",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        },
+        {
+          "url": "https://www.viz.com/read",
+          "site": "VIZ",
+          "title": "Read manga",
+          "retrievedAt": "2026-10-29T10:39:32.515151+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "54937931883f-1",
+          "prompt": "What makes an adaptation comparison more informative?",
+          "options": [
+            "Explaining the effect of a creative choice",
+            "Only counting changes",
+            "Assuming every change is a mistake"
+          ],
+          "answer": 0,
+          "explanation": "A printed page and a moving scene organize attention differently. A page lets you choose how long to linger; animation controls duration through movement, sound, and editing. Compare a small passage you can legally access in both forms. Describe one change in emphasis without immediately calling it an improvement or a failure. An adaptation comparison becomes more interesting when it explains the effect of a choice instead of merely counting differences."
+        },
+        {
+          "id": "54937931883f-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    }
+  ],
+  "conceptId": "bbcb5f91e719",
+  "ideaId": "05aaf3a84a8a"
+}
