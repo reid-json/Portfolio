@@ -1,0 +1,822 @@
+{
+  "date": "2026-11-25",
+  "sample": false,
+  "generatedAt": "2026-11-25T11:59:14.196131+00:00",
+  "tone": "Warm, curious, practical. An invitation to explore, not a substitute for the source.",
+  "articles": [
+    {
+      "id": "d97ef082ef55",
+      "date": "2026-11-25",
+      "category": "tech",
+      "title": "Backups are a recovery plan, not a folder",
+      "summary": "A copy on the same computer is convenient, but it shares many of the original's risks. Thinking about backups starts with a concrete question: what would you do if that computer stopped working this morning?",
+      "body": [
+        "A copy on the same computer is convenient, but it shares many of the original's risks. Thinking about backups starts with a concrete question: what would you do if that computer stopped working this morning?",
+        "List the few files you could not easily recreate. Choose a separate backup destination, decide how often it should update, and restore one harmless test file. A successful restore is much stronger evidence than a green checkmark. Keep at least one backup protected from accidental changes to the originals."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-11-25/d97ef082ef55.svg",
+      "imageAlt": "Original abstract tech illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository",
+          "site": "GitHub Docs",
+          "title": "Backing up a repository",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "tags": [
+        "Tech",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "d97ef082ef55-1",
+          "prompt": "What is the strongest practical check that a backup is useful?",
+          "options": [
+            "Its folder has a reassuring name",
+            "Restoring a test file successfully",
+            "It is on the same disk"
+          ],
+          "answer": 1,
+          "explanation": "A copy on the same computer is convenient, but it shares many of the original's risks. Thinking about backups starts with a concrete question: what would you do if that computer stopped working this morning? List the few files you could not easily recreate. Choose a separate backup destination, decide how often it should update, and restore one harmless test file. A successful restore is much stronger evidence than a green checkmark. Keep at least one backup protected from accidental changes to the originals."
+        },
+        {
+          "id": "d97ef082ef55-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "964f8076eb89",
+      "date": "2026-11-25",
+      "category": "tech",
+      "title": "Tech reading desk: APOD: 2026 November 25 \u2013 SPHEREx Seeing Through Dust",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-11-25",
+      "body": [
+        "On the reading desk: \"APOD: 2026 November 25 \u2013 SPHEREx Seeing Through Dust\". The linked source is dated 2026-11-25. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Separate what was demonstrated from what is promised. Look for the measurement, the comparison, and the constraints before deciding what a new technology changes.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A copy on the same computer is convenient, but it shares many of the original's risks. Thinking about backups starts with a concrete question: what would you do if that computer stopped working this morning?"
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Tech",
+        "reading desk"
+      ],
+      "image": "content/2026-11-25/964f8076eb89.svg",
+      "imageAlt": "Original paper-and-shapes illustration for tech",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/image-article/apod-2026-november-25-spherex-seeing-through-dust/",
+          "site": "Tech source",
+          "title": "APOD: 2026 November 25 \u2013 SPHEREx Seeing Through Dust",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        },
+        {
+          "url": "https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository",
+          "site": "GitHub Docs",
+          "title": "Backing up a repository",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "964f8076eb89-1",
+          "prompt": "What is the strongest practical check that a backup is useful?",
+          "options": [
+            "Its folder has a reassuring name",
+            "Restoring a test file successfully",
+            "It is on the same disk"
+          ],
+          "answer": 1,
+          "explanation": "A copy on the same computer is convenient, but it shares many of the original's risks. Thinking about backups starts with a concrete question: what would you do if that computer stopped working this morning? List the few files you could not easily recreate. Choose a separate backup destination, decide how often it should update, and restore one harmless test file. A successful restore is much stronger evidence than a green checkmark. Keep at least one backup protected from accidental changes to the originals."
+        },
+        {
+          "id": "964f8076eb89-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "7d9bc97d4198",
+      "date": "2026-11-25",
+      "category": "coding",
+      "title": "Concept of the Day: name the missing value",
+      "summary": "A lookup may return nothing. Treat that possibility as part of the method's contract, rather than as an inconvenient surprise. Optional can make absence visible to a caller.",
+      "body": [
+        "A lookup may return nothing. Treat that possibility as part of the method's contract, rather than as an inconvenient surprise. Optional can make absence visible to a caller.",
+        "Try the example with and without a name. Avoid calling get without checking whether a value exists. Pick a meaningful alternative or handle the empty case deliberately; a silent placeholder can hide a real data problem."
+      ],
+      "code": "import java.util.Optional;\nclass Main {\n  public static void main(String[] args) {\n    Optional<String> name = Optional.empty();\n    System.out.println(name.orElse(\"Reader\"));\n  }\n}",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-11-25/7d9bc97d4198.svg",
+      "imageAlt": "Original abstract programming illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html",
+          "site": "Oracle Java",
+          "title": "Optional class",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "tags": [
+        "Programming",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "7d9bc97d4198-1",
+          "prompt": "What does Optional make explicit?",
+          "options": [
+            "A value may be absent",
+            "Every value is a string",
+            "Errors can be ignored"
+          ],
+          "answer": 0,
+          "explanation": "A lookup may return nothing. Treat that possibility as part of the method's contract, rather than as an inconvenient surprise. Optional can make absence visible to a caller. Try the example with and without a name. Avoid calling get without checking whether a value exists. Pick a meaningful alternative or handle the empty case deliberately; a silent placeholder can hide a real data problem."
+        },
+        {
+          "id": "7d9bc97d4198-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "7450adb57091",
+      "date": "2026-11-25",
+      "category": "coding",
+      "title": "Programming reading desk: More predictable notifications on GitHub.com",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-11-24",
+      "body": [
+        "On the reading desk: \"More predictable notifications on GitHub.com\". The linked source is dated 2026-11-24. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Read the compatibility notes before changing a working project. Try the smallest example on a separate branch, write down the result, and keep a way to roll back.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A lookup may return nothing. Treat that possibility as part of the method's contract, rather than as an inconvenient surprise. Optional can make absence visible to a caller."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Programming",
+        "reading desk"
+      ],
+      "image": "content/2026-11-25/7450adb57091.svg",
+      "imageAlt": "Original paper-and-shapes illustration for programming",
+      "sources": [
+        {
+          "url": "https://github.blog/changelog/2026-11-24-more-predictable-notifications-on-github-com",
+          "site": "Programming source",
+          "title": "More predictable notifications on GitHub.com",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        },
+        {
+          "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html",
+          "site": "Oracle Java",
+          "title": "Optional class",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "7450adb57091-1",
+          "prompt": "What does Optional make explicit?",
+          "options": [
+            "A value may be absent",
+            "Every value is a string",
+            "Errors can be ignored"
+          ],
+          "answer": 0,
+          "explanation": "A lookup may return nothing. Treat that possibility as part of the method's contract, rather than as an inconvenient surprise. Optional can make absence visible to a caller. Try the example with and without a name. Avoid calling get without checking whether a value exists. Pick a meaningful alternative or handle the empty case deliberately; a silent placeholder can hide a real data problem."
+        },
+        {
+          "id": "7450adb57091-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "7e8fcc0764ec",
+      "date": "2026-11-25",
+      "category": "guitar",
+      "title": "Make one chord change a tiny study",
+      "summary": "A chord change contains several small decisions: which finger moves first, which fingers can stay close to the strings, and whether the new shape arrives together. Isolate one pair rather than racing through an entire song.",
+      "body": [
+        "A chord change contains several small decisions: which finger moves first, which fingers can stay close to the strings, and whether the new shape arrives together. Isolate one pair rather than racing through an entire song.",
+        "Move slowly, listen for clean notes, and release unnecessary pressure between attempts. A short recording can reveal a pause you did not notice while playing. Compare the movement tomorrow at the same pace, not just a higher count."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-11-25/7e8fcc0764ec.svg",
+      "imageAlt": "Original abstract guitar illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.justinguitar.com/guitar-lessons/one-minute-changes-exercise-b1-110",
+          "site": "JustinGuitar",
+          "title": "One minute changes",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "tags": [
+        "Guitar",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "7e8fcc0764ec-1",
+          "prompt": "Why isolate a single chord change?",
+          "options": [
+            "To examine the movement clearly",
+            "To avoid listening",
+            "To guarantee instant speed"
+          ],
+          "answer": 0,
+          "explanation": "A chord change contains several small decisions: which finger moves first, which fingers can stay close to the strings, and whether the new shape arrives together. Isolate one pair rather than racing through an entire song. Move slowly, listen for clean notes, and release unnecessary pressure between attempts. A short recording can reveal a pause you did not notice while playing. Compare the movement tomorrow at the same pace, not just a higher count."
+        },
+        {
+          "id": "7e8fcc0764ec-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "80c14ab6b445",
+      "date": "2026-11-25",
+      "category": "guitar",
+      "title": "Guitar reading desk: Black Friday guitar deals 2026 LIVE: the hottest Cyber Weekend guitar savings, minute by...",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-11-25",
+      "body": [
+        "On the reading desk: \"Black Friday guitar deals 2026 LIVE: the hottest Cyber Weekend guitar savings, minute by...\". The linked source is dated 2026-11-25. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Turn inspiration into a small practice experiment. Choose one sound or technique, slow it down until it is comfortable, and listen to a recording rather than judging by speed.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A chord change contains several small decisions: which finger moves first, which fingers can stay close to the strings, and whether the new shape arrives together. Isolate one pair rather than racing through an entire song."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Guitar",
+        "reading desk"
+      ],
+      "image": "content/2026-11-25/80c14ab6b445.svg",
+      "imageAlt": "Original paper-and-shapes illustration for guitar",
+      "sources": [
+        {
+          "url": "https://www.guitarworld.com/live/news/black-friday-guitar-deals-2026-live-2",
+          "site": "Guitar source",
+          "title": "Black Friday guitar deals 2026 LIVE: the hottest Cyber Weekend guitar savings, minute by minute",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        },
+        {
+          "url": "https://www.justinguitar.com/guitar-lessons/one-minute-changes-exercise-b1-110",
+          "site": "JustinGuitar",
+          "title": "One minute changes",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "80c14ab6b445-1",
+          "prompt": "Why isolate a single chord change?",
+          "options": [
+            "To examine the movement clearly",
+            "To avoid listening",
+            "To guarantee instant speed"
+          ],
+          "answer": 0,
+          "explanation": "A chord change contains several small decisions: which finger moves first, which fingers can stay close to the strings, and whether the new shape arrives together. Isolate one pair rather than racing through an entire song. Move slowly, listen for clean notes, and release unnecessary pressure between attempts. A short recording can reveal a pause you did not notice while playing. Compare the movement tomorrow at the same pace, not just a higher count."
+        },
+        {
+          "id": "80c14ab6b445-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "dfa23f1cd8a5",
+      "date": "2026-11-25",
+      "category": "music",
+      "title": "A drum pattern is a conversation of accents",
+      "summary": "A beat is more than a count of drum hits. Listen for which hits feel emphasized and how the spaces between them affect motion. A nearly empty pattern can still have a strong identity.",
+      "body": [
+        "A beat is more than a count of drum hits. Listen for which hits feel emphasized and how the spaces between them affect motion. A nearly empty pattern can still have a strong identity.",
+        "Tap the pulse while listening, then follow only the snare or clap. Notice whether an accent supports your pulse or pushes against it. Describe the effect before reaching for a genre label. That habit helps you hear what is actually present."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-11-25/dfa23f1cd8a5.svg",
+      "imageAlt": "Original abstract new music illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://learningmusic.ableton.com/make-beats/make-beats.html",
+          "site": "Ableton",
+          "title": "Learning Music: beats",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "tags": [
+        "New Music",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "dfa23f1cd8a5-1",
+          "prompt": "What can shape the feel of a beat besides the number of hits?",
+          "options": [
+            "Accents and spaces",
+            "Only album length",
+            "Only the artist's name"
+          ],
+          "answer": 0,
+          "explanation": "A beat is more than a count of drum hits. Listen for which hits feel emphasized and how the spaces between them affect motion. A nearly empty pattern can still have a strong identity. Tap the pulse while listening, then follow only the snare or clap. Notice whether an accent supports your pulse or pushes against it. Describe the effect before reaching for a genre label. That habit helps you hear what is actually present."
+        },
+        {
+          "id": "dfa23f1cd8a5-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "fa50db48b9d6",
+      "date": "2026-11-25",
+      "category": "music",
+      "title": "New Music reading desk: Album Of The Week: Star\u2019s Revenge Star\u2019s Revenge II",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-11-24",
+      "body": [
+        "On the reading desk: \"Album Of The Week: Star\u2019s Revenge Star\u2019s Revenge II\". The linked source is dated 2026-11-24. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Listen once without multitasking. Then revisit the arrangement: which instrument establishes the pulse, what changes between sections, and which sound creates the emotional center?",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A beat is more than a count of drum hits. Listen for which hits feel emphasized and how the spaces between them affect motion. A nearly empty pattern can still have a strong identity."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "New Music",
+        "reading desk"
+      ],
+      "image": "content/2026-11-25/fa50db48b9d6.svg",
+      "imageAlt": "Original paper-and-shapes illustration for new music",
+      "sources": [
+        {
+          "url": "https://stereogum.com/2520760/album-of-the-week-stars-revenge-stars-revenge-ii/reviews/album-of-the-week/",
+          "site": "New Music source",
+          "title": "Album Of The Week: Star\u2019s Revenge Star\u2019s Revenge II",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        },
+        {
+          "url": "https://learningmusic.ableton.com/make-beats/make-beats.html",
+          "site": "Ableton",
+          "title": "Learning Music: beats",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fa50db48b9d6-1",
+          "prompt": "What can shape the feel of a beat besides the number of hits?",
+          "options": [
+            "Accents and spaces",
+            "Only album length",
+            "Only the artist's name"
+          ],
+          "answer": 0,
+          "explanation": "A beat is more than a count of drum hits. Listen for which hits feel emphasized and how the spaces between them affect motion. A nearly empty pattern can still have a strong identity. Tap the pulse while listening, then follow only the snare or clap. Notice whether an accent supports your pulse or pushes against it. Describe the effect before reaching for a genre label. That habit helps you hear what is actually present."
+        },
+        {
+          "id": "fa50db48b9d6-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "a02c94a67d35",
+      "date": "2026-11-25",
+      "category": "philosophy",
+      "title": "Idea of the Day: what would change your mind?",
+      "summary": "A useful way to examine a belief is to ask what supports it and what evidence might count against it. Confidence and justification are related questions, but they are not the same question.",
+      "body": [
+        "A useful way to examine a belief is to ask what supports it and what evidence might count against it. Confidence and justification are related questions, but they are not the same question.",
+        "Choose a low-stakes belief and write one reason for it. Then describe an observation that would make you reconsider. If you cannot imagine one, investigate whether the claim is too vague to test or belongs to a different kind of inquiry. This is an original reflection prompt, not a historical quotation."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-11-25/a02c94a67d35.svg",
+      "imageAlt": "Original abstract philosophy & reading illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://plato.stanford.edu/entries/epistemology/",
+          "site": "Stanford Encyclopedia of Philosophy",
+          "title": "Epistemology",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "tags": [
+        "Philosophy & Reading",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "a02c94a67d35-1",
+          "prompt": "Which question encourages examining a belief?",
+          "options": [
+            "How can I avoid all disagreement?",
+            "What evidence would make me reconsider?",
+            "Can I repeat it more loudly?"
+          ],
+          "answer": 1,
+          "explanation": "A useful way to examine a belief is to ask what supports it and what evidence might count against it. Confidence and justification are related questions, but they are not the same question. Choose a low-stakes belief and write one reason for it. Then describe an observation that would make you reconsider. If you cannot imagine one, investigate whether the claim is too vague to test or belongs to a different kind of inquiry. This is an original reflection prompt, not a historical quotation."
+        },
+        {
+          "id": "a02c94a67d35-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "223949a99ff6",
+      "date": "2026-11-25",
+      "category": "philosophy",
+      "title": "Philosophy & Reading reading desk: A Game for Teaching Ancient Philosophy",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-11-24",
+      "body": [
+        "On the reading desk: \"A Game for Teaching Ancient Philosophy\". The linked source is dated 2026-11-24. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Write the claim in your own words, identify its strongest reason, and imagine a fair objection. Understanding an argument does not require agreeing with it.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A useful way to examine a belief is to ask what supports it and what evidence might count against it. Confidence and justification are related questions, but they are not the same question."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Philosophy & Reading",
+        "reading desk"
+      ],
+      "image": "content/2026-11-25/223949a99ff6.svg",
+      "imageAlt": "Original paper-and-shapes illustration for philosophy & reading",
+      "sources": [
+        {
+          "url": "https://dailynous.com/2026/11/24/a-game-for-teaching-ancient-philosophy/",
+          "site": "Philosophy & Reading source",
+          "title": "A Game for Teaching Ancient Philosophy",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        },
+        {
+          "url": "https://plato.stanford.edu/entries/epistemology/",
+          "site": "Stanford Encyclopedia of Philosophy",
+          "title": "Epistemology",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "223949a99ff6-1",
+          "prompt": "Which question encourages examining a belief?",
+          "options": [
+            "How can I avoid all disagreement?",
+            "What evidence would make me reconsider?",
+            "Can I repeat it more loudly?"
+          ],
+          "answer": 1,
+          "explanation": "A useful way to examine a belief is to ask what supports it and what evidence might count against it. Confidence and justification are related questions, but they are not the same question. Choose a low-stakes belief and write one reason for it. Then describe an observation that would make you reconsider. If you cannot imagine one, investigate whether the claim is too vague to test or belongs to a different kind of inquiry. This is an original reflection prompt, not a historical quotation."
+        },
+        {
+          "id": "223949a99ff6-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "8d75e9c2f621",
+      "date": "2026-11-25",
+      "category": "health",
+      "title": "Track the training you actually did",
+      "summary": "A training log is a description, not a verdict. Record what you did, how it felt, and any practical barrier you encountered. The purpose is to make the next decision better informed.",
+      "body": [
+        "A training log is a description, not a verdict. Record what you did, how it felt, and any practical barrier you encountered. The purpose is to make the next decision better informed.",
+        "Avoid interpreting one unusually good or bad session as a trend. Look for patterns over time and keep the plan appropriate to your current ability. General public-health guidance does not replace individualized advice, especially when pain, illness, or a medical condition changes what is suitable."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-11-25/8d75e9c2f621.svg",
+      "imageAlt": "Original abstract training & health illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+          "site": "CDC",
+          "title": "Adult activity guidelines",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "tags": [
+        "Training & Health",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "8d75e9c2f621-1",
+          "prompt": "How should a single difficult workout be interpreted?",
+          "options": [
+            "As proof the entire plan failed",
+            "As one observation, not automatically a trend",
+            "As a reason to ignore pain"
+          ],
+          "answer": 1,
+          "explanation": "A training log is a description, not a verdict. Record what you did, how it felt, and any practical barrier you encountered. The purpose is to make the next decision better informed. Avoid interpreting one unusually good or bad session as a trend. Look for patterns over time and keep the plan appropriate to your current ability. General public-health guidance does not replace individualized advice, especially when pain, illness, or a medical condition changes what is suitable."
+        },
+        {
+          "id": "8d75e9c2f621-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "ba537fe16b9d",
+      "date": "2026-11-25",
+      "category": "health",
+      "title": "Training & Health reading desk: A common blood pressure drug has a surprising effect on calorie-burning brown fat",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-11-21",
+      "body": [
+        "On the reading desk: \"A common blood pressure drug has a surprising effect on calorie-burning brown fat\". The linked source is dated 2026-11-21. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Ask who was studied, what was measured, and whether the result applies to your circumstances. One study is a starting point for questions, not a personal training prescription.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A training log is a description, not a verdict. Record what you did, how it felt, and any practical barrier you encountered. The purpose is to make the next decision better informed."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Training & Health",
+        "reading desk"
+      ],
+      "image": "content/2026-11-25/ba537fe16b9d.svg",
+      "imageAlt": "Original paper-and-shapes illustration for training & health",
+      "sources": [
+        {
+          "url": "https://www.sciencedaily.com/releases/2026/11/261119194558.htm",
+          "site": "Training & Health source",
+          "title": "A common blood pressure drug has a surprising effect on calorie-burning brown fat",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        },
+        {
+          "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+          "site": "CDC",
+          "title": "Adult activity guidelines",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ba537fe16b9d-1",
+          "prompt": "How should a single difficult workout be interpreted?",
+          "options": [
+            "As proof the entire plan failed",
+            "As one observation, not automatically a trend",
+            "As a reason to ignore pain"
+          ],
+          "answer": 1,
+          "explanation": "A training log is a description, not a verdict. Record what you did, how it felt, and any practical barrier you encountered. The purpose is to make the next decision better informed. Avoid interpreting one unusually good or bad session as a trend. Look for patterns over time and keep the plan appropriate to your current ability. General public-health guidance does not replace individualized advice, especially when pain, illness, or a medical condition changes what is suitable."
+        },
+        {
+          "id": "ba537fe16b9d-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    },
+    {
+      "id": "b75dd21c9cec",
+      "date": "2026-11-25",
+      "category": "anime",
+      "title": "Keep a spoiler-light recommendation note",
+      "summary": "A recommendation can explain the appeal of a story without recounting its surprises. Focus on tone, pacing, visual style, and the sort of reader who might enjoy it.",
+      "body": [
+        "A recommendation can explain the appeal of a story without recounting its surprises. Focus on tone, pacing, visual style, and the sort of reader who might enjoy it.",
+        "Write two sentences about a series you have actually read. Separate your preference from a factual claim, and check official publisher information for availability. Mark anything that reveals a major turn before sharing the note. Curiosity is a better invitation than a plot summary that removes the discovery."
+      ],
+      "code": "",
+      "label": "From the archives",
+      "archiveReason": "A foundational skill worth revisiting in today's reading.",
+      "image": "content/2026-11-25/b75dd21c9cec.svg",
+      "imageAlt": "Original abstract anime & manga illustration with paper, a circle and flowing shapes",
+      "sources": [
+        {
+          "url": "https://www.viz.com/shonenjump",
+          "site": "VIZ",
+          "title": "Shonen Jump",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "tags": [
+        "Anime & Manga",
+        "evergreen",
+        "practice"
+      ],
+      "quiz": [
+        {
+          "id": "b75dd21c9cec-1",
+          "prompt": "Which makes a useful spoiler-light recommendation?",
+          "options": [
+            "Tone and appeal without major plot revelations",
+            "Every ending in detail",
+            "A claim that taste is universal"
+          ],
+          "answer": 0,
+          "explanation": "A recommendation can explain the appeal of a story without recounting its surprises. Focus on tone, pacing, visual style, and the sort of reader who might enjoy it. Write two sentences about a series you have actually read. Separate your preference from a factual claim, and check official publisher information for availability. Mark anything that reveals a major turn before sharing the note. Curiosity is a better invitation than a plot summary that removes the discovery."
+        },
+        {
+          "id": "b75dd21c9cec-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ],
+      "readMinutes": 1
+    },
+    {
+      "id": "57a0df4e7fad",
+      "date": "2026-11-25",
+      "category": "anime",
+      "title": "Anime & Manga reading desk: 'Now That We Draw' Anime's New Video Unveils More Cast, Ending Song Artist, January...",
+      "summary": "A recent source to explore, with an original reading lens and a small exercise.",
+      "label": "Fresh reading",
+      "archiveReason": "",
+      "published": "2026-11-25",
+      "body": [
+        "On the reading desk: \"'Now That We Draw' Anime's New Video Unveils More Cast, Ending Song Artist, January...\". The linked source is dated 2026-11-25. Open it for the reporting, details, and any subsequent updates. This page is a reading companion, not an AI-generated news summary.",
+        "Check the region, format, and official announcement before treating a release date as a promise. For recommendations, separate your taste from a claim about universal quality.",
+        "Your five-minute exercise: read the source, write down one detail you learned and one question it left open. Keep the author's reporting separate from your interpretation. Save a note below so you can revisit the question later.",
+        "A foundational connection: A recommendation can explain the appeal of a story without recounting its surprises. Focus on tone, pacing, visual style, and the sort of reader who might enjoy it."
+      ],
+      "code": "",
+      "readMinutes": 2,
+      "tags": [
+        "Anime & Manga",
+        "reading desk"
+      ],
+      "image": "content/2026-11-25/57a0df4e7fad.svg",
+      "imageAlt": "Original paper-and-shapes illustration for anime & manga",
+      "sources": [
+        {
+          "url": "https://www.animenewsnetwork.com/news/2026-11-25/now-that-we-draw-anime-new-video-unveils-more-cast-ending-song-artist-january-8-debut/.244186",
+          "site": "Anime & Manga source",
+          "title": "'Now That We Draw' Anime's New Video Unveils More Cast, Ending Song Artist, January 8 Debut",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        },
+        {
+          "url": "https://www.viz.com/shonenjump",
+          "site": "VIZ",
+          "title": "Shonen Jump",
+          "retrievedAt": "2026-11-25T11:59:14.196131+00:00"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "57a0df4e7fad-1",
+          "prompt": "Which makes a useful spoiler-light recommendation?",
+          "options": [
+            "Tone and appeal without major plot revelations",
+            "Every ending in detail",
+            "A claim that taste is universal"
+          ],
+          "answer": 0,
+          "explanation": "A recommendation can explain the appeal of a story without recounting its surprises. Focus on tone, pacing, visual style, and the sort of reader who might enjoy it. Write two sentences about a series you have actually read. Separate your preference from a factual claim, and check official publisher information for availability. Mark anything that reveals a major turn before sharing the note. Curiosity is a better invitation than a plot summary that removes the discovery."
+        },
+        {
+          "id": "57a0df4e7fad-2",
+          "prompt": "What is the best next step after this reading?",
+          "options": [
+            "Treat a short article as the final authority",
+            "Open the cited source and try the reflection exercise",
+            "Assume every detail applies to everyone"
+          ],
+          "answer": 1,
+          "explanation": "Follow the source, examine its context, and use the exercise to form your own questions."
+        }
+      ]
+    }
+  ],
+  "conceptId": "7d9bc97d4198",
+  "ideaId": "a02c94a67d35"
+}
